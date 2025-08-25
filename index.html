@@ -1,140 +1,389 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edu-Suite 🚀 | Transformasi Digital Sekolah</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu-Suite – Transformasi Pembelajaran Digital Sejati</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony -->
+    <!-- Application Structure Plan: Halaman ini dirancang sebagai SPA (Single Page Application) dengan struktur landing page klasik yang mengalir secara logis untuk memandu calon pelanggan. Alurnya dimulai dari Hero Section (kesadaran), Kisah Saya (membangun kepercayaan), Keunggulan (menunjukkan nilai), Paket Harga (menawarkan solusi), Testimoni (bukti sosial), dan diakhiri dengan CTA (ajakan bertindak). Struktur ini dipilih karena sangat efektif dalam mengubah pengunjung menjadi pelanggan. Interaktivitas difokuskan pada navigasi smooth-scroll dan carousel testimoni untuk meningkatkan keterlibatan pengguna tanpa mengganggu alur informasi utama. -->
+    <!-- Visualization & Content Choices: Karena materi sumber bersifat promosi, "visualisasi" diwujudkan melalui elemen HTML/CSS yang terstruktur seperti kartu (cards) untuk paket dan fitur, serta ikon Unicode untuk memperjelas poin. Tidak ada data kuantitatif, sehingga tidak ada grafik (chart). Pilihan utama untuk interaktivitas adalah carousel testimoni yang dibuat dengan JavaScript untuk menyajikan bukti sosial secara dinamis dan hemat ruang. Ini lebih menarik daripada daftar statis dan mendukung alur narasi. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8; /* Warm Neutral Background */
+        }
+        .text-brand-dark { color: #2D3748; }
+        .text-brand-primary { color: #2B6CB0; } /* Calm Blue */
+        .bg-brand-primary { background-color: #2B6CB0; }
+        .bg-brand-primary-light { background-color: #EBF8FF; }
+        .border-brand-primary { border-color: #2B6CB0; }
+        .btn {
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .testimonial-card {
+            display: none;
+        }
+        .testimonial-card.active {
+            display: block;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #2B6CB0;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="text-brand-dark">
 
-  <!-- Hero -->
-  <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-10 text-center">
-    <h1 class="text-4xl font-bold mb-4">Edu-Suite 🚀</h1>
-    <p class="text-lg">Transformasi Digital di Ujung Jari</p>
-    <p class="mt-2 text-xl font-semibold">Berbasis Google Workspace + AI</p>
-    <a href="#paket" class="mt-6 inline-block bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold shadow hover:bg-yellow-500">
-      Lihat Paket
-    </a>
-  </header>
+    <!-- Header / Navigation -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-brand-primary">Edu-Suite</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#story" class="hover:text-brand-primary transition-colors">Kisah Saya</a>
+                <a href="#features" class="hover:text-brand-primary transition-colors">Keunggulan</a>
+                <a href="#ai-assistant" class="hover:text-brand-primary transition-colors">AI Assistant</a>
+                <a href="#pricing" class="hover:text-brand-primary transition-colors">Paket</a>
+                <a href="#testimonials" class="hover:text-brand-primary transition-colors">Testimoni</a>
+            </div>
+            <!-- FIX: Updated WhatsApp link with new number and attributes -->
+            <a href="https://wa.me/6282328888989" target="_blank" rel="noopener" class="hidden md:inline-block bg-brand-primary text-white font-semibold px-6 py-2 rounded-lg btn">Hubungi Kami</a>
+        </nav>
+    </header>
 
-  <!-- Tentang -->
-  <section class="p-8 text-center">
-    <h2 class="text-2xl font-bold mb-4">Mengapa Edu-Suite?</h2>
-    <p class="max-w-2xl mx-auto">
-      Administrasi manual bikin ribet. Dengan Edu-Suite, guru bisa <b>fokus mengajar, bukan laporan</b>.
-      Portal digital kami berbasis <b>Google Workspace</b> dan diperkuat <b>AI</b>, memudahkan sekolah
-      mengelola pembelajaran, absensi, hingga jurnal mengajar — semua otomatis.
-    </p>
-  </section>
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="py-20 md:py-32 bg-brand-primary-light">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-brand-dark leading-tight">Edu-Suite – Transformasi Pembelajaran Digital Sejati</h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Halo, saya Basri, S.Pd., M.A.P</p>
+                <blockquote class="mt-4 text-lg md:text-xl text-brand-primary font-medium max-w-3xl mx-auto italic">
+                    "Setiap guru memiliki potensi luar biasa. Dengan teknologi yang tepat, tantangan pendidikan menjadi peluang berinovasi. Edu-Suite siap mendampingi Anda hingga mahir!"
+                </blockquote>
+                <div class="mt-10 flex justify-center items-center space-x-4">
+                    <!-- FIX: Updated Demo link with the new URL and attributes -->
+                    <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" rel="noopener" class="bg-brand-primary text-white font-bold px-8 py-4 rounded-lg btn text-lg">🎁 Demo Gratis</a>
+                    <!-- FIX: Updated WhatsApp link here as well -->
+                    <a href="https://wa.me/6282328888989" target="_blank" rel="noopener" class="bg-white border-2 border-brand-primary text-brand-primary font-bold px-8 py-4 rounded-lg btn text-lg">📱 Hubungi WhatsApp</a>
+                </div>
+            </div>
+        </section>
 
-  <!-- Fitur -->
-  <section class="p-8 bg-white">
-    <h2 class="text-2xl font-bold text-center mb-6">Fitur Unggulan</h2>
-    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-      <div class="bg-gray-100 p-6 rounded-lg shadow">
-        <h3 class="font-bold mb-2">📑 Administrasi Otomatis</h3>
-        <p>Absensi, jurnal, & laporan guru otomatis sinkron dengan Google Sheets & Docs.</p>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-lg shadow">
-        <h3 class="font-bold mb-2">🤖 Asisten AI</h3>
-        <p>AI membantu guru menyusun RPP, soal, hingga ringkasan pembelajaran.</p>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-lg shadow">
-        <h3 class="font-bold mb-2">🌐 Website Sekolah</h3>
-        <p>Sekolah mendapat website modern berbasis Workspace sebagai pusat informasi.</p>
-      </div>
-    </div>
-  </section>
+        <!-- 2. Kisah Inspiratif -->
+        <section id="story" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/EBF8FF/2B6CB0?text=Basri+S.Pd.,+M.A.P" alt="Foto Basri" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Kisah Saya: Dari Tantangan Menuju Solusi</h2>
+                        <p class="text-gray-600 mb-4">Dengan pengalaman lebih dari 15 tahun di dunia pendidikan, saya meyakini bahwa mengajar bukan hanya soal menyampaikan materi, melainkan memberdayakan guru dan siswa agar memiliki kemampuan sejati.</p>
+                        <p class="text-gray-600 mb-4">Salah satu tantangan terbesar saya adalah ketika dipercaya sebagai Koordinator Tim Projek P5, di mana saya harus memantau progres **802 siswa** dan membimbing **134 guru**. Beban administrasi yang kompleks ini mendorong saya berinovasi.</p>
+                        <p class="text-gray-600 font-semibold">Dari sinilah lahir Edu-Suite — portal pembelajaran digital berbasis Google Workspace + AI yang kini terbukti membantu banyak rekan guru fokus kembali ke inti pembelajaran.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Paket -->
-  <section id="paket" class="p-8 bg-gray-50">
-    <h2 class="text-2xl font-bold text-center mb-6">Pilihan Paket Edu-Suite</h2>
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <!-- Lite -->
-      <div class="bg-white p-6 rounded-lg shadow text-center">
-        <h3 class="text-xl font-bold mb-2">Lite</h3>
-        <p class="mb-4 text-gray-600">Untuk guru individu.</p>
-        <p class="text-2xl font-bold mb-4">Rp 350.000</p>
-        <ul class="text-sm text-left mb-4 space-y-2">
-          <li>✔ Akses permanen aplikasi</li>
-          <li>✔ Bimbingan 1 bulan</li>
-          <li>✔ Update dasar</li>
-        </ul>
-        <a href="https://wa.me/6282328888989" class="bg-blue-600 text-white px-4 py-2 rounded shadow">Pesan</a>
-      </div>
-      <!-- Pro -->
-      <div class="bg-white p-6 rounded-lg shadow text-center border-2 border-blue-500">
-        <h3 class="text-xl font-bold mb-2">Pro</h3>
-        <p class="mb-4 text-gray-600">Untuk guru serius ingin mahir.</p>
-        <p class="text-2xl font-bold mb-4">Rp 950.000</p>
-        <ul class="text-sm text-left mb-4 space-y-2">
-          <li>✔ Akses permanen aplikasi</li>
-          <li>✔ Bimbingan 3 bulan</li>
-          <li>✔ Dukungan AI personal</li>
-        </ul>
-        <a href="https://wa.me/6282328888989" class="bg-blue-600 text-white px-4 py-2 rounded shadow">Pesan</a>
-      </div>
-      <!-- Institusi -->
-      <div class="bg-white p-6 rounded-lg shadow text-center">
-        <h3 class="text-xl font-bold mb-2">Institusi</h3>
-        <p class="mb-4 text-gray-600">Untuk sekolah/lembaga.</p>
-        <p class="text-2xl font-bold mb-4">Mulai Rp 4.500.000</p>
-        <ul class="text-sm text-left mb-4 space-y-2">
-          <li>✔ Workshop guru</li>
-          <li>✔ Website sekolah</li>
-          <li>✔ Bimbingan 1 tahun</li>
-          <li>✔ Dukungan prioritas</li>
-        </ul>
-        <a href="https://wa.me/6282328888989" class="bg-blue-600 text-white px-4 py-2 rounded shadow">Pesan</a>
-      </div>
-    </div>
-  </section>
+        <!-- 3. Keunggulan Edu-Suite -->
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Keunggulan Edu-Suite</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-lg shadow-lg bg-brand-primary-light transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-5xl mb-4">📋</div>
+                        <h3 class="text-xl font-bold mb-2">Absensi & Jurnal Otomatis</h3>
+                        <p class="text-gray-600">Semua data kehadiran dan aktivitas terekam secara digital dan rapi, menghemat waktu Anda.</p>
+                    </div>
+                    <div class="p-8 rounded-lg shadow-lg bg-brand-primary-light transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-5xl mb-4">💻</div>
+                        <h3 class="text-xl font-bold mb-2">Akses Multi-Platform</h3>
+                        <p class="text-gray-600">Kelola kelas dari mana saja, kapan saja, melalui HP, tablet, atau laptop dengan mudah.</p>
+                    </div>
+                    <div class="p-8 rounded-lg shadow-lg bg-brand-primary-light transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-5xl mb-4">📚</div>
+                        <h3 class="text-xl font-bold mb-2">Integrasi Sumber Belajar</h3>
+                        <p class="text-gray-600">Hubungkan materi dari PDF, link komunitas, Google Drive, dan lainnya dalam satu tempat.</p>
+                    </div>
+                    <div class="p-8 rounded-lg shadow-lg bg-brand-primary-light transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-5xl mb-4">⚙️</div>
+                        <h3 class="text-xl font-bold mb-2">Tanpa Coding</h3>
+                        <p class="text-gray-600">Siap pakai dengan akun Belajar.id Anda. Hemat biaya dan waktu pengembangan.</p>
+                    </div>
+                    <div class="p-8 rounded-lg shadow-lg bg-brand-primary-light transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-5xl mb-4">🤖</div>
+                        <h3 class="text-xl font-bold mb-2">AI Assistant</h3>
+                        <p class="text-gray-600">Dapatkan bantuan cerdas untuk menyiapkan bahan ajar, membuat laporan, dan analisis.</p>
+                    </div>
+                    <div class="p-8 rounded-lg shadow-lg bg-brand-primary-light transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-5xl mb-4">🏫</div>
+                        <h3 class="text-xl font-bold mb-2">Pendampingan Personal</h3>
+                        <p class="text-gray-600">Kami berkomitmen membimbing Anda sampai level mahir, karena teknologi harus memberdayakan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Testimoni -->
-  <section class="p-8 bg-white">
-    <h2 class="text-2xl font-bold text-center mb-6">Apa Kata Mereka?</h2>
-    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      <div class="bg-gray-100 p-6 rounded-lg shadow">
-        <p>"Dulu saya habiskan waktu untuk administrasi. Sekarang dengan Edu-Suite, semuanya otomatis."</p>
-        <p class="mt-2 font-bold">– Ibu Ani, Guru SMA</p>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-lg shadow">
-        <p>"Website sekolah kami jadi lebih profesional, dan guru lebih fokus mengajar."</p>
-        <p class="mt-2 font-bold">– Pak Budi, Kepala Sekolah</p>
-      </div>
-    </div>
-  </section>
+        <!-- New: AI Assistant Demo Section -->
+        <section id="ai-assistant" class="py-20 bg-brand-primary">
+            <div class="container mx-auto px-6 text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Rasakan Kecanggihan Edu-Suite</h2>
+                <p class="text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto">Coba fitur ✨ **AI Assistant** ✨ kami sekarang! Masukkan topik apa pun, dan lihat bagaimana AI dapat membantu Anda dalam menyiapkan bahan ajar.</p>
 
-  <!-- Demo AI -->
-  <section class="p-8 bg-gray-50">
-    <h2 class="text-2xl font-bold text-center mb-6">Coba AI Assistant</h2>
-    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow">
-      <textarea id="userInput" placeholder="Tanya AI (contoh: buat soal matematika kelas 7)" class="w-full border p-3 rounded mb-4"></textarea>
-      <button id="askBtn" class="w-full bg-blue-600 text-white py-2 rounded">Tanya AI</button>
-      <div id="aiResponse" class="mt-4 p-3 bg-gray-100 rounded text-sm"></div>
-    </div>
-  </section>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-2xl text-brand-dark">
+                    <div class="mb-6 text-left">
+                        <label for="topic-input" class="block font-semibold mb-2">Masukkan topik:</label>
+                        <input type="text" id="topic-input" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-brand-primary" placeholder="Contoh: Energi Alternatif untuk Kelas 7">
+                    </div>
+                    
+                    <button id="generate-btn" class="bg-brand-primary text-white font-bold py-3 px-6 rounded-lg btn text-lg w-full mb-4">Buat Materi Pembelajaran</button>
+                    
+                    <div id="loading-indicator" class="hidden flex justify-center items-center py-4">
+                        <div class="loading-spinner"></div>
+                        <span class="ml-4">Sedang membuat materi...</span>
+                    </div>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white text-center p-6 mt-8">
-    <p>&copy; 2025 Edu-Suite | Hubungi: 
-      <a href="https://wa.me/6282328888989" class="underline">+62 823-2888-8989</a>
-    </p>
-  </footer>
+                    <div id="result-output" class="text-left mt-6 bg-gray-50 p-6 rounded-lg border border-gray-200 min-h-[200px] overflow-auto">
+                        <p class="text-gray-500">Hasil akan muncul di sini.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Paket & Harga -->
+        <section id="pricing" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">Pilihan Paket Edu-Suite</h2>
+                <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Pilih paket yang paling sesuai dengan kebutuhan Anda. Semua paket bersifat sekali bayar dengan akses permanen dan garansi kepuasan.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Lite -->
+                    <div class="border rounded-lg p-8 flex flex-col shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-brand-primary">Lite</h3>
+                        <p class="text-gray-500 mt-2">Untuk guru yang ingin mencoba sistem</p>
+                        <p class="text-4xl font-extrabold my-6">Rp 350rb</p>
+                        <p class="font-semibold mb-6">- Rp 400rb (sekali bayar)</p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Bimbingan 1 Bulan</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Edu-Suite Dasar</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Absensi & Jurnal Otomatis</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Rekap Nilai Digital</li>
+                        </ul>
+                        <a href="https://wa.me/6282328888989" target="_blank" rel="noopener" class="mt-auto bg-white border-2 border-brand-primary text-brand-primary font-bold py-3 rounded-lg w-full btn">Pilih Lite</a>
+                    </div>
+                    <!-- Pro -->
+                    <div class="border-4 border-brand-primary rounded-lg p-8 flex flex-col shadow-2xl relative">
+                        <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-brand-primary text-white px-4 py-1 rounded-full text-sm font-bold">TERPOPULER</div>
+                        <h3 class="text-2xl font-bold text-brand-primary">Pro</h3>
+                        <p class="text-gray-500 mt-2">Untuk guru yang ingin mahir & bimbingan intensif</p>
+                        <p class="text-4xl font-extrabold my-6">Rp 950rb</p>
+                        <p class="font-semibold mb-6">- Rp 1.5jt (sekali bayar)</p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Semua layanan Lite</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Bimbingan 3 Bulan</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Dukungan AI Lanjutan</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Pelatihan Canva</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Pendampingan Intensif</li>
+                        </ul>
+                        <a href="https://wa.me/6282328888989" target="_blank" rel="noopener" class="mt-auto bg-brand-primary text-white font-bold py-3 rounded-lg w-full btn">Pilih Pro</a>
+                    </div>
+                    <!-- Institusi -->
+                    <div class="border rounded-lg p-8 flex flex-col shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-brand-primary">Institusi</h3>
+                        <p class="text-gray-500 mt-2">Transformasi digital untuk sekolah</p>
+                        <p class="text-4xl font-extrabold my-6">Mulai 4.5jt</p>
+                        <p class="font-semibold mb-6">(harga final setelah konsultasi)</p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Semua layanan Pro</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Bimbingan 1 Tahun / Permanen</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Website Sekolah Profesional</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Workshop & Pelatihan Guru</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Dukungan Prioritas</li>
+                        </ul>
+                        <a href="https://wa.me/6282328888989" target="_blank" rel="noopener" class="mt-auto bg-white border-2 border-brand-primary text-brand-primary font-bold py-3 rounded-lg w-full btn">Konsultasi</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Script dummy AI -->
-  <script>
-    document.getElementById("askBtn").addEventListener("click", function() {
-      const input = document.getElementById("userInput").value;
-      const responseBox = document.getElementById("aiResponse");
-      if (!input.trim()) {
-        responseBox.innerHTML = "⚠️ Silakan tulis pertanyaan Anda.";
-      } else {
-        responseBox.innerHTML = "🤖 AI (demo): Ide jawaban untuk '" + input + "'.<br>Untuk versi penuh gunakan API Gemini.";
-      }
-    });
-  </script>
+        <!-- 5. Testimoni -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Apa Kata Mereka?</h2>
+                <div class="max-w-3xl mx-auto relative">
+                    <div id="testimonial-container" class="overflow-hidden">
+                        <div class="testimonial-card active bg-brand-primary-light p-8 rounded-lg shadow-lg">
+                            <p class="text-xl italic text-gray-700">"Rasanya seperti punya perpustakaan global di satu tempat. Semua materi dan tugas bisa diakses kapan saja tanpa ribet. Belajar bersama lebih praktis dan menyenangkan."</p>
+                        </div>
+                        <div class="testimonial-card bg-brand-primary-light p-8 rounded-lg shadow-lg">
+                            <p class="text-xl italic text-gray-700">"Penilaian jadi jauh lebih mudah. Absensi otomatis, tugas siswa langsung terekam, dan laporan bulanan sudah tersusun rapi tanpa perlu mengetik ulang. Semua terasa lebih ringan."</p>
+                        </div>
+                        <div class="testimonial-card bg-brand-primary-light p-8 rounded-lg shadow-lg">
+                            <p class="text-xl italic text-gray-700">"Akses portal fleksibel, mendukung pembelajaran abad 21. Dengan Edu-Suite, guru lebih efisien, dan siswa menjadi lebih mandiri dalam belajar."</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-6 space-x-2" id="testimonial-dots">
+                        <!-- Dots will be generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- 6. CTA / Penutup -->
+        <section id="contact" class="py-20 bg-brand-primary-light">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Mulai Transformasi Digital Sekolah Anda Hari Ini!</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Edu-Suite adalah investasi terbaik untuk menjadi guru yang efisien, inovatif, dan siap meninggalkan jejak nyata.</p>
+                <div class="mt-10">
+                    <!-- FIX: Updated WhatsApp link here as well -->
+                    <a href="https://wa.me/6282328888989" target="_blank" rel="noopener" class="bg-brand-primary text-white font-bold px-8 py-4 rounded-lg btn text-lg">📱 Hubungi WhatsApp Sekarang</a>
+                </div>
+                <p class="mt-8 text-sm text-gray-500 italic">"Administrasi Mudah, Guru Merdeka – Edu-Suite lahir dari pengalaman. Jangan percayakan administrasi Anda pada yang bukan ahlinya."</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Edu-Suite by Basri, S.Pd., M.A.P. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Testimonial Carousel
+            const testimonials = document.querySelectorAll('.testimonial-card');
+            const dotsContainer = document.getElementById('testimonial-dots');
+            let currentTestimonial = 0;
+
+            if (testimonials.length > 0) {
+                testimonials.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition-colors');
+                    dot.classList.add(index === 0 ? 'bg-brand-primary' : 'bg-gray-300');
+                    dot.addEventListener('click', () => showTestimonial(index));
+                    dotsContainer.appendChild(dot);
+                });
+
+                function showTestimonial(index) {
+                    testimonials[currentTestimonial].classList.remove('active');
+                    dotsContainer.children[currentTestimonial].classList.remove('bg-brand-primary');
+                    dotsContainer.children[currentTestimonial].classList.add('bg-gray-300');
+
+                    currentTestimonial = index;
+
+                    testimonials[currentTestimonial].classList.add('active');
+                    dotsContainer.children[currentTestimonial].classList.add('bg-brand-primary');
+                    dotsContainer.children[currentTestimonial].classList.remove('bg-gray-300');
+                }
+
+                setInterval(() => {
+                    let next = (currentTestimonial + 1) % testimonials.length;
+                    showTestimonial(next);
+                }, 5000); // Change testimonial every 5 seconds
+            }
+
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scroll.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Gemini AI Assistant Integration
+            const topicInput = document.getElementById('topic-input');
+            const generateBtn = document.getElementById('generate-btn');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const resultOutput = document.getElementById('result-output');
+
+            generateBtn.addEventListener('click', async () => {
+                const prompt = topicInput.value.trim();
+                if (!prompt) {
+                    resultOutput.innerHTML = '<p class="text-red-500">Mohon masukkan topik terlebih dahulu.</p>';
+                    return;
+                }
+
+                loadingIndicator.classList.remove('hidden');
+                loadingIndicator.classList.add('flex');
+                generateBtn.disabled = true;
+
+                resultOutput.innerHTML = '';
+
+                try {
+                    const chatHistory = [];
+                    chatHistory.push({
+                        role: "user",
+                        parts: [{
+                            text: `Sebagai seorang asisten guru yang cerdas dan kreatif, buatlah sebuah rancangan materi pelajaran atau beberapa pertanyaan kuis untuk topik berikut: "${prompt}". Berikan dalam format yang mudah dibaca dengan judul dan poin-poin.`
+                        }]
+                    });
+                    const payload = {
+                        contents: chatHistory
+                    };
+
+                    const apiKey = ""
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API call failed with status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        resultOutput.innerHTML = `<p class="whitespace-pre-wrap">${text}</p>`;
+                    } else {
+                        // FIX: Improved error message for cases where the API returns an unexpected structure
+                        resultOutput.innerHTML = '<p class="text-red-500">Maaf, ada masalah dalam membuat materi. Silakan coba lagi.</p>';
+                    }
+
+                } catch (error) {
+                    // FIX: Added more detailed error logging and a user-friendly error message
+                    console.error("Error during API call:", error);
+                    resultOutput.innerHTML = `<p class="text-red-500">Terjadi kesalahan: ${error.message}. Silakan coba lagi nanti.</p>`;
+                } finally {
+                    loadingIndicator.classList.add('hidden');
+                    loadingIndicator.classList.remove('flex');
+                    generateBtn.disabled = false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>

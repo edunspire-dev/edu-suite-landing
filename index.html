@@ -1,99 +1,188 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edu-Suite 🚀 | Portal Digital Sekolah</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fa;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #4CAF50, #2e7d32);
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    section {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .cta {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #4CAF50;
-    }
-    footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengapa Memilih Edu-Suite?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm and Professional -->
+    <!-- Application Structure Plan: Halaman ini dirancang sebagai dashboard perbandingan interaktif satu halaman (SPA). Alurnya dimulai dengan bagian pengantar yang kuat, diikuti oleh panel perbandingan interaktif yang menjadi pusat perhatian. Alih-alih tabel statis yang sulit dibaca di perangkat seluler, setiap fitur perbandingan disajikan dalam card yang dapat diklik untuk menampilkan detailnya. Bagian ini memungkinkan pengguna menjelajahi informasi secara mandiri dan terstruktur. Setelah perbandingan, terdapat bagian "unggulan" yang merangkum poin-poin utama secara visual. Struktur ini dipilih untuk mengubah data tabel statis menjadi pengalaman yang dinamis, berfokus pada kemudahan konsumsi dan navigasi. -->
+    <!-- Visualization & Content Choices: Karena data utamanya adalah perbandingan kualitatif, tidak ada visualisasi data kompleks seperti grafik. Sebaliknya, informasi disajikan melalui kartu (card) dengan ikon Unicode untuk setiap fitur. Interaksi utama adalah klik-untuk-mengungkap (click-to-reveal) menggunakan JavaScript, di mana detail perbandingan ditampilkan atau disembunyikan. Metode ini dipilih untuk menjaga tampilan tetap bersih dan responsif, terutama di perangkat seluler. Ini memungkinkan pengguna untuk fokus pada satu perbandingan pada satu waktu. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+        }
+        .text-primary-blue { color: #2B6CB0; }
+        .bg-secondary-tan { background-color: #F8F4F0; }
+        .border-primary-blue { border-color: #2B6CB0; }
+        .comparison-card-header {
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .comparison-card-header:hover {
+            background-color: #EBF8FF;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Edu-Suite 🚀</h1>
-    <p>Transformasi Digital di Ujung Jari</p>
-    <a class="cta" href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Edu-Suite">Hubungi Kami via WhatsApp</a>
-  </header>
+<body class="text-gray-800">
 
-  <section>
-    <h2>Solusi Digital untuk Guru & Sekolah</h2>
-    <p>Berbasis <b>Google Workspace + AI</b>. Administrasi mudah, guru merdeka! Didesain khusus untuk pendidikan, bukan sekadar aplikasi umum.</p>
+    <div class="container mx-auto px-4 py-12 md:py-24 max-w-6xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Mengapa Memilih Edu-Suite?</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Banyak aplikasi mengklaim bisa menjadi solusi digital sekolah, tapi seringkali hanya menambah kerumitan. Edu-Suite hadir dengan keunggulan nyata yang lahir dari pengalaman guru di lapangan, bukan sekadar produk IT.</p>
+        </header>
 
-    <div class="packages">
-      <div class="card">
-        <h3>Paket Lite</h3>
-        <p>Bimbingan 1 bulan untuk guru individu.</p>
-        <p><b>Rp 350.000</b> (sekali bayar)</p>
-      </div>
-      <div class="card">
-        <h3>Paket Pro</h3>
-        <p>Bimbingan 3 bulan + dukungan AI personal.</p>
-        <p><b>Rp 950.000</b> (sekali bayar)</p>
-      </div>
-      <div class="card">
-        <h3>Paket Institusi</h3>
-        <p>Workshop & transformasi digital sekolah, termasuk website.</p>
-        <p><b>Mulai Rp 4.500.000</b></p>
-      </div>
+        <!-- Comparison Table -->
+        <section class="mb-16">
+            <div class="bg-white rounded-xl shadow-2xl p-6 md:p-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Perbandingan Edu-Suite dengan Aplikasi Lain</h2>
+                
+                <div id="comparison-panels" class="space-y-4">
+                    <!-- Cards will be populated here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Edu-Suite Advantages -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">✨ Kenapa Edu-Suite Unggul?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-secondary-tan rounded-lg p-6 shadow-md transition-transform transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2">Dibangun oleh guru untuk guru</h3>
+                    <p class="text-gray-600">Bukan produk IT yang asing dengan dunia sekolah.</p>
+                </div>
+                <div class="bg-secondary-tan rounded-lg p-6 shadow-md transition-transform transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2">Administrasi jadi ringan</h3>
+                    <p class="text-gray-600">Fokus guru kembali ke mengajar, bukan sibuk laporan.</p>
+                </div>
+                <div class="bg-secondary-tan rounded-lg p-6 shadow-md transition-transform transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2">Sekali investasi, manfaat permanen</h3>
+                    <p class="text-gray-600">Hemat anggaran sekolah.</p>
+                </div>
+                <div class="bg-secondary-tan rounded-lg p-6 shadow-md transition-transform transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2">Sudah teruji di lapangan</h3>
+                    <p class="text-gray-600">Bukan eksperimen, tapi solusi nyata yang dipakai ratusan siswa & guru.</p>
+                </div>
+                <div class="bg-secondary-tan rounded-lg p-6 shadow-md transition-transform transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2">Mendukung e-learning & LMS</h3>
+                    <p class="text-gray-600">Cocok untuk blended learning dan Kurikulum Merdeka.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slogans & CTA -->
+        <section class="text-center py-12">
+            <p class="text-xl md:text-2xl font-bold text-primary-blue mb-4">“Manual Out, Digital In. Administrasi Mudah, Guru Merdeka.”</p>
+            <p class="text-lg text-gray-600 mb-8">“Produk terbaik lahir dari pengalaman, bukan sekadar teknologi.”</p>
+            <a href="#" class="bg-primary-blue text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all">Hubungi Kami Sekarang</a>
+        </section>
     </div>
-  </section>
 
-  <footer>
-    © 2025 Edu-Suite | Powered by Workspace + AI
-  </footer>
+    <script>
+        const data = [
+            {
+                title: "Biaya",
+                eduSuite: "Sekali bayar, akses permanen (tanpa biaya bulanan)",
+                other: "Bulanan/tahunan, biaya terus berjalan"
+            },
+            {
+                title: "Integrasi Sistem",
+                eduSuite: "Google Workspace + Canva + AI (terhubung global)",
+                other: "Terbatas, sering harus input manual"
+            },
+            {
+                title: "Penyimpanan Data",
+                eduSuite: "100 GB gratis via BelajarID",
+                other: "Server lokal, kapasitas terbatas"
+            },
+            {
+                title: "Akses Perangkat",
+                eduSuite: "HP, tablet, laptop, tanpa instalasi",
+                other: "Kadang hanya bisa via PC/laptop"
+            },
+            {
+                title: "Absensi & Jurnal",
+                eduSuite: "Otomatis terhubung ke Spreadsheet",
+                other: "Input manual satu per satu"
+            },
+            {
+                title: "Rekap Nilai & Laporan",
+                eduSuite: "Digital & otomatis terekap",
+                other: "Biasanya diisi manual, rawan salah"
+            },
+            {
+                title: "Familiaritas Guru/Siswa",
+                eduSuite: "Semua sudah terbiasa dengan Google Docs, Drive, Meet",
+                other: "Perlu adaptasi panjang"
+            },
+            {
+                title: "Kustomisasi",
+                eduSuite: "Bisa disesuaikan dengan identitas sekolah",
+                other: "Template terbatas, sulit diubah"
+            },
+            {
+                title: "Dukungan Pengguna",
+                eduSuite: "Pendampingan langsung oleh pendidik (bukan vendor IT)",
+                other: "Biasanya hanya support teknis"
+            },
+            {
+                title: "Visi Pendidikan",
+                eduSuite: "Mendukung Kurikulum Merdeka & keterampilan abad 21",
+                other: "Sekadar aplikasi administrasi"
+            }
+        ];
+
+        const panelsContainer = document.getElementById('comparison-panels');
+
+        data.forEach((item, index) => {
+            const panel = document.createElement('div');
+            panel.classList.add('bg-white', 'rounded-lg', 'shadow-md', 'overflow-hidden');
+            
+            panel.innerHTML = `
+                <div class="comparison-card-header p-5 flex justify-between items-center bg-gray-50 border-b border-gray-200">
+                    <span class="text-lg font-bold text-gray-900">${item.title}</span>
+                    <span class="text-2xl text-gray-500 transform transition-transform duration-300">+</span>
+                </div>
+                <div class="p-5 hidden bg-white">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-semibold text-primary-blue">Edu-Suite (Workspace + AI)</p>
+                            <p class="text-gray-600">${item.eduSuite}</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-orange-500">Aplikasi Lain</p>
+                            <p class="text-gray-600">${item.other}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            panelsContainer.appendChild(panel);
+
+            const header = panel.querySelector('.comparison-card-header');
+            const content = panel.querySelector('.hidden');
+            const icon = header.querySelector('span:last-child');
+
+            header.addEventListener('click', () => {
+                const isExpanded = content.classList.contains('hidden');
+                
+                document.querySelectorAll('#comparison-panels .hidden').forEach(el => {
+                    el.classList.add('hidden');
+                });
+                document.querySelectorAll('#comparison-panels .transform').forEach(el => {
+                    el.style.transform = '';
+                });
+
+                if (isExpanded) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(45deg)';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

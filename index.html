@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edu-Suite-Transformasi Pembelajaran Digital Modern</title>
+    <title>Edu-Suite – Transformasi Pembelajaran Digital Sejati</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +35,19 @@
         .testimonial-card.active {
             display: block;
         }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #2B6CB0;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body class="text-brand-dark">
@@ -46,6 +59,7 @@
             <div class="hidden md:flex space-x-8">
                 <a href="#story" class="hover:text-brand-primary transition-colors">Kisah Saya</a>
                 <a href="#features" class="hover:text-brand-primary transition-colors">Keunggulan</a>
+                <a href="#ai-assistant" class="hover:text-brand-primary transition-colors">AI Assistant</a>
                 <a href="#pricing" class="hover:text-brand-primary transition-colors">Paket</a>
                 <a href="#testimonials" class="hover:text-brand-primary transition-colors">Testimoni</a>
             </div>
@@ -125,6 +139,32 @@
             </div>
         </section>
 
+        <!-- New: AI Assistant Demo Section -->
+        <section id="ai-assistant" class="py-20 bg-brand-primary">
+            <div class="container mx-auto px-6 text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Rasakan Kecanggihan Edu-Suite</h2>
+                <p class="text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto">Coba fitur ✨ **AI Assistant** ✨ kami sekarang! Masukkan topik apa pun, dan lihat bagaimana AI dapat membantu Anda dalam menyiapkan bahan ajar.</p>
+
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-2xl text-brand-dark">
+                    <div class="mb-6 text-left">
+                        <label for="topic-input" class="block font-semibold mb-2">Masukkan topik:</label>
+                        <input type="text" id="topic-input" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-brand-primary" placeholder="Contoh: Energi Alternatif untuk Kelas 7">
+                    </div>
+                    
+                    <button id="generate-btn" class="bg-brand-primary text-white font-bold py-3 px-6 rounded-lg btn text-lg w-full mb-4">Buat Materi Pembelajaran</button>
+                    
+                    <div id="loading-indicator" class="hidden flex justify-center items-center py-4">
+                        <div class="loading-spinner"></div>
+                        <span class="ml-4">Sedang membuat materi...</span>
+                    </div>
+
+                    <div id="result-output" class="text-left mt-6 bg-gray-50 p-6 rounded-lg border border-gray-200 min-h-[200px] overflow-auto">
+                        <p class="text-gray-500">Hasil akan muncul di sini.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <!-- 4. Paket & Harga -->
         <section id="pricing" class="py-20">
             <div class="container mx-auto px-6 text-center">
@@ -272,6 +312,73 @@
                         });
                     }
                 });
+            });
+
+            // Gemini AI Assistant Integration
+            const topicInput = document.getElementById('topic-input');
+            const generateBtn = document.getElementById('generate-btn');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const resultOutput = document.getElementById('result-output');
+
+            generateBtn.addEventListener('click', async () => {
+                const prompt = topicInput.value.trim();
+                if (!prompt) {
+                    resultOutput.innerHTML = '<p class="text-red-500">Mohon masukkan topik terlebih dahulu.</p>';
+                    return;
+                }
+
+                loadingIndicator.classList.remove('hidden');
+                loadingIndicator.classList.add('flex');
+                generateBtn.disabled = true;
+
+                resultOutput.innerHTML = '';
+
+                try {
+                    const chatHistory = [];
+                    chatHistory.push({
+                        role: "user",
+                        parts: [{
+                            text: `Sebagai seorang asisten guru yang cerdas dan kreatif, buatlah sebuah rancangan materi pelajaran atau beberapa pertanyaan kuis untuk topik berikut: "${prompt}". Berikan dalam format yang mudah dibaca dengan judul dan poin-poin.`
+                        }]
+                    });
+                    const payload = {
+                        contents: chatHistory
+                    };
+
+                    const apiKey = ""
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API call failed with status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        resultOutput.innerHTML = `<p class="whitespace-pre-wrap">${text}</p>`;
+                    } else {
+                        resultOutput.innerHTML = '<p class="text-red-500">Maaf, ada masalah dalam membuat materi. Silakan coba lagi.</p>';
+                    }
+
+                } catch (error) {
+                    console.error("Error during API call:", error);
+                    resultOutput.innerHTML = `<p class="text-red-500">Terjadi kesalahan: ${error.message}. Silakan coba lagi nanti.</p>`;
+                } finally {
+                    loadingIndicator.classList.add('hidden');
+                    loadingIndicator.classList.remove('flex');
+                    generateBtn.disabled = false;
+                }
             });
         });
     </script>

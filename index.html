@@ -3,32 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edu-Suite Landing</title>
+  <title>Edu-Suite 🚀 | Portal Digital Sekolah</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      text-align: center;
       background: #f5f7fa;
       color: #333;
     }
     header {
-      background: #4CAF50;
+      background: linear-gradient(135deg, #4CAF50, #2e7d32);
       color: white;
-      padding: 2rem;
+      padding: 3rem 1rem;
+      text-align: center;
     }
-    h1 {
-      margin: 0;
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
     section {
-      padding: 2rem;
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #4CAF50;
     }
     footer {
       background: #222;
       color: #aaa;
+      text-align: center;
       padding: 1rem;
-      font-size: 14px;
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -36,11 +66,30 @@
   <header>
     <h1>Edu-Suite 🚀</h1>
     <p>Transformasi Digital di Ujung Jari</p>
+    <a class="cta" href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Edu-Suite">Hubungi Kami via WhatsApp</a>
   </header>
 
   <section>
     <h2>Solusi Digital untuk Guru & Sekolah</h2>
-    <p>Berbasis Google Workspace + AI. Administrasi mudah, guru merdeka!</p>
+    <p>Berbasis <b>Google Workspace + AI</b>. Administrasi mudah, guru merdeka! Didesain khusus untuk pendidikan, bukan sekadar aplikasi umum.</p>
+
+    <div class="packages">
+      <div class="card">
+        <h3>Paket Lite</h3>
+        <p>Bimbingan 1 bulan untuk guru individu.</p>
+        <p><b>Rp 350.000</b> (sekali bayar)</p>
+      </div>
+      <div class="card">
+        <h3>Paket Pro</h3>
+        <p>Bimbingan 3 bulan + dukungan AI personal.</p>
+        <p><b>Rp 950.000</b> (sekali bayar)</p>
+      </div>
+      <div class="card">
+        <h3>Paket Institusi</h3>
+        <p>Workshop & transformasi digital sekolah, termasuk website.</p>
+        <p><b>Mulai Rp 4.500.000</b></p>
+      </div>
+    </div>
   </section>
 
   <footer>

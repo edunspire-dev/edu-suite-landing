@@ -95,9 +95,12 @@
                     </div>
                     <div class="md:w-1/2">
                         <h2 class="text-3xl md:text-4xl font-bold mb-4">Kisah Saya: Dari Tantangan Menuju Solusi</h2>
-                        <p class="text-gray-600 mb-4">Dengan pengalaman lebih dari 15 tahun di dunia pendidikan, saya meyakini bahwa mengajar bukan hanya soal menyampaikan materi, melainkan memberdayakan guru dan siswa agar memiliki kemampuan sejati.</p>
-                        <p class="text-gray-600 mb-4">Salah satu tantangan terbesar saya adalah ketika dipercaya sebagai Koordinator Tim Projek P5, di mana saya harus memantau progres **802 siswa** dan membimbing **134 guru**. Beban administrasi yang kompleks ini mendorong saya berinovasi.</p>
-                        <p class="text-gray-600 font-semibold">Dari sinilah lahir Edu-Suite — portal pembelajaran digital berbasis Google Workspace + AI yang kini terbukti membantu banyak rekan guru fokus kembali ke inti pembelajaran.</p>
+                        <!-- FIX: Removed markdown asterisks as requested -->
+                        <p class="text-gray-600 mb-4">Dengan pengalaman lebih dari 15 tahun di dunia pendidikan, saya percaya bahwa mengajar bukan sekadar menyampaikan materi, melainkan memberdayakan guru dan siswa agar tumbuh dengan kemampuan sejati.</p>
+                        <p class="text-gray-600 mb-4">Tantangan terbesar saya muncul saat dipercaya menjadi Koordinator Tim Projek P5. Saya harus memantau progres 802 siswa dan mendampingi 134 guru — sebuah pekerjaan administrasi yang begitu kompleks dan menyita waktu.</p>
+                        <p class="text-gray-600 font-semibold">Dari pengalaman itulah lahir Edu-Suite: portal pembelajaran digital berbasis Google Workspace + AI. Edu-Suite hadir sebagai solusi nyata yang sudah terbukti membantu banyak guru mengurangi beban administrasi dan kembali fokus pada esensi mengajar.</p>
+                        <!-- FIX: Added the new slogan here -->
+                        <p class="mt-4 text-sm italic text-gray-500">"Produk terbaik lahir dari pengalaman, bukan sekadar teknologi."</p>
                     </div>
                 </div>
             </div>
@@ -255,7 +258,8 @@
                     <!-- FIX: Updated WhatsApp link here as well -->
                     <a href="https://wa.me/6282328888989" target="_blank" rel="noopener" class="bg-brand-primary text-white font-bold px-8 py-4 rounded-lg btn text-lg">📱 Hubungi WhatsApp Sekarang</a>
                 </div>
-                <p class="mt-8 text-sm text-gray-500 italic">"Administrasi Mudah, Guru Merdeka – Edu-Suite lahir dari pengalaman. Jangan percayakan administrasi Anda pada yang bukan ahlinya."</p>
+                <!-- FIX: Replaced old slogan with the new one -->
+                <p class="mt-8 text-sm text-gray-500 italic">"Manual Out, Digital In. Administrasi Mudah, Guru Merdeka."</p>
             </div>
         </section>
     </main>
@@ -308,7 +312,8 @@
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
                     if(targetElement) {
-                        targetElement.scroll.scrollIntoView({
+                        // FIX: Corrected the typo in scrollIntoView
+                        targetElement.scrollIntoView({
                             behavior: 'smooth'
                         });
                     }

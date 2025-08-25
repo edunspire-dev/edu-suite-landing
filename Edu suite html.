@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edu-Suite | Solusi Digital Sekolah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #FDFBF8; }
+    .text-primary-blue { color: #2B6CB0; }
+    .bg-secondary-tan { background-color: #F8F4F0; }
+    .border-primary-blue { border-color: #2B6CB0; }
+    .comparison-card-header { cursor: pointer; transition: background-color 0.2s; }
+    .comparison-card-header:hover { background-color: #EBF8FF; }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <div class="container mx-auto px-4 py-12 md:py-24 max-w-6xl">
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Mengapa Memilih <span class="text-primary-blue">Edu-Suite</span>?</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Banyak aplikasi mengklaim bisa menjadi solusi digital sekolah, tapi seringkali hanya menambah kerumitan. Edu-Suite hadir dengan keunggulan nyata yang lahir dari pengalaman guru di lapangan, bukan sekadar produk IT.</p>
+    </header>
+
+    <!-- Comparison -->
+    <section class="mb-16">
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Perbandingan Edu-Suite dengan Aplikasi Lain</h2>
+        <div id="comparison-panels" class="space-y-4"></div>
+      </div>
+    </section>
+
+    <!-- Advantages -->
+    <section class="mb-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">✨ Kenapa Edu-Suite Unggul?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-secondary-tan rounded-lg p-6 shadow-md hover:-translate-y-1 transition">
+          <h3 class="text-xl font-semibold mb-2">Dibangun oleh guru untuk guru</h3>
+          <p class="text-gray-600">Bukan produk IT yang asing dengan dunia sekolah.</p>
+        </div>
+        <div class="bg-secondary-tan rounded-lg p-6 shadow-md hover:-translate-y-1 transition">
+          <h3 class="text-xl font-semibold mb-2">Administrasi jadi ringan</h3>
+          <p class="text-gray-600">Fokus guru kembali ke mengajar, bukan sibuk laporan.</p>
+        </div>
+        <div class="bg-secondary-tan rounded-lg p-6 shadow-md hover:-translate-y-1 transition">
+          <h3 class="text-xl font-semibold mb-2">Sekali investasi, manfaat permanen</h3>
+          <p class="text-gray-600">Hemat anggaran sekolah.</p>
+        </div>
+        <div class="bg-secondary-tan rounded-lg p-6 shadow-md hover:-translate-y-1 transition">
+          <h3 class="text-xl font-semibold mb-2">Sudah teruji di lapangan</h3>
+          <p class="text-gray-600">Dipakai ratusan siswa & guru.</p>
+        </div>
+        <div class="bg-secondary-tan rounded-lg p-6 shadow-md hover:-translate-y-1 transition">
+          <h3 class="text-xl font-semibold mb-2">Mendukung e-learning & LMS</h3>
+          <p class="text-gray-600">Cocok untuk blended learning dan Kurikulum Merdeka.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center py-12">
+      <p class="text-xl md:text-2xl font-bold text-primary-blue mb-4">“Manual Out, Digital In. Administrasi Mudah, Guru Merdeka.”</p>
+      <p class="text-lg text-gray-600 mb-8">“Produk terbaik lahir dari pengalaman, bukan sekadar teknologi.”</p>
+      <a href="mailto:edunspire@gmail.com" class="bg-primary-blue text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition">Hubungi Kami</a>
+    </section>
+  </div>
+
+  <script>
+    const data = [
+      { title: "Biaya", eduSuite: "Sekali bayar, akses permanen (tanpa biaya bulanan)", other: "Bulanan/tahunan, biaya terus berjalan" },
+      { title: "Integrasi Sistem", eduSuite: "Google Workspace + Canva + AI (terhubung global)", other: "Terbatas, sering harus input manual" },
+      { title: "Penyimpanan Data", eduSuite: "100 GB gratis via BelajarID", other: "Server lokal, kapasitas terbatas" },
+      { title: "Akses Perangkat", eduSuite: "HP, tablet, laptop, tanpa instalasi", other: "Kadang hanya bisa via PC/laptop" },
+      { title: "Absensi & Jurnal", eduSuite: "Otomatis terhubung ke Spreadsheet", other: "Input manual satu per satu" },
+      { title: "Rekap Nilai & Laporan", eduSuite: "Digital & otomatis terekap", other: "Biasanya diisi manual, rawan salah" },
+      { title: "Familiaritas Guru/Siswa", eduSuite: "Semua sudah terbiasa dengan Google Docs, Drive, Meet", other: "Perlu adaptasi panjang" },
+      { title: "Kustomisasi", eduSuite: "Bisa disesuaikan dengan identitas sekolah", other: "Template terbatas, sulit diubah" },
+      { title: "Dukungan Pengguna", eduSuite: "Pendampingan langsung oleh pendidik (bukan vendor IT)", other: "Biasanya hanya support teknis" },
+      { title: "Visi Pendidikan", eduSuite: "Mendukung Kurikulum Merdeka & keterampilan abad 21", other: "Sekadar aplikasi administrasi" }
+    ];
+
+    const panelsContainer = document.getElementById('comparison-panels');
+    data.forEach(item => {
+      const panel = document.createElement('div');
+      panel.classList.add('bg-white', 'rounded-lg', 'shadow-md', 'overflow-hidden');
+      panel.innerHTML = `
+        <div class="comparison-card-header p-5 flex justify-between items-center bg-gray-50 border-b border-gray-200">
+          <span class="text-lg font-bold text-gray-900">${item.title}</span>
+          <span class="text-2xl text-gray-500 transform transition-transform duration-300">+</span>
+        </div>
+        <div class="p-5 hidden bg-white">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <p class="font-semibold text-primary-blue">Edu-Suite (Workspace + AI)</p>
+              <p class="text-gray-600">${item.eduSuite}</p>
+            </div>
+            <div>
+              <p class="font-semibold text-orange-500">Aplikasi Lain</p>
+              <p class="text-gray-600">${item.other}</p>
+            </div>
+          </div>
+        </div>
+      `;
+      panelsContainer.appendChild(panel);
+
+      const header = panel.querySelector('.comparison-card-header');
+      const content = panel.querySelector('.hidden');
+      const icon = header.querySelector('span:last-child');
+
+      header.addEventListener('click', () => {
+        const isExpanded = content.classList.contains('hidden');
+        document.querySelectorAll('#comparison-panels .p-5:not(.comparison-card-header)').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('#comparison-panels .transform').forEach(el => { el.style.transform = ''; });
+        if (isExpanded) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(45deg)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

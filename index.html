@@ -1,225 +1,288 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edu-Suite i3 Landing Page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    #hero {
-      background-image: url('https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Foto%20Header.jpeg');
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      color: white;
-    }
-    #hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.3);
-      z-index: 0;
-    }
-    #hero .container {
-      position: relative;
-      z-index: 1;
-    }
-    html { scroll-behavior: smooth; }
-    .testimonial-card { display: none; }
-    .testimonial-card.active { display: block; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu-Suite i3 - Transformasi Pembelajaran Digital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for Hero Section background */
+        #hero {
+            background-image: url('https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Foto%20Header.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+        /* Overlay for better text readability on hero section */
+        #hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+        #hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        /* Smooth scrolling for anchor links */
+        html { scroll-behavior: smooth; }
+        /* Hide testimonial cards by default */
+        .testimonial-card { display: none; }
+        /* Show active testimonial card */
+        .testimonial-card.active { display: block; }
+    </style>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="font-sans antialiased text-gray-800">
 
-<!-- Hero Section -->
-<section id="hero" class="py-32 text-center">
-  <div class="container mx-auto px-6" data-aos="fade-up">
-    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
-      Edu-Suite i3 Transformasi Pembelajaran Digital Praktis
-    </h1>
-    <p class="mt-6 text-lg md:text-xl">Halo, saya Basri, S.Pd., M.A.P</p>
-    <blockquote class="mt-4 text-lg md:text-xl font-medium italic">
-      "Setiap guru memiliki potensi luar biasa. Dengan teknologi yang tepat, tantangan pendidikan menjadi peluang berinovasi."
-    </blockquote>
-    <p class="mt-4 text-lg md:text-xl font-semibold">
-      Edu-Suite i3 siap mendampingi Anda hingga mahir!
-    </p>
-    <div class="mt-10 flex justify-center items-center space-x-4">
-      <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-indigo-700 transition">
-        🎁 Demo Gratis
-      </a>
-      <a href="https://wa.me/6282328888989" target="_blank" class="bg-white border-2 border-indigo-600 text-indigo-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 transition">
-        📱 Hubungi WhatsApp
-      </a>
+<!-- Section 1: Hero Section -->
+<section id="hero" class="py-32 md:py-48 text-center rounded-b-3xl overflow-hidden">
+    <div class="container mx-auto px-6" data-aos="fade-up">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+            Edu-Suite i3: Transformasi Pembelajaran Digital Praktis. Lahir dari Pengalaman Guru.
+        </h1>
+        <p class="mt-6 text-lg md:text-xl font-light">
+            Fokus pada pembelajaran, bukan administrasi. Aman dan mudah karena berbasis Google for Education.
+        </p>
+        <div class="mt-10 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+            <a href="#demo" class="w-full md:w-auto bg-indigo-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-indigo-700 transition transform hover:scale-105">
+                🎁 Coba Demo Gratis
+            </a>
+            <a href="https://wa.me/6282328888989" target="_blank" class="w-full md:w-auto bg-white border-2 border-indigo-600 text-indigo-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 transition transform hover:scale-105">
+                📱 Hubungi Via WhatsApp
+            </a>
+        </div>
+        <blockquote class="mt-16 text-lg md:text-xl font-medium italic">
+            "Setiap guru memiliki potensi luar biasa. Dengan teknologi yang tepat, tantangan pendidikan menjadi peluang berinovasi."
+        </blockquote>
     </div>
-  </div>
 </section>
 
-<!-- About Section -->
+<!-- Section 2: Tentang Edu-Suite i3 - Peran Guru -->
 <section id="about" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6 text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-6">Tentang Edu-Suite i3</h2>
-    <p class="text-lg text-gray-700 leading-relaxed">
-      Edu-Suite i3 adalah solusi digital praktis untuk mendukung guru dalam pembelajaran abad 21. Kami hadir untuk memudahkan integrasi teknologi, mempercepat pembuatan materi, dan meningkatkan interaksi pembelajaran.
-    </p>
-  </div>
-</section>
-
-<!-- Features Section -->
-<section id="features" class="py-20">
-  <div class="container mx-auto px-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-12">Fitur Unggulan</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-6 bg-white rounded-xl shadow-lg">
-        <h3 class="font-bold text-xl mb-2">📚 LMS Praktis</h3>
-        <p>Platform belajar interaktif yang mudah digunakan guru & siswa.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow-lg">
-        <h3 class="font-bold text-xl mb-2">🤖 AI Assistant</h3>
-        <p>Buat materi ajar otomatis dengan bantuan AI.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow-lg">
-        <h3 class="font-bold text-xl mb-2">🌐 Integrasi Mudah</h3>
-        <p>Terhubung dengan Google Classroom & platform populer lainnya.</p>
-      </div>
+    <div class="container mx-auto px-6 max-w-4xl text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6">Edu-Suite i3, Lahir dari Pengalaman Guru</h2>
+        <div class="flex flex-col md:flex-row items-center md:space-x-8">
+            <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 md:mb-0">
+                <!-- Placeholder for profile image -->
+                <img src="https://placehold.co/200x200/4F46E5/ffffff?text=Basri" alt="Profil Basri" class="w-full h-full object-cover">
+            </div>
+            <p class="text-lg text-gray-700 leading-relaxed text-left md:text-justify">
+                "Sebagai guru, saya pernah kewalahan dengan tumpukan jurnal, absensi, dan persiapan materi ajar. Setelah menggunakan Edu-Suite i3, semua jadi otomatis. Saya bisa lebih fokus membimbing siswa dan membuat proses belajar lebih interaktif."<br><br>
+                Kami hadir bukan untuk menjual produk, tapi untuk **memudahkan digitalisasi administrasi** dan pembelajaran Anda. Dengan standar keamanan tinggi dari Google for Education, kami pastikan data Anda aman.
+            </p>
+        </div>
     </div>
-  </div>
 </section>
 
-<!-- AI Assistant Demo -->
-<section id="ai-demo" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6 max-w-2xl text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-6">Coba AI Assistant</h2>
-    <input id="topic-input" type="text" placeholder="Masukkan topik pembelajaran..." class="w-full p-4 border rounded-lg">
-    <button id="generate-btn" class="mt-4 bg-indigo-600 text-white px-6 py-3 rounded-lg font-bold">Buat Materi</button>
-    <div id="loading-indicator" class="hidden mt-4">⏳ Sedang membuat materi...</div>
-    <div id="result-output" class="mt-6 text-left"></div>
-  </div>
-</section>
-
-<!-- Pricing Section -->
-<section id="pricing" class="py-20">
-  <div class="container mx-auto px-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-12">Paket Harga</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-        <h3 class="text-xl font-bold mb-4">Starter</h3>
-        <p class="text-3xl font-extrabold mb-4">Gratis</p>
-        <p>Fitur dasar untuk mencoba Edu-Suite i3.</p>
-      </div>
-      <div class="bg-indigo-600 text-white p-8 rounded-xl shadow-lg text-center">
-        <h3 class="text-xl font-bold mb-4">Pro</h3>
-        <p class="text-3xl font-extrabold mb-4">Rp 99.000/bulan</p>
-        <p>Akses penuh semua fitur & dukungan premium.</p>
-      </div>
-      <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-        <h3 class="text-xl font-bold mb-4">Institusi</h3>
-        <p class="text-3xl font-extrabold mb-4">Custom</p>
-        <p>Paket khusus untuk sekolah & lembaga.</p>
-      </div>
+<!-- Section 3: Masalah Guru -->
+<section id="problems" class="py-20">
+    <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6">Masalah yang Sering Dihadapi Guru Saat Ini</h2>
+        <div class="flex flex-col md:flex-row items-center md:space-x-12 mt-12">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <!-- Placeholder for illustration -->
+                <img src="https://placehold.co/600x400/1E40AF/ffffff?text=Guru+Kebingungan+dengan+Tugas+Administrasi" alt="Ilustrasi Guru Pusing dengan Administrasi" class="rounded-xl shadow-lg">
+            </div>
+            <ul class="w-full md:w-1/2 text-lg text-gray-700 leading-relaxed list-disc list-inside text-left space-y-4">
+                <li>Banyak guru belum memanfaatkan akun **Belajar.id** secara maksimal.</li>
+                <li>Jumlah siswa banyak, administrasi menumpuk, dan jam wajib mengajar terbatas.</li>
+                <li>Data siswa tidak tersedia saat rapat atau kasus muncul.</li>
+                <li>Waktu untuk refleksi dan analisis pembelajaran hampir tidak ada.</li>
+            </ul>
+        </div>
     </div>
-  </div>
 </section>
 
-<!-- Testimonials -->
+<!-- Section 4: Solusi Edu-Suite i3 -->
+<section id="solutions" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-12">Solusi dari Edu-Suite i3</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="p-6 bg-white rounded-xl shadow-lg">
+                <div class="text-4xl mb-4">⚙️</div>
+                <h3 class="font-bold text-xl mb-2">Digitalisasi Otomatis</h3>
+                <p class="text-gray-600">Otomatiskan semua jurnal, absensi, dan administrasi.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-lg">
+                <div class="text-4xl mb-4">🔗</div>
+                <h3 class="font-bold text-xl mb-2">Multi-Integrasi</h3>
+                <p class="text-gray-600">Google Workspace, Canva, AI, dan platform lain terhubung tanpa ribet.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-lg">
+                <div class="text-4xl mb-4">🧩</div>
+                <h3 class="font-bold text-xl mb-2">Fleksibel Sesuai Kebutuhan</h3>
+                <p class="text-gray-600">Pilih fitur yang Anda perlukan, tanpa biaya tersembunyi.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-lg">
+                <div class="text-4xl mb-4">🎯</div>
+                <h3 class="font-bold text-xl mb-2">Fokus Mengajar</h3>
+                <p class="text-gray-600">Bebaskan waktu Anda dari tugas manual, lebih fokus membimbing siswa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 5: Teaser AI Assistant -->
+<section id="ai-teaser" class="py-20">
+    <div class="container mx-auto px-6 max-w-2xl text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6">Kenalan dengan Asisten Cerdas Pribadi Anda</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+            Bayangkan punya asisten yang bisa menyiapkan RPP, soal, atau materi pembelajaran dalam hitungan detik. **AI Assistant** kami siap jadi mitra inovasi Anda.
+        </p>
+        <div class="mt-8">
+            <a href="#community" class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-indigo-700 transition transform hover:scale-105">
+                Bergabung di Komunitas Belajar.id untuk Akses Penuh
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Section 6: Demo & Akses Gratis -->
+<section id="demo" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-4xl text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6">Coba Sendiri, Rasakan Bedanya</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+            Tidak perlu khawatir, Edu-Suite i3 menyediakan versi dasar yang bisa Anda gunakan selamanya secara gratis. Rasakan pengalaman mengelola kelas yang efisien, mudah, dan menyenangkan.
+        </p>
+        <div class="mt-8">
+            <img src="https://placehold.co/1200x800/60A5FA/ffffff?text=Screenshot+Dashboard+Edu-Suite+i3" alt="Screenshot Portal Edu-Suite i3" class="rounded-xl shadow-xl">
+        </div>
+        <div class="mt-12 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+            <a href="#demo-link" class="w-full md:w-auto bg-indigo-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-indigo-700 transition transform hover:scale-105">
+                🎁 Coba Demo Gratis
+            </a>
+            <a href="https://wa.me/6282328888989" target="_blank" class="w-full md:w-auto bg-white border-2 border-indigo-600 text-indigo-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 transition transform hover:scale-105">
+                📱 Hubungi Via WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Section 7: Komunitas & Pendampingan -->
+<section id="community" class="py-20">
+    <div class="container mx-auto px-6 max-w-2xl text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6">Bergabung dengan Komunitas Belajar.id</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+            Kami percaya, setiap guru memiliki potensi luar biasa. Mari kita saling mendukung dan belajar bersama.
+        </p>
+        <ul class="mt-8 text-left text-gray-700 leading-relaxed space-y-4">
+            <li class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>**Edukasi Berkala:** Dapatkan tips & trik mingguan untuk mengoptimalkan penggunaan akun Belajar.id Anda.</span>
+            </li>
+            <li class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>**Upgrade Bertahap:** Kami akan perkenalkan fitur premium secara alami, saat Anda sudah siap.</span>
+            </li>
+            <li class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>**Saling Kolaborasi:** Bertemu dengan guru lain untuk bertukar ide dan praktik terbaik.</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- Section 8: Testimonial -->
 <section id="testimonials" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-12">Apa Kata Guru?</h2>
-    <div class="max-w-xl mx-auto">
-      <div class="testimonial-card active p-6 bg-white rounded-xl shadow-lg text-center">
-        <p>"Edu-Suite i3 sangat membantu saya membuat materi lebih cepat!"</p>
-        <h4 class="mt-4 font-bold">Ibu Ani, Guru SMA</h4>
-      </div>
-      <div class="testimonial-card p-6 bg-white rounded-xl shadow-lg text-center">
-        <p>"Interaktif dan mudah dipahami siswa. Highly recommended!"</p>
-        <h4 class="mt-4 font-bold">Pak Budi, Guru SMP</h4>
-      </div>
-      <div class="flex justify-center mt-6 space-x-4">
-        <button id="prev-testimonial" class="px-4 py-2 bg-gray-300 rounded-lg">⬅️</button>
-        <button id="next-testimonial" class="px-4 py-2 bg-gray-300 rounded-lg">➡️</button>
-      </div>
+    <div class="container mx-auto px-6" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center mb-12">Apa Kata Guru yang Sudah Mencoba?</h2>
+        <div class="max-w-xl mx-auto">
+            <div class="testimonial-card active p-6 bg-white rounded-xl shadow-lg text-center">
+                <p class="italic text-lg text-gray-700">"Edu-Suite i3 sangat membantu saya membuat materi lebih cepat dan terorganisir. Penghemat waktu yang luar biasa!"</p>
+                <h4 class="mt-4 font-bold">- Ibu Ani, Guru SMA</h4>
+            </div>
+            <div class="testimonial-card p-6 bg-white rounded-xl shadow-lg text-center">
+                <p class="italic text-lg text-gray-700">"Sistemnya sangat intuitif dan fleksibel. Saya bisa menyesuaikan platform sesuai gaya mengajar saya. Siswa jadi lebih interaktif."</p>
+                <h4 class="mt-4 font-bold">- Pak Budi, Guru SMP</h4>
+            </div>
+            <div class="testimonial-card p-6 bg-white rounded-xl shadow-lg text-center">
+                <p class="italic text-lg text-gray-700">"Saya tidak lagi pusing saat rapat, karena semua data siswa sudah ada di satu tempat. Terima kasih Edu-Suite i3!"</p>
+                <h4 class="mt-4 font-bold">- Bapak Joko, Kepala Sekolah</h4>
+            </div>
+            <div class="flex justify-center mt-6 space-x-4">
+                <button id="prev-testimonial" class="px-4 py-2 bg-gray-300 rounded-lg transition hover:bg-gray-400">⬅️</button>
+                <button id="next-testimonial" class="px-4 py-2 bg-gray-300 rounded-lg transition hover:bg-gray-400">➡️</button>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
-<!-- CTA -->
-<section id="cta" class="py-20 text-center bg-indigo-600 text-white">
-  <h2 class="text-3xl font-bold">Siap Bertransformasi?</h2>
-  <p class="mt-4 text-lg">Mulai gunakan Edu-Suite i3 hari ini!</p>
-  <div class="mt-6">
-    <a href="https://wa.me/6282328888989" target="_blank" class="bg-yellow-400 text-gray-900 font-bold px-8 py-4 rounded-lg btn text-lg">📱 Hubungi Sekarang</a>
-  </div>
+<!-- Section 9: CTA Akhir -->
+<section id="cta-akhir" class="py-20 text-center bg-indigo-600 text-white rounded-t-3xl overflow-hidden">
+    <h2 class="text-3xl font-bold mb-4">Siap Membawa Kelas Anda ke Level Selanjutnya?</h2>
+    <p class="mt-4 text-lg">Mulai gunakan Edu-Suite i3 hari ini, gratis selamanya!</p>
+    <div class="mt-6 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+        <a href="#demo" class="w-full md:w-auto bg-yellow-400 text-gray-900 font-bold px-8 py-4 rounded-lg btn text-lg hover:bg-yellow-500 transition transform hover:scale-105">
+            🎁 Coba Demo Gratis
+        </a>
+        <a href="https://wa.me/6282328888989" target="_blank" class="w-full md:w-auto bg-white border-2 border-gray-900 text-gray-900 font-bold px-8 py-4 rounded-lg btn text-lg hover:bg-gray-100 transition transform hover:scale-105">
+            📱 Hubungi Via WhatsApp
+        </a>
+    </div>
 </section>
-
-<!-- Contact Form -->
-<section id="contact" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6 max-w-2xl" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-8">Hubungi Kami</h2>
-    <form action="https://formspree.io/f/xblajqjw" method="POST" class="bg-white p-8 rounded-xl shadow-lg space-y-4">
-      <div>
-        <label for="name" class="block font-semibold mb-2">Nama</label>
-        <input type="text" id="name" name="name" required class="w-full p-3 border rounded-lg">
-      </div>
-      <div>
-        <label for="email" class="block font-semibold mb-2">Email</label>
-        <input type="email" id="email" name="_replyto" required class="w-full p-3 border rounded-lg">
-      </div>
-      <div>
-        <label for="message" class="block font-semibold mb-2">Pesan</label>
-        <textarea id="message" name="message" rows="4" required class="w-full p-3 border rounded-lg"></textarea>
-      </div>
-      <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition">
-        ✉️ Kirim Pesan
-      </button>
-    </form>
-    <p class="text-center mt-6 text-gray-600">
-      Atau langsung email ke: <a href="mailto:basri12@guru.sma.belajar.id" class="text-indigo-600 font-semibold">basri12@guru.sma.belajar.id</a>
-    </p>
-  </div>
-</section>
-
 
 <!-- Footer -->
-<footer class="py-10 bg-gray-800 text-gray-300 text-center">
-  <p>© 2025 Edu-Suite i3. Semua hak cipta dilindungi.</p>
+<footer class="py-10 bg-gray-900 text-gray-400 text-center">
+    <div class="container mx-auto px-6">
+        <p>Hubungi: <a href="mailto:basri12@guru.sma.belajar.id" class="text-indigo-400 hover:underline">basri12@guru.sma.belajar.id</a></p>
+        <p class="mt-4">© 2025 Edu-Suite i3. Semua hak cipta dilindungi.</p>
+    </div>
 </footer>
 
+<!-- AOS and Custom JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
+    // Initialize AOS for animations
+    AOS.init();
 
-  // Testimonial Carousel
-  const testimonials = document.querySelectorAll('.testimonial-card');
-  let index = 0;
-  document.getElementById('next-testimonial')?.addEventListener('click', () => {
-    testimonials[index].classList.remove('active');
-    index = (index + 1) % testimonials.length;
-    testimonials[index].classList.add('active');
-  });
-  document.getElementById('prev-testimonial')?.addEventListener('click', () => {
-    testimonials[index].classList.remove('active');
-    index = (index - 1 + testimonials.length) % testimonials.length;
-    testimonials[index].classList.add('active');
-  });
+    // Testimonial Carousel Script
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    let index = 0;
 
-  // AI Assistant Demo
-  const btn = document.getElementById('generate-btn');
-  const input = document.getElementById('topic-input');
-  const output = document.getElementById('result-output');
-  const loading = document.getElementById('loading-indicator');
+    const showTestimonial = () => {
+        // Hide all testimonials
+        testimonials.forEach(card => card.classList.remove('active'));
+        // Show the current testimonial
+        testimonials[index].classList.add('active');
+    };
 
-  btn?.addEventListener('click', () => {
-    const topic = input.value.trim();
-    if(!topic) { alert('Silakan masukkan topik'); return; }
-    output.innerHTML = '';
-    loading.classList.remove('hidden');
-    setTimeout(() => {
-      loading.classList.add('hidden');
-      output.innerHTML = `<p>Materi pembelajaran untuk topik <strong>${topic}</strong> berhasil dibuat! 🎉</p><ul class="mt-4 list-disc list-inside"><li>Tujuan Pembelajaran</li><li>Langkah-Langkah Kegiatan</li><li>Latihan dan Penilaian</li></ul>`;
-    }, 1500);
-  });
+    // Event listener for next button
+    document.getElementById('next-testimonial')?.addEventListener('click', () => {
+        index = (index + 1) % testimonials.length;
+        showTestimonial();
+    });
+
+    // Event listener for previous button
+    document.getElementById('prev-testimonial')?.addEventListener('click', () => {
+        index = (index - 1 + testimonials.length) % testimonials.length;
+        showTestimonial();
+    });
+
+    // Optional: Auto-rotate testimonials
+    // setInterval(() => {
+    //     index = (index + 1) % testimonials.length;
+    //     showTestimonial();
+    // }, 5000); // Change testimonial every 5 seconds
 </script>
 
 </body>

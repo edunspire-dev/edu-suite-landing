@@ -15,24 +15,52 @@
       <!-- Judul -->
       <h1 class="text-4xl md:text-5xl font-bold mb-6">Edu-Suite i3</h1>
 
-      <!-- Foto Profil -->
-      <div class="flex justify-center mb-6">
-        <img src="Poto Profil.png" alt="Foto Profil" class="w-32 h-32 rounded-full border-4 border-yellow-400 shadow-lg" />
-      </div>
+      <!-- Foto Profil dengan Hover Zoom -->
+<div class="text-center">
+  <img src="Poto Profil.png" alt="Foto Profil Basri"
+       class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg border-4 border-indigo-500 cursor-pointer transition-transform duration-300 hover:scale-110"
+       onclick="openProfileModal()">
 
-      <!-- CTA -->
-      <a href="https://wa.me/6282328888989" target="_blank" 
-         class="bg-yellow-400 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg hover:bg-yellow-300 transition duration-300">
-         💬 Chat via WhatsApp
-      </a>
-    </div>
-  </section>
+  <!-- Nama + Jabatan -->
+  <h3 class="text-xl font-bold mb-2">Halo, saya Basri, S.Pd., M.A.P</h3>
+  <p class="text-gray-200 mb-8">Pendidik & Kreator Rumah Digital Edu-Suite i3</p>
+</div>
 
-  <!-- Script AOS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000, once: true });</script>
-</body>
-</html>
+<!-- Modal Popup Profil dengan Animasi -->
+<div id="profileModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+  <div class="bg-white rounded-xl shadow-xl p-6 max-w-sm text-center relative transform scale-90 opacity-0 transition-all duration-300">
+    <!-- Tombol Close -->
+    <button onclick="closeProfileModal()" 
+            class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+    
+    <!-- Foto Besar -->
+    <img src="Poto Profil.png" alt="Foto Profil Basri" class="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-indigo-500 shadow-lg">
+    
+    <!-- Nama + Jabatan -->
+    <h3 class="text-2xl font-bold mb-2">Basri, S.Pd., M.A.P</h3>
+    <p class="text-gray-600">Pendidik & Kreator Rumah Digital Edu-Suite i3</p>
+  </div>
+</div>
+
+<script>
+  function openProfileModal() {
+    const modal = document.getElementById('profileModal');
+    const content = modal.querySelector('div');
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      content.classList.remove('scale-90', 'opacity-0');
+      content.classList.add('scale-100', 'opacity-100');
+    }, 50);
+  }
+
+  function closeProfileModal() {
+    const modal = document.getElementById('profileModal');
+    const content = modal.querySelector('div');
+    content.classList.add('scale-90', 'opacity-0');
+    setTimeout(() => modal.classList.add('hidden'), 300);
+  }
+</script>
+
 
 
   <!-- MASALAH -->

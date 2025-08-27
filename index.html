@@ -1,164 +1,26 @@
-<!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edu-Suite i3 – Transformasi Pembelajaran Digital Praktis</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  body { font-family: 'Inter', sans-serif; background-color: #FDFBF8; }
-  .text-brand-dark { color: #2D3748; }
-  .text-brand-primary { color: #2B6CB0; }
-  .bg-brand-primary { background-color: #2B6CB0; }
-  .bg-brand-primary-light { background-color: #EBF8FF; }
-  .border-brand-primary { border-color: #2B6CB0; }
-  .btn { transition: all 0.3s ease; }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-  .testimonial-card { display: none; }
-  .testimonial-card.active { display: block; }
-  .loading-spinner { border: 4px solid rgba(0, 0, 0, 0.1); border-left-color: #2B6CB0; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-</style>
-</head>
-<body class="text-brand-dark">
-
-<!-- Header / Navigation -->
-<header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
-<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-  <a href="#hero" class="text-2xl font-bold text-brand-primary">Edu-Suite i3</a>
-  <div class="hidden md:flex space-x-8">
-      <a href="#about-me" class="hover:text-brand-primary transition-colors">Tentang Saya</a>
-      <a href="#features" class="hover:text-brand-primary transition-colors">Keunggulan</a>
-      <a href="#ai-assistant" class="hover:text-brand-primary transition-colors">AI Assistant</a>
-      <a href="#pricing" class="hover:text-brand-primary transition-colors">Paket</a>
-      <a href="#testimonials" class="hover:text-brand-primary transition-colors">Testimoni</a>
-  </div>
-  <a href="https://wa.me/6282328888989" target="_blank" rel="noopener" class="hidden md:inline-block bg-brand-primary text-white font-semibold px-6 py-2 rounded-lg btn">Hubungi Kami</a>
-</nav>
-</header>
-
-<main>
-
-<!-- 1. Hero Section -->
-<section id="hero" class="py-20 md:py-32 bg-brand-primary-light text-center">
-  <div class="container mx-auto px-6">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-brand-dark leading-tight">Edu-Suite i3: Transformasi Pembelajaran Digital Praktis</h1>
-      <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Halo, saya Basri, S.Pd., M.A.P</p>
-      <p class="mt-4 text-lg md:text-xl text-gray-700 max-w-3xl mx-auto italic">Setiap guru memiliki potensi luar biasa. Dengan teknologi yang tepat, tantangan pendidikan menjadi peluang berinovasi.</p>
-      <p class="mt-2 text-lg md:text-xl text-brand-primary font-medium max-w-3xl mx-auto italic">Edu-Suite i3 siap mendampingi Anda hingga mahir!</p>
-      <div class="mt-10 flex justify-center items-center space-x-4">
-          <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" rel="noopener" class="bg-brand-primary text-white font-bold px-8 py-4 rounded-lg btn text-lg">🎁 Demo Gratis</a>
-          <a href="https://wa.me/6282328888989" target="_blank" rel="noopener" class="bg-white border-2 border-brand-primary text-brand-primary font-bold px-8 py-4 rounded-lg btn text-lg">📱 Hubungi WhatsApp</a>
+<!-- Contact Form -->
+<section id="contact" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6 max-w-2xl" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-8">Hubungi Kami</h2>
+    <form action="https://formspree.io/f/xblajqjw" method="POST" class="bg-white p-8 rounded-xl shadow-lg space-y-4">
+      <div>
+        <label for="name" class="block font-semibold mb-2">Nama</label>
+        <input type="text" id="name" name="name" required class="w-full p-3 border rounded-lg">
       </div>
+      <div>
+        <label for="email" class="block font-semibold mb-2">Email</label>
+        <input type="email" id="email" name="_replyto" required class="w-full p-3 border rounded-lg">
+      </div>
+      <div>
+        <label for="message" class="block font-semibold mb-2">Pesan</label>
+        <textarea id="message" name="message" rows="4" required class="w-full p-3 border rounded-lg"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition">
+        ✉️ Kirim Pesan
+      </button>
+    </form>
+    <p class="text-center mt-6 text-gray-600">
+      Atau langsung email ke: <a href="mailto:basri12@guru.sma.belajar.id" class="text-indigo-600 font-semibold">basri12@guru.sma.belajar.id</a>
+    </p>
   </div>
 </section>
-
-<!-- 2. Tentang Saya / Pemandu Otentik -->
-<section id="about-me" class="py-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
-  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 text-white">
-      <div class="md:w-1/2 flex justify-center">
-          <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Basri.jpg" 
-               alt="Basri, S.Pd., M.Ds - Kreator Edu-Suite i3" 
-               class="w-72 md:w-96 object-contain drop-shadow-2xl rounded-xl bg-white p-2">
-      </div>
-      <div class="md:w-1/2">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Berkenalan dengan Saya</h2>
-          <h3 class="text-2xl font-semibold mb-6 text-yellow-300">Basri, S.Pd., M.Ds</h3>
-          <p class="mb-6 leading-relaxed text-lg text-gray-100">
-              Sebagai guru, saya pernah kewalahan dengan tumpukan jurnal, absensi, dan persiapan materi ajar. Setelah menggunakan <span class="font-semibold">Edu-Suite i3</span>, semua jadi otomatis. Saya bisa lebih fokus membimbing siswa dan membuat proses belajar lebih interaktif.
-          </p>
-          <a href="https://drive.google.com/file/d/1HKHS_eqAX_L-W2xPK8ZAjWiuVwuIwvCH/preview" target="_blank" class="inline-block px-6 py-3 mt-4 bg-yellow-400 text-gray-900 font-semibold rounded-lg shadow hover:bg-yellow-300 transition">
-              Lihat Profil & Buku Panduan
-          </a>
-      </div>
-  </div>
-</section>
-
-<!-- 3. Keunggulan Edu-Suite i3 -->
-<section id="features" class="py-20 bg-white text-center">
-  <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12">Keunggulan Edu-Suite i3</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="p-8 rounded-lg shadow-lg bg-brand-primary-light transform hover:-translate-y-2 transition-transform duration-300">
-              <div class="text-5xl mb-4">💻</div>
-              <h3 class="text-xl font-bold mb-2">Multi-Integrasi Kuat</h3>
-              <p class="text-gray-600">Terhubung dengan Google Workspace, Canva, AI, dan platform favorit Anda tanpa ribet.</p>
-          </div>
-          <div class="p-8 rounded-lg shadow-lg bg-brand-primary-light transform hover:-translate-y-2 transition-transform duration-300">
-              <div class="text-5xl mb-4">📋</div>
-              <h3 class="text-xl font-bold mb-2">Otomatisasi Jurnal & Absensi</h3>
-              <p class="text-gray-600">Data kehadiran dan aktivitas otomatis, sehingga guru bisa fokus mengajar.</p>
-          </div>
-          <div class="p-8 rounded-lg shadow-lg bg-brand-primary-light transform hover:-translate-y-2 transition-transform duration-300">
-              <div class="text-5xl mb-4">⚙️</div>
-              <h3 class="text-xl font-bold mb-2">Fleksibilitas Tanpa Batas</h3>
-              <p class="text-gray-600">Pilih fitur yang Anda butuhkan, sesuaikan dengan gaya mengajar Anda.</p>
-          </div>
-          <div class="p-8 rounded-lg shadow-lg bg-brand-primary-light transform hover:-translate-y-2 transition-transform duration-300">
-              <div class="text-5xl mb-4">🎁</div>
-              <h3 class="text-xl font-bold mb-2">Akses Gratis Selamanya</h3>
-              <p class="text-gray-600">Mulai kapan saja tanpa risiko, versi dasar gratis untuk semua guru.</p>
-          </div>
-      </div>
-  </div>
-</section>
-
-<!-- 4. AI Assistant Demo -->
-<section id="ai-assistant" class="py-20 bg-brand-primary text-white text-center">
-  <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Kenalan dengan Asisten Cerdas Pribadi Anda</h2>
-      <p class="text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto">
-          Bayangkan punya asisten yang bisa menyiapkan RPP, soal, atau materi pembelajaran dalam hitungan detik. Edu-Suite i3 siap jadi mitra inovasi Anda.
-      </p>
-      <a href="https://wa.me/6282328888989" target="_blank" class="bg-white text-brand-primary font-bold py-4 px-10 rounded-lg btn text-lg">Gabung Komunitas</a>
-  </div>
-</section>
-
-<!-- 5. Paket & Harga -->
-<section id="pricing" class="py-20 bg-white text-center">
-  <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12">Paket Edu-Suite i3</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="p-8 rounded-xl shadow-lg border border-gray-200">
-              <h3 class="text-2xl font-bold mb-4">Versi Dasar</h3>
-              <p class="text-gray-600 mb-6">Gratis & fleksibel untuk semua guru. Ideal untuk mencoba semua fitur utama.</p>
-              <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" class="inline-block px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg btn">Coba Gratis</a>
-          </div>
-          <div class="p-8 rounded-xl shadow-lg border border-gray-200">
-              <h3 class="text-2xl font-bold mb-4">Premium & AI Assistant</h3>
-              <p class="text-gray-600 mb-6">Fitur tambahan, AI Assistant, template premium, dan dukungan komunitas.</p>
-              <a href="https://wa.me/6282328888989" target="_blank" class="inline-block px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-lg btn">Info Lebih Lanjut</a>
-          </div>
-      </div>
-  </div>
-</section>
-
-<!-- 6. Testimoni -->
-<section id="testimonials" class="py-20 bg-brand-primary-light text-center">
-  <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12">Guru Kami Bicara</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
-              <p class="mb-4">"Edu-Suite i3 membuat pekerjaan administrasi lebih ringan. Saya bisa fokus pada siswa dan kreatif membuat materi." – <strong>Ibu Sari, SDN Bambaira</strong></p>
-          </div>
-          <div class="p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
-              <p class="mb-4">"Integrasi dengan Canva & Google Workspace sangat memudahkan. Semuanya di satu tempat!" – <strong>Bapak Ardi, SMPN 1 Pasangkayu</strong></p>
-          </div>
-          <div class="p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
-              <p class="mb-4">"Versi gratisnya saja sudah sangat membantu. AI Assistant makin membuat segalanya cepat dan praktis." – <strong>Ibu Lina, SMA Negeri 1 Pasangkayu</strong></p>
-          </div>
-      </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="py-12 bg-gray-900 text-white text-center">
-  <p>© 2025 Edu-Suite i3. Semua hak dilindungi. Kontak: <a href="mailto:basri12@guru.sma.belajar.id" class="text-yellow-400">basri12@guru.sma.belajar.id</a></p>
-</footer>
-
-</main>
-</body>
-</html>

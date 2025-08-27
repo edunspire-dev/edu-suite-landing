@@ -24,13 +24,27 @@
 
   <main class="pt-24">
 
-    <!-- PROFIL -->
-    <section id="profile" class="py-16 bg-gray-50 text-center">
-      <div class="container mx-auto px-6">
-        <img src="Poto Profil.png" alt="Foto Profil Basri" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg border-4 border-indigo-500">
-        <h3 class="text-2xl font-bold">Halo, saya Basri, S.Pd., M.A.P</h3>
-      </div>
-    </section>
+   <!-- Foto Profil -->
+<div class="text-center">
+  <img src="Poto Profil.png" alt="Foto Profil Basri"
+       class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg border-4 border-indigo-500 cursor-pointer transition duration-300 hover:scale-105"
+       onclick="document.getElementById('profileModal').classList.remove('hidden')">
+  <h3 class="text-xl font-bold">Halo, saya Basri, S.Pd., M.A.P</h3>
+</div>
+
+<!-- Modal (Popup) -->
+<div id="profileModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+  <div class="relative bg-white p-4 rounded-xl shadow-2xl">
+    <!-- Tombol Tutup -->
+    <button onclick="document.getElementById('profileModal').classList.add('hidden')"
+            class="absolute top-2 right-2 text-black text-2xl font-bold">&times;</button>
+    
+    <!-- Foto Versi Besar -->
+    <img src="Poto Profil.png" alt="Foto Profil Basri"
+         class="w-[400px] h-[400px] rounded-xl shadow-lg border-4 border-indigo-500">
+  </div>
+</div>
+
 
     <!-- MASALAH -->
     <section id="problem" class="py-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white">

@@ -6,6 +6,7 @@
     <title>Edu-Suite i3 - Transformasi Digital Kelas Anda</title>
     <meta name="description" content="Edu-Suite i3: Solusi pintar untuk guru modern. Kelola kelas, siswa, dan laporan dengan mudah menggunakan platform berbasis Google Workspace.">
     <meta name="keywords" content="aplikasi guru, administrasi kelas, aplikasi belajar id, laporan siswa, manajemen kelas, edu-suite i3">
+    <meta name="robots" content="index, follow">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
@@ -17,236 +18,173 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        .animate-pulse-strong { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        .animate-pulse-strong { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+        :focus-visible {
+            outline: 3px solid #facc15; /* kuning kontras */
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <nav class="fixed top-0 left-0 w-full bg-blue-600 shadow z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center text-white">
-            <a href="#hero" class="font-bold text-xl hover:text-yellow-400">Edu-Suite i3</a>
-            <div class="space-x-4 hidden md:block">
-                <a href="#masalah" class="hover:underline">Masalah</a>
-                <a href="#solusi" class="hover:underline">Solusi</a>
-                <a href="#fitur" class="hover:underline">Fitur</a>
-                <a href="#testimoni" class="hover:underline">Testimoni</a>
-                <a href="#offer" class="hover:underline">Penawaran</a>
-                <a href="#faq" class="hover:underline">FAQ</a>
-                <a href="#kontak" class="hover:underline">Kontak</a>
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full bg-blue-600 shadow z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center text-white">
+        <a href="#hero" class="font-bold text-xl hover:text-yellow-400 focus:text-yellow-300">Edu-Suite i3</a>
+        <div class="space-x-4 hidden md:block">
+            <a href="#masalah" class="hover:underline focus:underline">Masalah</a>
+            <a href="#solusi" class="hover:underline focus:underline">Solusi</a>
+            <a href="#fitur" class="hover:underline focus:underline">Fitur</a>
+            <a href="#testimoni" class="hover:underline focus:underline">Testimoni</a>
+            <a href="#offer" class="hover:underline focus:underline">Penawaran</a>
+            <a href="#faq" class="hover:underline focus:underline">FAQ</a>
+            <a href="#kontak" class="hover:underline focus:underline">Kontak</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="py-24 bg-gradient-to-r from-blue-600 to-purple-600 text-white flex items-center justify-center" data-aos="zoom-in">
+    <div class="container mx-auto px-6 text-center">
+        <div class="bg-white rounded-xl p-10 shadow-lg text-gray-800">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Transformasi Digital Kelas Anda dengan Edu-Suite i3</h1>
+            <p class="text-lg md:text-xl mb-8">Solusi pintar untuk mengelola kelas, siswa, dan laporan dalam genggaman Anda.</p>
+            
+            <div class="text-center mb-6">
+                <img src="Poto Profil.png" alt="Foto Basri, Pendidik & Kreator Edu-Suite i3" loading="lazy"
+                     class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg border-4 border-indigo-500 cursor-pointer transition-transform duration-300 hover:scale-105 focus:scale-105">
+                <h3 class="text-xl font-bold mb-1">Halo, saya Basri, S.Pd., M.A.P</h3>
+                <p class="text-gray-700">Pendidik & Kreator Rumah digital Edu-Suite i3</p>
+            </div>
+            
+            <a href="https://wa.me/6282328888989" target="_blank" class="bg-yellow-400 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg hover:bg-yellow-300 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition duration-300 transform hover:scale-105 animate-pulse-strong">💬 Mulai Sekarang</a>
+        </div>
+    </div>
+</section>
+
+<!-- MASALAH -->
+<section id="masalah" class="py-20 bg-gray-100" data-aos="fade-right">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Masalah yang Sering Dihadapi Guru</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
+                <h3 class="font-bold text-xl mb-2">Administrasi Rumit</h3>
+                <p>Terlalu banyak dokumen manual yang menghabiskan waktu.</p>
+            </div>
+            <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
+                <h3 class="font-bold text-xl mb-2">Waktu Terbuang</h3>
+                <p>Mengoreksi tugas & membuat laporan memakan banyak waktu.</p>
+            </div>
+            <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
+                <h3 class="font-bold text-xl mb-2">Kurang Monitoring</h3>
+                <p>Orang tua sulit memantau perkembangan anak secara langsung.</p>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <section id="hero" class="py-24 bg-gradient-to-r from-blue-600 to-purple-600 text-white flex items-center justify-center" data-aos="zoom-in">
-        <div class="container mx-auto px-6 text-center">
-            <div class="bg-white rounded-xl p-10 shadow-lg text-gray-800">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Edu-Suite i3</h1>
-                <p class="text-lg md:text-xl mb-8">Solusi pintar untuk mengelola kelas, siswa, dan laporan dalam genggaman Anda.</p>
-                
-                <div class="text-center mb-6">
-                    <img src="Poto Profil.png" alt="Foto Profil Basri"
-                         class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg border-4 border-indigo-500 cursor-pointer transition-transform duration-300 hover:scale-110">
-                    <h3 class="text-xl font-bold mb-1">Halo, saya Basri, S.Pd., M.A.P</h3>
-                    <p class="text-gray-700">Pendidik & Kreator Rumah digital Edu-Suite i3</p>
-                </div>
-                
-                <a href="https://wa.me/6282328888989" target="_blank" class="bg-yellow-400 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg hover:bg-yellow-300 transition duration-300 transform hover:scale-105 animate-pulse-strong">💬 Mulai Sekarang</a>
+<!-- SOLUSI -->
+<section id="solusi" class="py-20 bg-white" data-aos="fade-left">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Solusi Praktis dengan Edu-Suite i3</h2>
+        <p class="text-lg mb-8 max-w-2xl mx-auto">
+            Platform all-in-one untuk guru modern: kelola kelas, nilai, laporan, dan komunikasi orang tua dalam satu aplikasi berbasis cloud (Akun Belajar ID).
+        </p>
+    </div>
+</section>
+
+<!-- FITUR -->
+<section id="fitur" class="py-20 bg-gray-100" data-aos="zoom-in-up">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Fitur Unggulan</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
+                <h3 class="font-bold text-xl mb-2">Dashboard Interaktif</h3>
+                <p>Pantau data siswa dalam satu tampilan.</p>
+            </div>
+            <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
+                <h3 class="font-bold text-xl mb-2">Manajemen Kelas</h3>
+                <p>Kelola tugas, materi, dan absensi lebih cepat.</p>
+            </div>
+            <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
+                <h3 class="font-bold text-xl mb-2">Laporan Instan</h3>
+                <p>Buat laporan otomatis tanpa ribet.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="masalah" class="py-20 bg-gray-100" data-aos="fade-right">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Masalah yang Sering Dihadapi Guru</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
-                    <div class="text-indigo-600 text-5xl mb-4 mx-auto w-12 h-12 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.179c-.426-1.56-2.008-2.613-3.791-2.613H15c-1.783 0-3.365 1.053-3.79 2.613V14.25m2.25-2.25H15c.32 0 .63.03.93.088a2.639 2.639 0 01.954.545c.294.253.535.57.707.93m-.707.93a2.639 2.639 0 01-.707.93m-1.579-2.25a2.639 2.639 0 01-.954-.545c-.294-.253-.535-.57-.707-.93m1.579 2.25h-1.579M17.25 12h-1.579M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">Administrasi Rumit</h3>
-                    <p>Terlalu banyak dokumen manual yang menghabiskan waktu.</p>
-                </div>
-                <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
-                    <div class="text-indigo-600 text-5xl mb-4 mx-auto w-12 h-12 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">Waktu Terbuang</h3>
-                    <p>Mengoreksi tugas & membuat laporan memakan banyak waktu.</p>
-                </div>
-                <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
-                    <div class="text-indigo-600 text-5xl mb-4 mx-auto w-12 h-12 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a7.488 7.488 0 01-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" /> </svg>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">Kurang Monitoring</h3>
-                    <p>Orang tua sulit memantau perkembangan anak secara langsung.</p>
-                </div>
+<!-- TESTIMONI -->
+<section id="testimoni" class="py-20 bg-white" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Apa Kata Mereka?</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-6 shadow rounded-lg bg-gray-100 transition duration-300 hover:shadow-xl">
+                <img src="https://ui-avatars.com/api/?name=Sinta&background=4F46E5&color=fff" loading="lazy" class="mx-auto w-16 h-16 rounded-full mb-4 object-cover" alt="Ibu Sinta, Guru SMA">
+                <p>"Sangat membantu pekerjaan saya sebagai guru. Semua jadi lebih praktis!"</p>
+                <p class="mt-2 font-bold">- Ibu Sinta, Guru SMA</p>
+            </div>
+            <div class="p-6 shadow rounded-lg bg-gray-100 transition duration-300 hover:shadow-xl">
+                <img src="https://ui-avatars.com/api/?name=Budi&background=4F46E5&color=fff" loading="lazy" class="mx-auto w-16 h-16 rounded-full mb-4 object-cover" alt="Pak Budi, Kepala Sekolah">
+                <p>"Orang tua bisa langsung memantau perkembangan anaknya. Luar biasa!"</p>
+                <p class="mt-2 font-bold">- Pak Budi, Kepala Sekolah</p>
+            </div>
+            <div class="p-6 shadow rounded-lg bg-gray-100 transition duration-300 hover:shadow-xl">
+                <img src="https://ui-avatars.com/api/?name=Lia&background=4F46E5&color=fff" loading="lazy" class="mx-auto w-16 h-16 rounded-full mb-4 object-cover" alt="Ibu Lia, Guru SD">
+                <p>"Edu-Suite i3 membuat laporan lebih cepat dan mudah dipahami."</p>
+                <p class="mt-2 font-bold">- Ibu Lia, Guru SD</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="solusi" class="py-20 bg-white" data-aos="fade-left">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Solusi Praktis dengan Edu-Suite i3</h2>
-            <p class="text-lg mb-8 max-w-2xl mx-auto">
-                Platform all-in-one untuk guru modern: kelola kelas, nilai, laporan, dan komunikasi orang tua dalam satu aplikasi berbasis cloud (Akun Belajar ID).
-            </p>
-        </div>
-    </section>
+<!-- PENAWARAN -->
+<section id="offer" class="py-20 bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900" data-aos="zoom-in">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Penawaran Spesial Edu-Suite i3</h2>
+        <p class="text-lg mb-8 max-w-2xl mx-auto">Dapatkan akses lengkap ke semua fitur Edu-Suite i3 dan panduan penggunaan langkah demi langkah, gratis biaya bulanan!</p>
+        <a href="https://wa.me/6282328888989" target="_blank" class="bg-gray-900 text-yellow-400 font-bold py-3 px-6 rounded-xl shadow-lg hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-yellow-500 transition duration-300 transform hover:scale-105 animate-pulse-strong">💬 Daftar Sekarang</a>
+    </div>
+</section>
 
-    <section id="fitur" class="py-20 bg-gray-100" data-aos="zoom-in-up">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Fitur Unggulan</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
-                    <div class="text-indigo-600 text-5xl mb-4 mx-auto w-12 h-12 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125a9 9 0 0118 0M3 13.125a9 9 0 0018 0M3 13.125a9 9 0 01-9 0m9 0A9 9 0 003 13.125M12 4.5a.75.75 0 100 1.5.75.75 0 000-1.5zM12 10.5a.75.75 0 100 1.5.75.75 0 000-1.5zM12 16.5a.75.75 0 100 1.5.75.75 0 000-1.5z" /> </svg>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">Dashboard Interaktif</h3>
-                    <p>Pantau data siswa dalam satu tampilan.</p>
-                </div>
-                <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
-                    <div class="text-indigo-600 text-5xl mb-4 mx-auto w-12 h-12 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.179c-.426-1.56-2.008-2.613-3.791-2.613H15c-1.783 0-3.365 1.053-3.79 2.613V14.25m2.25-2.25H15c.32 0 .63.03.93.088a2.639 2.639 0 01.954.545c.294.253.535.57.707.93m-.707.93a2.639 2.639 0 01-.707.93m-1.579-2.25a2.639 2.639 0 01-.954-.545c-.294-.253-.535-.57-.707-.93m1.579 2.25h-1.579M17.25 12h-1.579M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">Manajemen Kelas</h3>
-                    <p>Kelola tugas, materi, dan absensi lebih cepat.</p>
-                </div>
-                <div class="p-6 shadow rounded-lg bg-white transition duration-300 hover:shadow-xl">
-                    <div class="text-indigo-600 text-5xl mb-4 mx-auto w-12 h-12 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.5l5.25 5.25L19.5 7.5" /> </svg>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">Laporan Instan</h3>
-                    <p>Buat laporan otomatis tanpa ribet.</p>
-                </div>
+<!-- FAQ -->
+<section id="faq" class="py-20 bg-gray-100" data-aos="fade-down">
+    <div class="container mx-auto px-6 max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">❓ Pertanyaan Umum (FAQ)</h2>
+        <div class="space-y-6">
+            <div class="p-6 rounded-lg shadow bg-white transition duration-300 hover:shadow-xl">
+                <h3 class="font-bold">Apakah Edu-Suite i3 dikenakan biaya bulanan?</h3>
+                <p>Tidak. Platform ini tidak memerlukan biaya bulanan karena berbasis <strong>Google Workspace</strong>, sehingga aman dan tanpa lisensi tambahan.</p>
+            </div>
+            <div class="p-6 rounded-lg shadow bg-white transition duration-300 hover:shadow-xl">
+                <h3 class="font-bold">Bagaimana cara mendaftar?</h3>
+                <p>Daftar mudah melalui WhatsApp, kami akan pandu Anda langkah demi langkah.</p>
+            </div>
+            <div class="p-6 rounded-lg shadow bg-white transition duration-300 hover:shadow-xl">
+                <h3 class="font-bold">Apakah ada demo produk?</h3>
+                <p>Ya, klik tautan di bagian <strong>Penawaran</strong> untuk melihat demo lengkap Edu-Suite i3.</p>
+            </div>
+            <div class="p-6 rounded-lg shadow bg-white transition duration-300 hover:shadow-xl">
+                <h3 class="font-bold">Apakah data saya aman?</h3>
+                <p>Data Anda disimpan dengan enkripsi aman dan hanya dapat diakses oleh pihak berwenang.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="testimoni" class="py-20 bg-white" data-aos="fade-up">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Apa Kata Mereka?</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 shadow rounded-lg bg-gray-100 transition duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="0">
-                    <img src="https://ui-avatars.com/api/?name=Sinta&background=4F46E5&color=fff" class="mx-auto w-16 h-16 rounded-full mb-4 object-cover" alt="User 1">
-                    <p>"Sangat membantu pekerjaan saya sebagai guru. Semua jadi lebih praktis!"</p>
-                    <p class="mt-2 font-bold">- Ibu Sinta, Guru SMA</p>
-                </div>
-                <div class="p-6 shadow rounded-lg bg-gray-100 transition duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://ui-avatars.com/api/?name=Budi&background=4F46E5&color=fff" class="mx-auto w-16 h-16 rounded-full mb-4 object-cover" alt="User 2">
-                    <p>"Orang tua bisa langsung memantau perkembangan anaknya. Luar biasa!"</p>
-                    <p class="mt-2 font-bold">- Pak Budi, Kepala Sekolah</p>
-                </div>
-                <div class="p-6 shadow rounded-lg bg-gray-100 transition duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://ui-avatars.com/api/?name=Rina&background=4F46E5&color=fff" class="mx-auto w-16 h-16 rounded-full mb-4 object-cover" alt="User 3">
-                    <p>"Aplikasi ini membuat administrasi guru jauh lebih mudah."</p>
-                    <p class="mt-2 font-bold">- Bu Rina, Guru SMP</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER -->
+<footer id="kontak" class="py-12 bg-blue-600 text-white text-center" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+        <h3 class="text-2xl font-bold mb-4">Kontak Kami</h3>
+        <p class="mb-4">WhatsApp: <a href="https://wa.me/6282328888989" class="underline hover:text-yellow-300 focus:text-yellow-300">0823-2888-8989</a></p>
+        <p>© 2025 Edu-Suite i3. Semua hak dilindungi.</p>
+    </div>
+</footer>
 
-    <section id="offer" class="py-20 bg-indigo-700 text-white text-center" data-aos="fade-up">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">🎁 Penawaran Spesial untuk Anda!</h2>
-            <p class="text-lg mb-8 max-w-2xl mx-auto">
-                Dapatkan akses penuh ke **Edu-Suite i3** plus perangkat pembelajaran deep learning gratis!
-            </p>
-            <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" class="px-8 py-4 bg-yellow-400 text-indigo-900 font-bold rounded-full shadow-lg hover:bg-yellow-300 transition duration-300 inline-flex items-center gap-2 transform hover:scale-105">▶️ Lihat Demo Produk</a>
-        </div>
-    </section>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
 
-    <section id="faq" class="py-20 bg-gray-100" data-aos="fade-down">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">❓ Pertanyaan Umum (FAQ)</h2>
-            <div class="space-y-6">
-                <div class="p-6 rounded-lg shadow bg-white transition duration-300 hover:shadow-xl">
-                    <h3 class="font-bold">Apakah Edu-Suite i3 dikenakan biaya bulanan?</h3>
-                    <p>Tidak. Platform ini tidak akan dikenakan biaya bulanan karena berbasis **Google Workspace**, sehingga tidak memerlukan biaya lisensi tambahan.</p>
-                </div>
-                <div class="p-6 rounded-lg shadow bg-white transition duration-300 hover:shadow-xl">
-                    <h3 class="font-bold">Bagaimana cara mendaftar?</h3>
-                    <p>Anda bisa langsung chat via WhatsApp untuk panduan pendaftaran.</p>
-                </div>
-                <div class="p-6 rounded-lg shadow bg-white transition duration-300 hover:shadow-xl">
-                    <h3 class="font-bold">Apakah ada demo produk?</h3>
-                    <p>Ya, Anda bisa melihat demo produk di tautan yang tersedia pada bagian **Penawaran**.</p>
-                </div>
-                <div class="p-6 rounded-lg shadow bg-white transition duration-300 hover:shadow-xl">
-                    <h3 class="font-bold">Apakah data saya aman?</h3>
-                    <p>Data disimpan dengan enkripsi aman dan hanya dapat diakses oleh pihak yang berwenang.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-blue-600 text-white text-center" data-aos="zoom-in">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Siap Mengubah Kelas Anda?</h2>
-            <p class="text-lg md:text-xl mb-8">Gabung dengan ribuan guru lain yang sudah merasakan kemudahan dan efisiensi bersama Edu-Suite i3.</p>
-            <a href="https://wa.me/6282328888989" target="_blank" class="bg-yellow-400 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg hover:bg-yellow-300 transition duration-300 transform hover:scale-105 animate-pulse-strong">
-                💬 Gabung Sekarang
-            </a>
-        </div>
-    </section>
-
-    <section id="kontak" class="py-20 bg-white" data-aos="fade-up">
-        <div class="container mx-auto px-6 max-w-xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Hubungi Kami</h2>
-            <p class="text-center text-lg mb-8">Isi formulir di bawah ini dan kami akan segera menghubungi Anda.</p>
-            <form action="https://formspree.io/f/xblajqjw" method="POST" class="space-y-6">
-                <div>
-                    <label for="nama" class="block text-lg font-medium text-gray-700 mb-2">Nama Lengkap</label>
-                    <input type="text" id="nama" name="Nama" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-                <div>
-                    <label for="email" class="block text-lg font-medium text-gray-700 mb-2">Email</label>
-                    <input type="email" id="email" name="Email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-                <div>
-                    <label for="pesan" class="block text-lg font-medium text-gray-700 mb-2">Pesan</label>
-                    <textarea id="pesan" name="Pesan" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
-                        Kirim Pesan
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <footer class="bg-gray-900 text-gray-300 py-8 text-center" data-aos="fade-up">
-        <div class="container mx-auto px-6">
-            <p class="mb-4">© 2025 Edu-Suite i3. All rights reserved.</p>
-            <p class="text-sm mt-4">
-                📖 Baca artikel & tips guru digital di
-                <a href="https://dosenkren.blogspot.com/" target="_blank" class="text-yellow-400 hover:underline">Blog kami</a>
-            </p>
-        </div>
-    </footer>
-
-    <button id="back-to-top" class="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg transition-transform duration-300 hover:scale-110 opacity-0 transform scale-0">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" /> </svg>
-    </button>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-
-        const backToTopButton = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'scale-0');
-                backToTopButton.classList.add('opacity-100', 'scale-100');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'scale-100');
-                backToTopButton.classList.add('opacity-0', 'scale-0');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
 </body>
 </html>

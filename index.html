@@ -24,10 +24,10 @@
 
   <main class="pt-24">
 
-   <!-- Foto Profil -->
+   <!-- Foto Profil dengan Hover Zoom -->
 <div class="text-center">
   <img src="Poto Profil.png" alt="Foto Profil Basri"
-       class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg border-4 border-indigo-500 cursor-pointer transition duration-300 hover:scale-105"
+       class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg border-4 border-indigo-500 cursor-pointer transition-transform duration-300 hover:scale-110"
        onclick="document.getElementById('profileModal').classList.remove('hidden')">
   <h3 class="text-xl font-bold">Halo, saya Basri, S.Pd., M.A.P</h3>
 </div>
@@ -39,9 +39,9 @@
     <button onclick="document.getElementById('profileModal').classList.add('hidden')"
             class="absolute top-2 right-2 text-black text-2xl font-bold">&times;</button>
     
-    <!-- Foto Versi Besar -->
+    <!-- Foto Versi Besar dengan Hover Zoom -->
     <img src="Poto Profil.png" alt="Foto Profil Basri"
-         class="w-[400px] h-[400px] rounded-xl shadow-lg border-4 border-indigo-500">
+         class="w-[400px] h-[400px] rounded-xl shadow-lg border-4 border-indigo-500 transition-transform duration-500 hover:scale-105">
   </div>
 </div>
 

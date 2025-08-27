@@ -1,114 +1,140 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edu-Suite i3 - Solusi Pembelajaran Digital untuk Guru</title>
-  <meta name="description" content="Edu-Suite i3 - Platform pembelajaran digital untuk guru dan sekolah. Manajemen kelas, AI Assistant, absensi otomatis, analitik siswa, sekali bayar update selamanya.">
-  <link rel="icon" href="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/fav-icon.png">
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- AOS Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* Hero section with background image & overlay */
-    #hero {
-      background-image: url('https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Foto%20Header.jpeg');
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      color: white;
-    }
-    #hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 0;
-    }
-    #hero .container { position: relative; z-index: 1; }
-    html { scroll-behavior: smooth; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edu-Suite i3 - Solusi Pembelajaran Digital untuk Guru</title>
+  <meta name="description" content="Edu-Suite i3 - Platform pembelajaran digital untuk guru dan sekolah. Manajemen kelas, AI Assistant, absensi otomatis, analitik siswa, sekali bayar update selamanya.">
+  <link rel="icon" href="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/fav-icon.png">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS (Animate On Scroll) Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <style>
+    /* Hero section dengan background image dan overlay untuk kontras */
+    #hero {
+      background-image: url('https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Foto%20Header.jpeg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: white;
+    }
+    #hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    #hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    html { scroll-behavior: smooth; }
+    
+    .testimonial-card {
+      display: none;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0;
+    }
+    .testimonial-card.active {
+      display: block;
+      opacity: 1;
+    }
 
-    /* Testimonial fade-in */
-    .testimonial-card { display: none; transition: opacity 0.5s ease-in-out; opacity: 0; }
-    .testimonial-card.active { display: block; opacity: 1; }
-
-    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    .animate-spin-custom { animation: spin 1s linear infinite; }
-  </style>
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-custom {
+      animation: spin 1s linear infinite;
+    }
+  </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Hero Section -->
 <section id="hero" class="py-32 text-center">
-  <div class="container mx-auto px-6" data-aos="fade-up">
-    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Transformasi Pembelajaran Digital Tanpa Ribet</h1>
-    <p class="mt-6 text-xl md:text-2xl font-light">Halo, saya Basri, S.Pd., M.A.P</p>
-    <blockquote class="mt-4 text-lg md:text-xl font-medium italic">"Setiap guru memiliki potensi luar biasa. Dengan teknologi yang tepat, tantangan pendidikan menjadi peluang berinovasi."</blockquote>
-    <p class="mt-4 text-xl md:text-2xl font-semibold">Edu-Suite i3 siap mendampingi Anda hingga mahir!</p>
-    <div class="mt-10 flex justify-center items-center space-x-4">
-      <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-indigo-700 hover:scale-105 hover:shadow-xl transition-all duration-300">🎁 Demo Gratis</a>
-      <a href="https://wa.me/6282328888989" target="_blank" class="bg-white border-2 border-indigo-600 text-indigo-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300">📱 Hubungi WhatsApp</a>
-    </div>
-  </div>
+  <div class="container mx-auto px-6" data-aos="fade-up">
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+      Transformasi Pembelajaran Digital Tanpa Ribet
+    </h1>
+    <p class="mt-6 text-xl md:text-2xl font-light">
+      Halo, saya Basri, S.Pd., M.A.P
+    </p>
+    <blockquote class="mt-4 text-lg md:text-xl font-medium italic">
+      "Setiap guru memiliki potensi luar biasa. Dengan teknologi yang tepat, tantangan pendidikan menjadi peluang berinovasi."
+    </blockquote>
+    <p class="mt-4 text-xl md:text-2xl font-semibold">
+      Edu-Suite i3 siap mendampingi Anda hingga mahir!
+    </p>
+    <div class="mt-10 flex justify-center items-center space-x-4">
+      <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-indigo-700 hover:scale-105 hover:shadow-xl transition-all duration-300">
+        🎁 Demo Gratis
+      </a>
+      <a href="https://wa.me/6282328888989" target="_blank" class="bg-white border-2 border-indigo-600 text-indigo-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300">
+        📱 Hubungi WhatsApp
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- Mengapa Edu-Suite i3 -->
 <section id="why-edusuite" class="py-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-6" data-aos="fade-down">Mengapa Edu-Suite i3?</h2>
-    <p class="text-center text-lg md:text-xl font-semibold mb-12" data-aos="fade-up">Pernahkah Anda mengalami situasi ini? 😩🫠😅</p>
+  <div class="container mx-auto px-6 flex flex-col md:flex-col items-center gap-12 text-white">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Mengapa Edu-Suite i3?</h2>
+    <p class="mb-4 text-lg md:text-xl text-center font-semibold">Pernahkah Anda mengalami situasi ini? 😩🫠😅</p>
+    <ul class="list-disc list-inside text-lg md:text-xl mb-6 max-w-3xl">
+      <li>❌ Kepala sekolah tiba-tiba meminta data lengkap setiap siswa: nilai, kehadiran, catatan perilaku, dan capaian pembelajaran.</li>
+      <li>❌ Rekan guru membutuhkan informasi cepat tentang perkembangan siswa, tapi sulit menemukannya secepat kilat.</li>
+      <li>❌ Orang tua siswa ingin mengetahui kemajuan belajar anaknya secara tepat dan cepat.</li>
+      <li>❌ Sering terlambat menginput nilai rapor karena data penilaian belum terorganisir dengan rapi.</li>
+    </ul>
+    <p class="mb-8 text-lg md:text-xl font-semibold text-center">Tenang, itu wajar—semua guru pasti pernah mengalaminya!</p>
+  </div>
+</section>
 
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <div class="bg-white/20 backdrop-blur-md rounded-xl p-6 shadow-lg hover:scale-105 transform transition-all duration-300" data-aos="fade-right" data-aos-delay="100">
-        <p class="text-lg font-semibold text-white">❌ Kepala sekolah tiba-tiba meminta data lengkap setiap siswa: nilai, kehadiran, catatan perilaku, dan capaian pembelajaran.</p>
-      </div>
-      <div class="bg-white/20 backdrop-blur-md rounded-xl p-6 shadow-lg hover:scale-105 transform transition-all duration-300" data-aos="fade-left" data-aos-delay="200">
-        <p class="text-lg font-semibold text-white">❌ Rekan guru membutuhkan informasi cepat tentang perkembangan siswa, tapi sulit menemukannya secepat kilat.</p>
-      </div>
-      <div class="bg-white/20 backdrop-blur-md rounded-xl p-6 shadow-lg hover:scale-105 transform transition-all duration-300" data-aos="fade-right" data-aos-delay="300">
-        <p class="text-lg font-semibold text-white">❌ Orang tua siswa ingin mengetahui kemajuan belajar anaknya secara tepat dan cepat.</p>
-      </div>
-      <div class="bg-white/20 backdrop-blur-md rounded-xl p-6 shadow-lg hover:scale-105 transform transition-all duration-300" data-aos="fade-left" data-aos-delay="400">
-        <p class="text-lg font-semibold text-white">❌ Sering terlambat menginput nilai rapor karena data penilaian belum terorganisir dengan rapi.</p>
-      </div>
-    </div>
-
-    <p class="text-center text-lg md:text-xl font-semibold mb-6" data-aos="zoom-in" data-aos-delay="500">Tenang, itu wajar—semua guru pasti pernah mengalaminya!</p>
-
-    <div class="max-w-3xl mx-auto bg-yellow-200/70 rounded-xl p-6 text-gray-900 shadow-lg text-center" data-aos="fade-up" data-aos-delay="600">
-      <p class="text-lg font-bold">✨ Solusi: Edu-Suite i3 adalah solusi nyata, diciptakan oleh guru untuk guru. Kami hadir untuk memudahkan setiap kebutuhan administrasi dan data siswa Anda. Hanya dengan satu sentuhan, semuanya teratasi.</p>
-    </div>
-  </div>
+<!-- Foto Profil Basri -->
+<section class="py-12 bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600 text-white">
+  <div class="container mx-auto flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
+    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Basri.jpg" 
+        alt="Foto Basri, S.Pd., M.A.P" 
+        class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white shadow-xl mb-6 object-cover">
+    <h3 class="text-2xl md:text-3xl font-bold mb-2">Basri, S.Pd., M.A.P</h3>
+    <p class="text-center max-w-xl text-lg md:text-xl font-medium">"Setiap guru memiliki potensi luar biasa. Dengan Edu-Suite i3, semua tantangan pendidikan bisa diubah menjadi peluang berinovasi."</p>
+  </div>
 </section>
 
 <!-- Features -->
 <section class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-12">Fitur Unggulan</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-right" data-aos-duration="1000">
-        <h3 class="text-xl font-bold mb-4">📚 Manajemen Kelas</h3>
-        <p>Atur materi, tugas, dan nilai dengan mudah dalam satu platform.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-duration="1000">
-        <h3 class="text-xl font-bold mb-4">🤖 AI Assistant</h3>
-        <p>Buat soal & materi otomatis sesuai kurikulum hanya dengan 1 klik.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-left" data-aos-duration="1000">
-        <h3 class="text-xl font-bold mb-4">📊 Analitik Belajar</h3>
-        <p>Lacak perkembangan siswa dengan laporan real-time yang mudah dipahami.</p>
-      </div>
-    </div>
-    <div class="py-8">
-      <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Kemitraan.jpeg" alt="Kemitraan Edu-Suite i3" class="w-full md:w-[600px] mx-auto rounded-xl shadow-lg">
-    </div>
-  </div>
+  <div class="container mx-auto px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-12">Fitur Unggulan</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-right" data-aos-duration="1000">
+        <h3 class="text-xl font-bold mb-4">📚 Manajemen Kelas</h3>
+        <p>Atur materi, tugas, dan nilai dengan mudah dalam satu platform.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-duration="1000">
+        <h3 class="text-xl font-bold mb-4">🤖 AI Assistant</h3>
+        <p>Buat soal & materi otomatis sesuai kurikulum hanya dengan 1 klik.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-left" data-aos-duration="1000">
+        <h3 class="text-xl font-bold mb-4">📊 Analitik Belajar</h3>
+        <p>Lacak perkembangan siswa dengan laporan real-time yang mudah dipahami.</p>
+      </div>
+    </div>
+    <div class="py-8">
+      <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Kemitraan.jpeg"
+           alt="Kemitraan Edu-Suite i3 dengan berbagai perusahaan teknologi"
+           class="w-full md:w-[600px] mx-auto rounded-xl shadow-lg">
+    </div>
+  </div>
 </section>
-
 <!-- AI Assistant Demo -->
 <section class="py-20 bg-white">
   <div class="container mx-auto px-6" data-aos="fade-up">

@@ -1,397 +1,279 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edu-Suite i3 - Solusi Pembelajaran Digital untuk Guru</title>
-  <meta name="description" content="Edu-Suite i3 - Platform pembelajaran digital untuk guru dan sekolah. Manajemen kelas, AI Assistant, absensi otomatis, analitik siswa, sekali bayar update selamanya.">
-  <link rel="icon" href="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/fav-icon.png">
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- AOS (Animate On Scroll) Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Font Awesome untuk ikon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="preconnect" href="https://unpkg.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <style>
-    /* Hero section dengan background image dan overlay untuk kontras */
-    #hero {
-      background-image: url('https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Foto%20Header.jpeg');
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      color: white;
-    }
-    #hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5); /* Overlay lebih gelap untuk kontras */
-      z-index: 0;
-    }
-    #hero .container {
-      position: relative;
-      z-index: 1;
-    }
-    /* Smooth scroll */
-    html { scroll-behavior: smooth; }
-    
-    /* Testimonial fade-in effect */
-    .testimonial-card {
-      display: none;
-      transition: opacity 0.5s ease-in-out;
-      opacity: 0;
-    }
-    .testimonial-card.active {
-      display: block;
-      opacity: 1;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edu-Suite i3 - Solusi Pembelajaran Digital untuk Guru</title>
+  <meta name="description" content="Edu-Suite i3 - Platform pembelajaran digital untuk guru dan sekolah. Manajemen kelas, AI Assistant, absensi otomatis, analitik siswa, sekali bayar update selamanya.">
+  <link rel="icon" href="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/fav-icon.png">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS (Animate On Scroll) Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <style>
+    /* Hero section dengan background image dan overlay */
+    #hero {
+      background-image: url('https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Foto%20Header.jpeg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: white;
+    }
+    #hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    #hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    html { scroll-behavior: smooth; }
 
-    /* Custom styles for loading spinner */
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    .animate-spin-custom {
-      animation: spin 1s linear infinite;
-    }
-  </style>
+    /* Typing cursor */
+    .blinking-cursor { animation: blink 1s infinite; }
+    @keyframes blink { 0%,50%,100% {opacity:1;} 25%,75%{opacity:0;} }
+
+    /* Testimonial fade-in effect */
+    .testimonial-card {
+      display: none;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0;
+    }
+    .testimonial-card.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Custom spinner */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-custom { animation: spin 1s linear infinite; }
+  </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
 
-<!-- Hero Section -->
-<section id="hero" class="py-32 text-center">
-  <div class="container mx-auto px-6" data-aos="fade-up">
-    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
-      Transformasi Pembelajaran Digital Tanpa Ribet
-    </h1>
-    <p class="mt-6 text-xl md:text-2xl font-light">
-      Halo, saya Basri, S.Pd., M.A.P
-    </p>
-    <blockquote class="mt-4 text-lg md:text-xl font-medium italic">
-      "Setiap guru memiliki potensi luar biasa. Dengan teknologi yang tepat, tantangan pendidikan menjadi peluang berinovasi."
-    </blockquote>
-    <p class="mt-4 text-xl md:text-2xl font-semibold">
-      Edu-Suite i3 siap mendampingi Anda hingga mahir!
-    </p>
-    <div class="mt-10 flex justify-center items-center space-x-4">
-      <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-indigo-700 hover:scale-105 hover:shadow-xl transition-all duration-300">
-        🎁 Demo Gratis
-      </a>
-      <a href="https://wa.me/6282328888989" target="_blank" class="bg-white border-2 border-indigo-600 text-indigo-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300">
-        📱 Hubungi WhatsApp
-      </a>
-    </div>
-  </div>
+<!-- Hero Section dengan Typing Effect -->
+<section id="hero" class="py-32 min-h-screen flex flex-col justify-center items-center text-center relative">
+  <div class="absolute inset-0 bg-black/50 z-0"></div>
+  <div class="container mx-auto px-6 relative z-10">
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+      <span id="typed-text"></span><span class="blinking-cursor">|</span>
+    </h1>
+    <p class="mt-6 text-xl md:text-2xl font-light opacity-0" id="hero-sub">Halo, saya Basri, S.Pd., M.A.P</p>
+    <blockquote class="mt-4 text-lg md:text-xl font-medium italic opacity-0" id="hero-quote">
+      "Setiap guru memiliki potensi luar biasa. Dengan teknologi yang tepat, tantangan pendidikan menjadi peluang berinovasi."
+    </blockquote>
+    <p class="mt-4 text-xl md:text-2xl font-semibold opacity-0" id="hero-cta-text">Edu-Suite i3 siap mendampingi Anda hingga mahir!</p>
+    <div class="mt-10 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 opacity-0" id="hero-buttons">
+      <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-indigo-700 hover:scale-105 transition-all duration-300">🎁 Demo Gratis</a>
+      <a href="https://wa.me/6282328888989" target="_blank" class="bg-white border-2 border-indigo-600 text-indigo-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300">📱 Hubungi WhatsApp</a>
+    </div>
+  </div>
 </section>
 
 <!-- Mengapa Edu-Suite i3 -->
 <section id="why-edusuite" class="py-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
-  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 text-white">
-    <!-- Foto -->
-    <div class="md:w-1/2 flex justify-center">
-      <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Basri.jpg" 
-           alt="Basri, S.Pd., M.A.P - Edu-Suite i3" 
-           class="w-72 md:w-96 object-contain drop-shadow-2xl rounded-xl bg-white p-2">
-    </div>
-    <!-- Narasi -->
-    <div class="md:w-1/2">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Mengapa Edu-Suite i3?</h2>
-      <p class="mb-4 text-lg leading-relaxed font-semibold">
-        Pernahkah Anda mengalami situasi ini? 😩🫠😅
-      </p>
-      <ul class="list-none space-y-2 mb-4 text-lg">
-        <li>❌ Kepala sekolah tiba-tiba meminta data lengkap setiap siswa: nilai, kehadiran, catatan perilaku, dan capaian pembelajaran.</li>
-        <li>❌ Rekan guru membutuhkan informasi cepat tentang perkembangan siswa, tapi sulit menemukannya secepat kilat.</li>
-        <li>❌ Orang tua siswa ingin mengetahui kemajuan belajar anaknya secara tepat dan cepat.</li>
-        <li>❌ Sering terlambat menginput nilai rapor karena data penilaian belum terorganisir dengan rapi.</li>
-      </ul>
-      <p class="mb-4 text-lg leading-relaxed">
-        Tenang, itu wajar—semua guru pasti pernah mengalaminya!
-      </p>
-      <div class="bg-yellow-200/50 rounded-lg p-4 text-gray-800">
-        <p class="text-lg font-bold">
-          ✨ Solusi: Edu-Suite i3 adalah solusi nyata, diciptakan oleh guru untuk guru. Kami hadir untuk memudahkan setiap kebutuhan administrasi dan data siswa Anda. Hanya dengan satu sentuhan, semuanya teratasi.
-        </p>
-      </div>
-    </div>
-  </div>
+  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 text-white">
+    <div class="md:w-1/2 flex justify-center">
+      <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Basri.jpg" 
+           alt="Basri, S.Pd., M.A.P - Edu-Suite i3" 
+           class="w-72 md:w-96 object-contain drop-shadow-2xl rounded-xl bg-white p-2">
+    </div>
+    <div class="md:w-1/2">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Mengapa Edu-Suite i3?</h2>
+      <p class="mb-4 text-lg leading-relaxed font-semibold">Pernahkah Anda mengalami situasi ini? 😩🫠😅</p>
+      <ul class="list-none space-y-2 mb-4 text-lg">
+        <li>❌ Kepala sekolah tiba-tiba meminta data lengkap setiap siswa: nilai, kehadiran, catatan perilaku, dan capaian pembelajaran.</li>
+        <li>❌ Rekan guru membutuhkan informasi cepat tentang perkembangan siswa, tapi sulit menemukannya secepat kilat.</li>
+        <li>❌ Orang tua siswa ingin mengetahui kemajuan belajar anaknya secara tepat dan cepat.</li>
+        <li>❌ Sering terlambat menginput nilai rapor karena data penilaian belum terorganisir dengan rapi.</li>
+      </ul>
+      <p class="mb-4 text-lg leading-relaxed">Tenang, itu wajar—semua guru pasti pernah mengalaminya!</p>
+      <div class="bg-yellow-200/50 rounded-lg p-4 text-gray-800">
+        <p class="text-lg font-bold">
+          ✨ Solusi: Edu-Suite i3 adalah solusi nyata, diciptakan oleh guru untuk guru. Kami hadir untuk memudahkan setiap kebutuhan administrasi dan data siswa Anda. Hanya dengan satu sentuhan, semuanya teratasi.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Features -->
 <section class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-12">Fitur Unggulan</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-right" data-aos-duration="1000">
-        <h3 class="text-xl font-bold mb-4">📚 Manajemen Kelas</h3>
-        <p>Atur materi, tugas, dan nilai dengan mudah dalam satu platform.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-duration="1000">
-        <h3 class="text-xl font-bold mb-4">🤖 AI Assistant</h3>
-        <p>Buat soal & materi otomatis sesuai kurikulum hanya dengan 1 klik.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-left" data-aos-duration="1000">
-        <h3 class="text-xl font-bold mb-4">📊 Analitik Belajar</h3>
-        <p>Lacak perkembangan siswa dengan laporan real-time yang mudah dipahami.</p>
-      </div>
-    </div>
-    <div class="py-8">
-      <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Kemitraan.jpeg"
-           alt="Kemitraan Edu-Suite i3 dengan berbagai perusahaan teknologi"
-           class="w-full md:w-[600px] mx-auto rounded-xl shadow-lg">
-    </div>
-  </div>
+  <div class="container mx-auto px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-12">Fitur Unggulan</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-right" data-aos-duration="1000">
+        <h3 class="text-xl font-bold mb-4">📚 Manajemen Kelas</h3>
+        <p>Atur materi, tugas, dan nilai dengan mudah dalam satu platform.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-duration="1000">
+        <h3 class="text-xl font-bold mb-4">🤖 AI Assistant</h3>
+        <p>Buat soal & materi otomatis sesuai kurikulum hanya dengan 1 klik.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl" data-aos="fade-left" data-aos-duration="1000">
+        <h3 class="text-xl font-bold mb-4">📊 Analitik Belajar</h3>
+        <p>Lacak perkembangan siswa dengan laporan real-time yang mudah dipahami.</p>
+      </div>
+    </div>
+    <div class="py-8">
+      <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Kemitraan.jpeg"
+           alt="Kemitraan Edu-Suite i3 dengan berbagai perusahaan teknologi"
+           class="w-full md:w-[600px] mx-auto rounded-xl shadow-lg">
+    </div>
+  </div>
 </section>
 
 <!-- AI Assistant Demo -->
 <section class="py-20 bg-white">
-  <div class="container mx-auto px-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-8">Coba AI Assistant</h2>
-    <div class="max-w-2xl mx-auto bg-gray-100 p-6 rounded-xl shadow-lg">
-      <textarea id="topic-input" rows="3" placeholder="Masukkan topik yang ingin Anda buat materinya (contoh: Sistem Peredaran Darah pada Manusia)" class="w-full p-3 rounded-lg border mb-4"></textarea>
-      <button id="generate-btn" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition">✨ Buat Materi</button>
-      <div id="loading-indicator" class="hidden flex justify-center items-center mt-4 text-indigo-600">
-        <svg class="animate-spin-custom h-5 w-5 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        <span>Sedang membuat materi...</span>
-      </div>
-      <div id="result-output" class="mt-4 text-gray-700 bg-white p-4 rounded-lg shadow"></div>
-    </div>
-  </div>
+  <div class="container mx-auto px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-8">Coba AI Assistant</h2>
+    <div class="max-w-2xl mx-auto bg-gray-100 p-6 rounded-xl shadow-lg">
+      <textarea id="topic-input" rows="3" placeholder="Masukkan topik yang ingin Anda buat materinya (contoh: Sistem Peredaran Darah pada Manusia)" class="w-full p-3 rounded-lg border mb-4"></textarea>
+      <button id="generate-btn" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition">✨ Buat Materi</button>
+      <div id="loading-indicator" class="hidden flex justify-center items-center mt-4 text-indigo-600">
+        <svg class="animate-spin-custom h-5 w-5 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Sedang membuat materi...</span>
+      </div>
+      <div id="result-output" class="mt-4 text-gray-700 bg-white p-4 rounded-lg shadow"></div>
+    </div>
+  </div>
 </section>
 
 <!-- Pricing -->
 <section class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-12">Penawaran Edu-Suite i3</h2>
-    <p class="text-xl font-semibold text-center mb-8">Sekali Bayar, Update Selamanya</p>
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Basic Plan Card -->
-      <div class="p-6 bg-white rounded-xl shadow-lg text-center relative overflow-hidden transform transition-transform duration-300 hover:scale-105">
-        <h3 class="text-2xl font-bold mb-4">Basic</h3>
-        <p class="text-4xl font-extrabold mb-4 text-indigo-600">Hanya Rp 99.000</p>
-        <ul class="mb-6 space-y-2 text-gray-600 text-left leading-relaxed font-semibold">
-          <li>✅ Akses semua template Google Workspace gratis</li>
-          <li>✅ Akses perangkat ajar Deep Learning</li>
-          <li>✅ Gratis Konsultasi</li>
-          <li>❌ Tanpa absensi otomatis & bimbingan intensif</li>
-          <li>✅ Sekali bayar, update selamanya</li>
-        </ul>
-        <p class="text-sm italic mt-4 text-gray-500">💡 Cocok untuk guru perorangan atau sekolah kecil</p>
-        <a href="https://wa.me/6282328888989" class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-lg mt-4 inline-block">Pilih Basic</a>
-        <p class="text-xs text-indigo-600 font-bold mt-2">Upgrade ke Pro dapat diskon Rp 20.000</p>
-      </div>
-      <!-- Pro Plan Card -->
-      <div class="p-6 bg-indigo-600 text-white rounded-xl shadow-lg text-center transform scale-105 relative overflow-hidden transition-transform duration-300 hover:scale-105">
-        <div class="absolute top-0 right-0 bg-yellow-400 text-gray-900 px-4 py-1 rounded-bl-lg font-bold text-sm transform rotate-45 translate-x-1/4 -translate-y-1/4">
-          Best Value
-        </div>
-        <h3 class="text-2xl font-bold mb-4">Pro</h3>
-        <p class="text-4xl font-extrabold mb-4 text-yellow-300">Hanya Rp 149.000</p>
-        <ul class="mb-6 space-y-2 text-left leading-relaxed font-semibold">
-          <li>✅ Semua fitur Basic</li>
-          <li>✅ Absensi otomatis siswa</li>
-          <li>✅ Dashboard progres siswa lengkap</li>
-          <li>✅ Bimbingan intensif & konsultasi personal</li>
-          <li>✅ Sekali bayar, update selamanya</li>
-        </ul>
-        <p class="text-sm italic mt-4 text-indigo-200">💡 Cocok untuk sekolah menengah atau beberapa kelas</p>
-        <a href="https://wa.me/6282328888989" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg shadow-lg font-bold mt-4 inline-block">Pilih Pro</a>
-      </div>
-      <!-- Institusi/Custom Plan Card -->
-      <div class="p-6 bg-white rounded-xl shadow-lg text-center transform transition-transform duration-300 hover:scale-105">
-        <h3 class="text-2xl font-bold mb-4">Institusi / Custom</h3>
-        <p class="text-4xl font-extrabold mb-4 text-indigo-600">Mulai dari Rp 2.500.000</p>
-        <ul class="mb-6 space-y-2 text-gray-600 text-left leading-relaxed font-semibold">
-          <li>✅ Semua fitur Pro</li>
-          <li>✅ Branding sekolah (custom portal dengan logo & identitas)</li>
-           <li>✅ Pembuatan situs website sekolah berbasis Google Site</li>
-          <li>✅ Dukungan premium (konsultasi personal, prioritas bantuan)</li>
-          <li>✅ Sekali bayar, update selamanya</li>
-        </ul>
-        <p class="text-sm italic mt-4 text-gray-500">💡 Cocok untuk sekolah besar atau lembaga pendidikan yang membutuhkan layanan penuh</p>
-        <p class="text-sm italic mt-2 font-bold text-red-500">Harga disesuaikan dengan jumlah siswa, tingkat kustomisasi, dan kesepakatan khusus</p>
-        <a href="https://wa.me/6282328888989" class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-lg mt-4 inline-block">Hubungi Kami</a>
-      </div>
-    </div>
-    <div class="mt-12 p-8 bg-white rounded-xl shadow-lg">
-      <h3 class="text-2xl font-bold text-center mb-6">💡 Keunggulan Semua Paket</h3>
-      <ul class="grid md:grid-cols-2 gap-4 text-gray-700 leading-relaxed font-semibold">
-        <li>✅ Akses perangkat ajar Deep Learning</li>
-        <li>✅ Sekali bayar, update selamanya → hemat biaya & mudah diakses kapan saja</li>
-        <li>✅ Demo gratis tersedia sebelum membeli</li>
-        <li>✅ Dukungan komunitas untuk berbagi pengalaman dan bimbingan penggunaan platform</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section class="py-20 bg-white">
-  <div class="container mx-auto px-6 text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-12">Apa Kata Guru?</h2>
-    <div class="max-w-2xl mx-auto">
-      <div class="testimonial-card active">
-        <p class="text-lg italic">"Edu-Suite i3 memudahkan saya mengajar online tanpa ribet. Siswa lebih aktif!"</p>
-        <h4 class="mt-4 font-bold">– Ibu Sari, Guru Biologi</h4>
-      </div>
-      <div class="testimonial-card">
-        <p class="text-lg italic">"Fitur AI sangat membantu buat soal dengan cepat. Hemat waktu banget!"</p>
-        <h4 class="mt-4 font-bold">– Pak Andi, Guru Matematika</h4>
-      </div>
-      <div class="flex justify-center mt-6 space-x-4">
-        <button id="prev-testimonial" class="px-4 py-2 bg-gray-200 rounded-lg transition-all duration-300 hover:bg-gray-300 hover:shadow-lg">
-          <i class="fas fa-arrow-left"></i>
-        </button>
-        <button id="next-testimonial" class="px-4 py-2 bg-gray-200 rounded-lg transition-all duration-300 hover:bg-gray-300 hover:shadow-lg">
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Channel Hub -->
-<section id="channel-hub" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6 text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-4">Lihat Saluran Resmi kami</h2>
-    <p class="text-lg mb-8">Manual out digital in, edu suite i3 wujudkan merdeka belajar dengan akun belajar.id</p>
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
-      <!-- Tombol Saluran Demo -->
-      <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" class="p-6 bg-white rounded-xl shadow-lg hover:bg-indigo-50 transition transform hover:scale-105 hover:shadow-lg">
-        <p class="text-4xl mb-2">🎁</p>
-        <p class="font-bold text-sm md:text-base">Demo Portal</p>
-      </a>
-      <!-- Tombol Saluran WhatsApp -->
-      <a href="https://wa.me/6282328888989" target="_blank" class="p-6 bg-white rounded-xl shadow-lg hover:bg-indigo-50 transition transform hover:scale-105 hover:shadow-lg">
-        <i class="fab fa-whatsapp text-4xl text-green-500 mb-2"></i>
-        <p class="font-bold text-sm md:text-base">WhatsApp Bisnis</p>
-      </a>
-      <!-- Tombol Saluran Panduan -->
-      <a href="https://edusuite.id/panduan" target="_blank" class="p-6 bg-white rounded-xl shadow-lg hover:bg-indigo-50 transition transform hover:scale-105 hover:shadow-lg">
-        <p class="text-4xl mb-2">📘</p>
-        <p class="font-bold text-sm md:text-base">Buku Panduan</p>
-      </a>
-      <!-- Tombol Saluran Harga -->
-      <a href="https://edusuite.id/harga" target="_blank" class="p-6 bg-white rounded-xl shadow-lg hover:bg-indigo-50 transition transform hover:scale-105 hover:shadow-lg">
-        <p class="text-4xl mb-2">💰</p>
-        <p class="font-bold text-sm md:text-base">Harga Paket</p>
-      </a>
-      <!-- Tombol Saluran Instagram -->
-      <a href="https://www.instagram.com/edusuitei3" target="_blank" class="p-6 bg-white rounded-xl shadow-lg hover:bg-indigo-50 transition transform hover:scale-105 hover:shadow-lg">
-        <i class="fab fa-instagram text-4xl text-pink-600 mb-2"></i>
-        <p class="font-bold text-sm md:text-base">Instagram</p>
-      </a>
-      <!-- Tombol Saluran Facebook -->
-      <a href="https://www.facebook.com/edusuitei3" target="_blank" class="p-6 bg-white rounded-xl shadow-lg hover:bg-indigo-50 transition transform hover:scale-105 hover:shadow-lg">
-        <i class="fab fa-facebook text-4xl text-blue-600 mb-2"></i>
-        <p class="font-bold text-sm md:text-base">Facebook</p>
-      </a>
-      <!-- Tombol Saluran YouTube -->
-      <a href="https://www.youtube.com/@edusuitei3channel" target="_blank" class="p-6 bg-white rounded-xl shadow-lg hover:bg-indigo-50 transition transform hover:scale-105 hover:shadow-lg">
-        <i class="fab fa-youtube text-4xl text-red-600 mb-2"></i>
-        <p class="font-bold text-sm md:text-base">YouTube</p>
-      </a>
-      <!-- Tombol Saluran TikTok -->
-      <a href="https://tiktok.com/@edusuitei3" target="_blank" class="p-6 bg-white rounded-xl shadow-lg hover:bg-indigo-50 transition transform hover:scale-105 hover:shadow-lg">
-        <i class="fab fa-tiktok text-4xl text-black mb-2"></i>
-        <p class="font-bold text-sm md:text-base">TikTok</p>
-      </a>
-      <!-- Tombol Saluran Blog -->
-      <a href="https://edusuite.id/blog" target="_blank" class="p-6 bg-white rounded-xl shadow-lg hover:bg-indigo-50 transition transform hover:scale-105 hover:shadow-lg">
-        <p class="text-4xl mb-2">📝</p>
-        <p class="font-bold text-sm md:text-base">Blog</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="py-20 bg-indigo-600 text-white text-center">
-  <h2 class="text-3xl md:text-4xl font-bold mb-6">Siap Transformasi Kelas Anda?</h2>
-  <p class="text-lg md:text-xl mb-8">Gabung sekarang dan nikmati kemudahan mengelola kelas dengan Edu-Suite i3.</p>
-  <a href="https://wa.me/6282328888989" target="_blank" class="bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 group-hover:bg-amber-500">
-    <span class="group-hover:translate-x-1 transition-transform inline-block">Gabung Sekarang</span>
-  </a>
+  <div class="container mx-auto px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-12">Penawaran Edu-Suite i3</h2>
+    <p class="text-xl font-semibold text-center mb-8">Sekali Bayar, Update Selamanya</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Basic Plan Card -->
+      <div class="p-6 bg-white rounded-xl shadow-lg text-center relative overflow-hidden transform transition-transform duration-300 hover:scale-105">
+        <h3 class="text-2xl font-bold mb-4">Basic</h3>
+        <p class="text-4xl font-extrabold mb-4 text-indigo-600">Hanya Rp 99.000</p>
+        <ul class="mb-6 space-y-2 text-gray-600 text-left leading-relaxed font-semibold">
+          <li>✅ Akses semua template Google Workspace gratis</li>
+          <li>✅ Akses perangkat ajar Deep Learning</li>
+          <li>✅ Gratis Konsultasi</li>
+          <li>❌ Tanpa absensi otomatis & bimbingan intensif</li>
+          <li>✅ Sekali bayar, update selamanya</li>
+        </ul>
+        <p class="text-sm italic mt-4 text-gray-500">💡 Cocok untuk guru perorangan atau sekolah kecil</p>
+        <a href="https://wa.me/6282328888989" target="_blank" class="mt-6 inline-block bg-indigo-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-indigo-700 transition">Pesan Sekarang</a>
+      </div>
+      <!-- Pro Plan Card -->
+      <div class="p-6 bg-white rounded-xl shadow-xl text-center relative overflow-hidden transform transition-transform duration-300 hover:scale-105 border-2 border-indigo-600">
+        <h3 class="text-2xl font-bold mb-4">Pro</h3>
+        <p class="text-4xl font-extrabold mb-4 text-indigo-600">Hanya Rp 199.000</p>
+        <ul class="mb-6 space-y-2 text-gray-600 text-left leading-relaxed font-semibold">
+          <li>✅ Semua fitur Basic</li>
+          <li>✅ Absensi otomatis & laporan real-time</li>
+          <li>✅ Akses AI Assistant & analitik siswa</li>
+          <li>✅ Konsultasi & bimbingan intensif</li>
+          <li>✅ Sekali bayar, update selamanya</li>
+        </ul>
+        <p class="text-sm italic mt-4 text-gray-500">💡 Cocok untuk guru aktif dan sekolah menengah</p>
+        <a href="https://wa.me/6282328888989" target="_blank" class="mt-6 inline-block bg-indigo-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-indigo-700 transition">Pesan Sekarang</a>
+      </div>
+      <!-- Enterprise Plan Card -->
+      <div class="p-6 bg-white rounded-xl shadow-lg text-center relative overflow-hidden transform transition-transform duration-300 hover:scale-105">
+        <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+        <p class="text-4xl font-extrabold mb-4 text-indigo-600">Hubungi Kami</p>
+        <ul class="mb-6 space-y-2 text-gray-600 text-left leading-relaxed font-semibold">
+          <li>✅ Semua fitur Pro</li>
+          <li>✅ Integrasi khusus untuk sekolah besar</li>
+          <li>✅ Pelatihan guru & workshop</li>
+          <li>✅ Dukungan teknis prioritas</li>
+          <li>✅ Sekali bayar, update selamanya</li>
+        </ul>
+        <p class="text-sm italic mt-4 text-gray-500">💡 Cocok untuk sekolah besar atau institusi pendidikan</p>
+        <a href="https://wa.me/6282328888989" target="_blank" class="mt-6 inline-block bg-indigo-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-indigo-700 transition">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Footer -->
-<footer class="py-10 bg-gray-800 text-gray-300 text-center">
-  <div class="container mx-auto px-6">
-    <p class="mb-4">© 2025 Edu-Suite i3. Semua hak cipta dilindungi.</p>
-    <div class="flex justify-center space-x-6 text-2xl">
-      <a href="https://www.instagram.com/edusuitei3" target="_blank" class="hover:text-pink-600 transition-colors">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.facebook.com/edusuitei3" target="_blank" class="hover:text-blue-600 transition-colors">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.youtube.com/@edusuitei3channel" target="_blank" class="hover:text-red-600 transition-colors">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://wa.me/6282328888989" target="_blank" class="hover:text-green-500 transition-colors">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-    </div>
-  </div>
+<footer class="bg-gray-900 text-white py-12">
+  <div class="container mx-auto px-6 text-center">
+    <p class="mb-4 font-semibold">Edu-Suite i3 © 2025</p>
+    <p>Solusi pembelajaran digital untuk guru dan sekolah di Indonesia</p>
+  </div>
 </footer>
 
+<!-- AOS Library JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({ once: true, offset: 100, duration: 1000 });
+  AOS.init({ once: true, duration: 1000 });
+</script>
 
-  // Testimonial Carousel with fade and auto-rotate
-  const testimonials = document.querySelectorAll('.testimonial-card');
-  let index = 0;
-  const updateTestimonial = () => {
-    testimonials.forEach(card => card.classList.remove('active'));
-    testimonials[index].classList.add('active');
-  };
-  document.getElementById('next-testimonial').addEventListener('click', () => {
-    index = (index + 1) % testimonials.length;
-    updateTestimonial();
-  });
-  document.getElementById('prev-testimonial').addEventListener('click', () => {
-    index = (index - 1 + testimonials.length) % testimonials.length;
-    updateTestimonial();
-  });
-  updateTestimonial(); // Initial load
-  setInterval(() => {
-    index = (index + 1) % testimonials.length;
-    updateTestimonial();
-  }, 6000); // Auto-rotate every 6 seconds
+<!-- Typing Effect Script -->
+<script>
+  const phrases = ["Transformasi Pembelajaran Digital Tanpa Ribet", "Kemudahan Data Siswa Hanya Sekali Klik", "Platform Cerdas untuk Guru Indonesia"];
+  const typedText = document.getElementById("typed-text");
+  let phraseIndex = 0, letterIndex = 0;
 
-  // AI Assistant Demo
-  const btn = document.getElementById('generate-btn');
-  const input = document.getElementById('topic-input');
-  const output = document.getElementById('result-output');
-  const loading = document.getElementById('loading-indicator');
+  function type() {
+    if(letterIndex < phrases[phraseIndex].length) {
+      typedText.textContent += phrases[phraseIndex][letterIndex];
+      letterIndex++;
+      setTimeout(type, 80);
+    } else {
+      setTimeout(erase, 2000);
+    }
+  }
 
-  btn?.addEventListener('click', () => {
-    const topic = input.value.trim();
-    if(!topic) { 
-      output.innerHTML = `<p class="text-red-500 font-bold">⚠️ Silakan masukkan topik terlebih dahulu!</p>`;
-      return; 
-    }
-    output.innerHTML = '';
-    loading.classList.remove('hidden');
-    setTimeout(() => {
-      loading.classList.add('hidden');
-      output.innerHTML = `
-        <p>Materi pembelajaran untuk topik <strong>${topic}</strong> berhasil dibuat! 🎉</p>
-        <ul class="mt-4 list-disc list-inside">
-          <li>Tujuan Pembelajaran</li>
-          <li>Langkah-Langkah Kegiatan</li>
-          <li>Latihan dan Penilaian</li>
-        </ul>
-      `;
-    }, 1500);
-  });
+  function erase() {
+    if(letterIndex > 0) {
+      typedText.textContent = phrases[phraseIndex].substring(0, letterIndex-1);
+      letterIndex--;
+      setTimeout(erase, 40);
+    } else {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      setTimeout(type, 500);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    type();
+    setTimeout(() => {
+      document.getElementById("hero-sub").classList.add("opacity-100", "transition-opacity", "duration-1000");
+      document.getElementById("hero-quote").classList.add("opacity-100", "transition-opacity", "duration-1000", "delay-500");
+      document.getElementById("hero-cta-text").classList.add("opacity-100", "transition-opacity", "duration-1000", "delay-700");
+      document.getElementById("hero-buttons").classList.add("opacity-100", "transition-opacity", "duration-1000", "delay-900");
+    }, 2000);
+  });
+</script>
+
+<!-- AI Assistant Demo Script (Placeholder) -->
+<script>
+  const generateBtn = document.getElementById("generate-btn");
+  const topicInput = document.getElementById("topic-input");
+  const outputDiv = document.getElementById("result-output");
+  const loading = document.getElementById("loading-indicator");
+
+  generateBtn.addEventListener("click", () => {
+    const topic = topicInput.value.trim();
+    if(!topic) { alert("Masukkan topik terlebih dahulu!"); return; }
+    outputDiv.innerHTML = "";
+    loading.classList.remove("hidden");
+    setTimeout(() => {
+      loading.classList.add("hidden");
+      outputDiv.innerHTML = `<strong>Materi untuk topik:</strong> ${topic}<br>✅ [Contoh konten AI Assistant untuk topik ini...]`;
+    }, 2000);
+  });
 </script>
 
 </body>

@@ -18,6 +18,16 @@
             50% { transform: scale(1.05); }
         }
         .animate-pulse-strong { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes fade-in-down {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down { animation: fade-in-down 1s ease-out forwards; }
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(-5%); }
+            50% { transform: translateY(0); }
+        }
+        .animate-bounce-slow { animation: bounce-slow 4s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -29,7 +39,8 @@
             <a href="#masalah" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white">Masalah</a>
             <a href="#fitur" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white">Fitur</a>
             <a href="#testimoni" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white">Testimoni</a>
-            <a href="#daftar" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white">Daftar</a>
+            <a href="#demo" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white">Demo</a>
+            <a href="#daftar" class="hover:underline focus:outline-none focus:ring-2 focus:ring-2 ring-white">Daftar</a>
         </div>
     </div>
 </nav>
@@ -164,6 +175,19 @@
     </div>
 </section>
 
+<section id="demo" class="py-20 bg-gray-100" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Tonton Demo Edu-Suite i3</h2>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+            Ingin melihat langsung bagaimana Edu-Suite i3 bekerja? Klik tombol di bawah untuk melihat fitur-fitur unggulannya.
+        </p>
+        <a href="https://sites.google.com/guru.sma.belajar.id/lms-edunspire/beranda" target="_blank" 
+           class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 inline-block animate-pulse-strong">
+           Lihat Demo Produk
+        </a>
+    </div>
+</section>
+
 <section id="daftar" class="py-20 bg-blue-600 text-white text-center" data-aos="fade-up">
     <div class="container mx-auto px-6">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">
@@ -195,32 +219,6 @@
         </a>
     </div>
 </section>
-<style>
-    @keyframes fade-in-down {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-in-down { animation: fade-in-down 1s ease-out forwards; }
-
-    @keyframes bounce-slow {
-        0%, 100% { transform: translateY(-5%); }
-        50% { transform: translateY(0); }
-    }
-    .animate-bounce-slow { animation: bounce-slow 4s ease-in-out infinite; }
-</style>
-    
-    @keyframes fade-in-down {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-in-down { animation: fade-in-down 1s ease-out forwards; }
-
-    @keyframes bounce-slow {
-        0%, 100% { transform: translateY(-5%); }
-        50% { transform: translateY(0); }
-    }
-    .animate-bounce-slow { animation: bounce-slow 4s ease-in-out infinite; }
-</style>
     
 <section id="faq" class="py-20 bg-white" data-aos="fade-down">
     <div class="container mx-auto px-6 max-w-3xl">
@@ -264,7 +262,7 @@
 </section>
 
 <button id="back-to-top" aria-label="Kembali ke atas" class="fixed bottom-6 right-6 p-3 bg-yellow-400 text-gray-900 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-yellow-500 opacity-0 transform scale-0">
-  ⬆️
+    ⬆️
 </button>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -296,9 +294,9 @@
         <p class="text-sm mb-4">
             💬 Tertarik mencoba Edu-Suite i3? Hubungi kami langsung melalui WhatsApp:
             <a href="https://wa.me/6282328888989?text=Halo%2C%20saya%20tertarik%20dengan%20Edu-Suite%20i3.%20Apakah%20saya%20bisa%20mendapatkan%20info%20lebih%20lanjut%20tentang%20demo%20produk%3F" 
-               target="_blank" 
-               class="text-green-400 hover:underline font-bold">
-               Chat WhatsApp Sekarang
+                target="_blank" 
+                class="text-green-400 hover:underline font-bold">
+                Chat WhatsApp Sekarang
             </a>
         </p>
         <div class="flex justify-center space-x-4 mt-4">
@@ -308,5 +306,6 @@
         </div>
     </div>
 </footer>
+
 </body>
 </html>

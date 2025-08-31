@@ -172,24 +172,21 @@
         <p class="text-lg md:text-xl mb-8">
             Kuasai fitur Google Workspace untuk meningkatkan dampak pengajaran. Hemat waktu dan perkaya pembelajaran siswa dengan alat yang mudah digunakan. Jangan lewatkan kesempatan ini!
         </p>
-
+        
         <div class="bg-white text-gray-800 rounded-xl p-6 md:p-8 shadow-2xl mx-auto max-w-sm transform transition-transform duration-500 hover:scale-105">
-            <p class="text-lg font-bold mb-2 text-red-500 line-through">
-                Harga Normal: Rp 364.000,-
-            </p>
             <p class="text-xl md:text-2xl font-bold mt-4 mb-2">
-                Biaya Spesial (Diskon 65%):
+                Biaya Normal:
             </p>
-            <p class="text-4xl md:text-5xl font-extrabold text-green-600">
-                Rp 125.000,-
+            <p class="text-4xl md:text-5xl font-extrabold text-red-600 line-through">
+                Rp 364.000,-
             </p>
             <p class="mt-4 font-medium text-gray-600">
-                Hanya untuk 10 pendaftar pertama.
+                Dapatkan diskon spesial untuk 10 pendaftar pertama!
             </p>
         </div>
-        
+
         <p class="text-lg mt-8">
-            Klik tombol di bawah untuk mendapatkan promonya dan mengamankan tempat Anda.
+            Klik tombol di bawah untuk mendapatkan harga promo dan mengamankan tempat Anda.
         </p>
 
         <a href="https://wa.me/6282328888989" target="_blank"
@@ -199,6 +196,19 @@
     </div>
 </section>
 <style>
+    @keyframes fade-in-down {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-down { animation: fade-in-down 1s ease-out forwards; }
+
+    @keyframes bounce-slow {
+        0%, 100% { transform: translateY(-5%); }
+        50% { transform: translateY(0); }
+    }
+    .animate-bounce-slow { animation: bounce-slow 4s ease-in-out infinite; }
+</style>
+    
     @keyframes fade-in-down {
         from { opacity: 0; transform: translateY(-20px); }
         to { opacity: 1; transform: translateY(0); }

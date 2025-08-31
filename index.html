@@ -34,13 +34,11 @@
 </nav>
 
 <header id="hero" class="w-full pt-16 md:pt-20">
-    <a href="https://wa.me/6282328888989" target="_blank" class="block">
-        <img 
-            src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Spanduk%20Github.png" 
-            alt="Spanduk Program Bimbingan Intensif Otomatisasi Administrasi Guru" 
-            class="w-full h-auto"
-        >
-    </a>
+    <img 
+        src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Spanduk%20Github.png" 
+        alt="Spanduk Program Bimbingan Intensif Otomatisasi Administrasi Guru" 
+        class="w-full h-auto"
+    >
 </header>
 
 <section id="tentang-kami" class="py-20 bg-white">
@@ -115,18 +113,6 @@
     </div>
 </section>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({
-        duration: 1000,
-        once: true,
-    });
-</script>
-
-</body>
-</html>
-
-<!-- MASALAH -->
 <section id="masalah" class="py-20 bg-gray-100" data-aos="fade-right">
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-12">Masalah yang Sering Dihadapi Guru</h2>
@@ -162,7 +148,6 @@
     </div>
 </section>
 
-<!-- SOLUSI -->
 <section id="solusi" class="py-20 bg-white" data-aos="fade-left">
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Solusi Praktis dengan Edu-Suite i3</h2>
@@ -172,7 +157,6 @@
     </div>
 </section>
 
-<!-- FITUR -->
 <section id="fitur" class="py-20 bg-gray-100" data-aos="zoom-in-up">
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-12">Fitur Unggulan</h2>
@@ -208,7 +192,6 @@
     </div>
 </section>
 
-<!-- TESTIMONI -->
 <section id="testimoni" class="py-20 bg-white" data-aos="fade-up">
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-12">Apa Kata Mereka?</h2>
@@ -232,7 +215,6 @@
     </div>
 </section>
 
-<!-- PENAWARAN -->
 <section id="offer" class="py-20 bg-indigo-700 text-white text-center" data-aos="fade-up">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl md:text-4xl font-bold mb-4">🎁 Penawaran Spesial Hanya untuk Anda!</h2>
@@ -254,9 +236,6 @@
   </div>
 </section>
 
-
-
-<!-- FAQ -->
 <section id="faq" class="py-20 bg-gray-100" data-aos="fade-down">
     <div class="container mx-auto px-6 max-w-3xl">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Pertanyaan yang Sering Diajukan (FAQ)</h2>
@@ -277,7 +256,6 @@
     </div>
 </section>
 
-<!-- FORMULIR & CTA -->
 <section id="kontak" class="py-20 bg-white" data-aos="fade-up">
     <div class="container mx-auto px-6 max-w-2xl text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-8">Hubungi Kami / Daftar Demo</h2>
@@ -299,41 +277,35 @@
     </div>
 </section>
 
-<!-- BUTTON BACK TO TOP -->
 <button id="back-to-top" aria-label="Kembali ke atas" class="fixed bottom-6 right-6 p-3 bg-yellow-400 text-gray-900 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-yellow-500 opacity-0 transform scale-0">
   ⬆️
 </button>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({ once: true });
+    AOS.init({ once: true });
 
-  // Tombol back-to-top
-  const backToTopButton = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-      backToTopButton.classList.remove('opacity-0','scale-0');
-      backToTopButton.classList.add('opacity-100','scale-100');
-    } else {
-      backToTopButton.classList.remove('opacity-100','scale-100');
-      backToTopButton.classList.add('opacity-0','scale-0');
-    }
-  });
-  backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    // Tombol back-to-top
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove('opacity-0','scale-0');
+            backToTopButton.classList.add('opacity-100','scale-100');
+        } else {
+            backToTopButton.classList.remove('opacity-100','scale-100');
+            backToTopButton.classList.add('opacity-0','scale-0');
+        }
+    });
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 </script>
 
-</body>
-</html>
-
-
-<!-- FOOTER -->
 <footer class="bg-gray-900 text-gray-300 py-8 text-center" data-aos="fade-up">
     <div class="container mx-auto px-6">
         <p class="mb-4">© 2025 Edu-Suite i3. All rights reserved.</p>
         <p class="text-sm mt-2 mb-4">
-            📖 Baca artikel & tips guru digital di 
+            📖 Baca artikel & tips guru digital di  
             <a href="https://dosenkren.blogspot.com/" target="_blank" class="text-yellow-400 hover:underline">Blog kami</a>
         </p>
         <p class="text-sm mb-4">
@@ -351,11 +323,5 @@
         </div>
     </div>
 </footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 1000 });
-</script>
-
 </body>
 </html>

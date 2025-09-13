@@ -97,11 +97,14 @@
             object-fit: contain;
         }
         .card-hover:hover {
-            transform: translateY(-8px) scale(1.03) rotate(-1deg);
+            transform: translateY(-8px) scale(1.03);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         .shadow-layered {
             box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 4px 8px rgba(0,0,0,0.08), 0 8px 16px rgba(0,0,0,0.10);
+        }
+        .rotate-hover:hover {
+            transform: rotate(-1deg);
         }
 
         /* Gradasi Latar Belakang untuk Setiap Bagian (Diperbarui) */
@@ -182,10 +185,10 @@
     <div class="container mx-auto px-6 hero-content fade-in flex flex-col lg:flex-row items-center justify-between">
         <div class="lg:w-1/2 text-center lg:text-left">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-            Pembelajaran Tanpa Batas <span class="gradient-text-hero"></span>
+                <span class="gradient-text-hero">Pembelajaran Tanpa Batas</span>
             </h1>
             <p class="text-lg leading-relaxed font-light mb-8 max-w-xl mx-auto lg:mx-0 text-indigo-100">
-                Akses ribuan sumber belajar, kolaborasi real-time, administrasi otomatis..
+                Akses ribuan sumber belajar, kolaborasi real-time, administrasi otomatis.
             </p>
             <a href="#daftar" class="inline-block px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-emerald-400/50 cta-glow text-xl focus:outline-none focus:ring-2 focus:ring-emerald-500">
                 🚀 Mulai Gratis Sekarang
@@ -215,7 +218,7 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Masalah Profesional Guru -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-emerald-500 hover:rotate-1 hover:border-emerald-700">
+                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in hover:shadow-2xl border-t-4 border-emerald-500 hover:rotate-hover hover:border-emerald-700">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                         <i class="fas fa-user-tie text-emerald-500 mr-3 text-3xl icon-pulse-hover"></i>
                         Masalah Profesional
@@ -227,7 +230,7 @@
                     </ul>
                 </div>
                 <!-- Tantangan dalam Mengajar -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-indigo-500 hover:scale-105 hover:border-indigo-700">
+                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in hover:shadow-2xl border-t-4 border-indigo-500 hover:scale-105 hover:border-indigo-700">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                         <i class="fas fa-chalkboard-teacher text-indigo-500 mr-3 text-3xl icon-pulse-hover"></i>
                         Tantangan Mengajar
@@ -239,7 +242,7 @@
                     </ul>
                 </div>
                 <!-- Masalah Lingkungan dan Siswa -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-orange-500 hover:rotate-1 hover:border-orange-700">
+                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in hover:shadow-2xl border-t-4 border-orange-500 hover:rotate-hover hover:border-orange-700">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                         <i class="fas fa-school text-orange-500 mr-3 text-3xl icon-pulse-hover"></i>
                         Masalah Lingkungan
@@ -261,20 +264,20 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Setiap div di bawah ini adalah kartu solusi -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-indigo-600 transition-transform duration-300 card-hover hover:shadow-2xl fade-in shadow-layered hover:scale-105">
+                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-indigo-600 transition-transform duration-300 card-hover hover:shadow-2xl fade-in hover:scale-105">
                     <h3 class="text-2xl font-bold text-gray-900 mt-2">Portal Digital Gratis</h3>
                     <p class="text-gray-700 leading-relaxed">Administrasi rapi dalam satu tempat.</p>
                 </div>
-                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-purple-600 transition-transform duration-300 card-hover hover:shadow-2xl fade-in shadow-layered hover:rotate-1">
+                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-purple-600 transition-transform duration-300 card-hover hover:shadow-2xl fade-in hover:rotate-hover">
                     <h3 class="text-2xl font-bold text-gray-900 mt-2">Bimbingan Praktis</h3>
                     <p class="text-gray-700 leading-relaxed">Panduan langkah demi langkah, bahkan untuk pemula.</p>
                 </div>
-                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-green-600 transition-transform duration-300 card-hover hover:shadow-2xl fade-in shadow-layered hover:scale-105">
+                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-green-600 transition-transform duration-300 card-hover hover:shadow-2xl fade-in hover:scale-105">
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Latihan Nyata</h3>
                     <p class="text-gray-700 leading-relaxed">Simulasi di kelas & praktik langsung.</p>
                 </div>
-                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in shadow-layered hover:rotate-1">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Desain Progresif </h3>
+                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in hover:rotate-hover">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Desain Progresif </h3>
                     <p class="text-gray-700 leading-relaxed">Portal bisa dikustomisasi agar tampil profesional.</p>
                 </div>
             </div>
@@ -289,7 +292,7 @@
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
                 <!-- Card Level 1 -->
-                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-indigo-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in shadow-layered">
+                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-indigo-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in">
                     <span class="text-5xl font-extrabold text-indigo-600 mb-4">1</span>
                     <h3 class="text-xl font-bold text-gray-900 mt-2">Level 1 (Gratis)</h3>
                     <p class="text-gray-700 leading-relaxed mb-4">Bangun portal digital administratif Anda.</p>
@@ -297,17 +300,17 @@
                     <span class="text-sm text-gray-500">per bulan</span>
                 </div>
                 <!-- Card Level 2 -->
-                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-purple-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in shadow-layered">
+                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-purple-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in">
                     <span class="absolute top-0 right-0 mt-2 mr-2 bg-gradient-to-r from-emerald-400 to-emerald-600 text-white font-bold px-3 py-1.5 rounded-full uppercase -rotate-6 text-sm">Paling Dicari</span>
                     <span class="text-5xl font-extrabold text-purple-600 mb-4">2</span>
                     <h3 class="text-xl font-bold text-gray-900 mt-2">Level 2</h3>
-                    <p class="text-700 leading-relaxed mb-4">Bimbingan langsung menguasai Google Site dan fitur dasar Google Workspace.</p>
+                    <p class="text-gray-700 leading-relaxed mb-4">Bimbingan langsung menguasai Google Site dan fitur dasar Google Workspace.</p>
                     <a href="https://wa.me/6282328888989" target="_blank" class="mt-auto inline-block px-6 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition-colors">
                         Kontak Kami
                     </a>
                 </div>
                 <!-- Card Level 3 -->
-                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-green-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in shadow-layered">
+                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-green-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in">
                     <span class="text-5xl font-extrabold text-green-600 mb-4">3</span>
                     <h3 class="text-xl font-bold text-gray-900 mt-2">Level 3</h3>
                     <p class="text-gray-700 leading-relaxed mb-4">Praktik di kelas & tangani kendala nyata dukungan penuh.</p>
@@ -316,7 +319,7 @@
                     </a>
                 </div>
                 <!-- Card Level 4 -->
-                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-yellow-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in shadow-layered">
+                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-yellow-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in">
                     <span class="text-5xl font-extrabold text-yellow-600 mb-4">4</span>
                     <h3 class="text-xl font-bold text-gray-900 mt-2">Level 4</h3>
                     <p class="text-gray-700 leading-relaxed mb-4">Desain lanjutan dengan tampilan dasboard profesional.</p>
@@ -336,7 +339,7 @@
             </h2>
             <!-- Grid responsif yang ditingkatkan -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-indigo-500 transition-transform duration-300 card-hover fade-in shadow-layered">
+                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-indigo-500 transition-transform duration-300 card-hover fade-in hover:shadow-2xl">
                     <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
                         “Awalnya saya tidak paham sama sekali Google Site, sekarang semua administrasi saya rapi hanya dengan sekali klik. Waktu saya lebih banyak untuk siswa.”
                     </p>
@@ -348,7 +351,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-purple-500 transition-transform duration-300 card-hover fade-in shadow-layered">
+                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-purple-500 transition-transform duration-300 card-hover fade-in hover:shadow-2xl">
                     <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
                         “Bimbingan e-Suite sangat praktis. Tidak hanya teori, tapi juga pendampingan ketika ada masalah nyata di kelas.”
                     </p>
@@ -360,7 +363,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-green-500 transition-transform duration-300 card-hover fade-in shadow-layered">
+                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-green-500 transition-transform duration-300 card-hover fade-in hover:shadow-2xl">
                     <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
                         “Saya merasa lebih percaya diri menggunakan teknologi di kelas setelah mengikuti bimbingan e-Suite. Siswa jadi lebih termotivasi!”
                     </p>
@@ -372,8 +375,8 @@
                         </div>
                     </div>
                 </div>
-                 <!-- Tambahan testimoni agar grid terlihat lebih seimbang -->
-                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-yellow-500 transition-transform duration-300 card-hover fade-in shadow-layered">
+                <!-- Tambahan testimoni agar grid terlihat lebih seimbang -->
+                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-yellow-500 transition-transform duration-300 card-hover fade-in hover:shadow-2xl">
                     <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
                         “Modul yang diberikan sangat relevan dengan kebutuhan kami sebagai guru. Saya bisa langsung menerapkannya di kelas tanpa kesulitan.”
                     </p>
@@ -506,6 +509,11 @@
     </section>
 </main>
 
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-4 rounded-full shadow-lg opacity-0 transform translate-y-4 hover:bg-indigo-700 transition-all duration-300 z-50">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <!-- Footer -->
 <footer class="bg-gray-900 text-gray-300 py-10">
     <div class="container mx-auto px-6">
@@ -520,167 +528,130 @@
                     <li><a href="#" class="hover:text-white transition-colors">Tentang Kami</a></li>
                     <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
                     <li><a href="https://dosenkren.blogspot.com/" class="hover:text-white transition-colors" target="_blank">Blog DosenKeren</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a></li>
-                    <li><a href="https://wa.me/6282328888989" target="_blank" class="hover:text-white transition-colors">Hubungi Kami via WhatsApp</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Kontak</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Layanan</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Bimbingan Intensif</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Konsultasi</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Pelatihan Sekolah</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-xl font-semibold text-white mb-2">Ikuti Kami</h4>
-                <div class="social-icons space-x-6 mb-4">
-                    <a href="https://www.facebook.com/edusuitei3?locale=id_ID" class="text-gray-500 hover:text-white transition-colors duration-300" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="https://www.instagram.com/basrione?igsh=YW1kamRkYTM2dmVq" class="text-gray-500 hover:text-white transition-colors duration-300" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="https://www.linkedin.com/in/basri-lopia-776a88182?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-500 hover:text-white transition-colors duration-300" target="_blank"><i class="fab fa-linkedin-in fa-lg"></i></a>
-                    <a href="https://www.youtube.com/@Edunspire" class="text-gray-500 hover:text-white transition-colors duration-300" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+                <div class="flex space-x-4 justify-center md:justify-start">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in text-xl"></i></a>
                 </div>
-                <p class="text-sm">Dapatkan update terbaru kami!</p>
             </div>
         </div>
         <div class="text-center mt-8 pt-8 border-t border-gray-700">
-            <p class="text-sm">&copy; 2025 e-Suite i3. Semua Hak Dilindungi.</p>
-            <p class="text-sm mt-1">Powered by Halo@edunspire.com</p>
+            <p class="text-sm text-gray-500">&copy; 2024 e-Suite i3. Hak Cipta Dilindungi.</p>
         </div>
     </div>
 </footer>
 
-<!-- Tombol WhatsApp Mengambang -->
-<a href="https://wa.me/6282328888989" target="_blank"
-   id="whatsappBtn"
-   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center gap-2 transition-transform duration-300 transform hover:scale-110 z-50">
-    <i class="fab fa-whatsapp fa-lg"></i>
-    <span class="hidden md:inline">Chat Kami</span>
-</a>
-
-<!-- Scroll to Top Button -->
-<button id="scrollToTopBtn" class="fixed bottom-6 left-6 p-4 rounded-full shadow-lg opacity-0 transition-all duration-300 z-50 bg-gradient-to-r from-green-500 to-emerald-600 text-white transform scale-100 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-emerald-500">
-    <i class="fas fa-arrow-up"></i>
-</button>
-
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Intersection Observer untuk animasi saat di-scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        document.querySelectorAll('.fade-in').forEach(element => {
-            observer.observe(element);
-        });
-
-        // FAQ accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                const isOpen = answer.classList.contains('open');
-
-                // Tutup semua jawaban FAQ yang terbuka
-                document.querySelectorAll('.faq-answer.open').forEach(item => {
-                    if (item !== answer) {
-                        item.classList.remove('open');
-                        const prevIcon = item.previousElementSibling.querySelector('i');
-                        if (prevIcon) {
-                           prevIcon.classList.replace('fa-minus', 'fa-plus');
-                        }
-                        item.previousElementSibling.setAttribute('aria-expanded', 'false');
-                    }
-                });
-
-                // Buka atau tutup jawaban yang diklik
-                if (isOpen) {
-                    answer.classList.remove('open');
-                    icon.classList.replace('fa-minus', 'fa-plus');
-                    button.setAttribute('aria-expanded', 'false');
-                } else {
-                    answer.classList.add('open');
-                    icon.classList.replace('fa-plus', 'fa-minus');
-                    button.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-
-        // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-        const showButton = () => {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                scrollToTopBtn.classList.remove('opacity-0');
-                scrollToTopBtn.classList.add('opacity-100');
-                scrollToTopBtn.style.transform = 'scale(1)';
-            } else {
-                scrollToTopBtn.classList.remove('opacity-100');
-                scrollToTopBtn.classList.add('opacity-0');
-                scrollToTopBtn.style.transform = 'scale(0.8)';
+    // Intersection Observer untuk animasi fade-in saat scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
             }
-        };
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
 
-        const scrollToTop = () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        };
-
-        window.addEventListener('scroll', showButton);
-        scrollToTopBtn.addEventListener('click', scrollToTop);
-    
-        // Skrip baru untuk menangani pengiriman formulir
-        const form = document.getElementById('contactForm');
-        const submitButton = document.getElementById('submitButton');
-        const formStatus = document.getElementById('form-status');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // Sembunyikan pesan status dan disable tombol
-            formStatus.classList.add('hidden');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Mengirim...';
-
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (response.ok) {
-                    formStatus.textContent = 'Pendaftaran berhasil! Terima kasih, data Anda sudah kami terima.';
-                    formStatus.classList.remove('hidden');
-                    formStatus.classList.add('show');
-                    form.reset(); // Reset form setelah sukses
-                } else {
-                    const responseData = await response.json();
-                    if (responseData.errors) {
-                        formStatus.textContent = 'Terjadi kesalahan, pastikan semua data diisi dengan benar.';
-                    } else {
-                        formStatus.textContent = 'Terjadi kesalahan saat mengirim. Silakan coba lagi.';
-                    }
-                    formStatus.classList.remove('hidden');
-                    formStatus.classList.add('show');
-                }
-            } catch (error) {
-                formStatus.textContent = 'Terjadi kesalahan jaringan. Periksa koneksi internet Anda.';
-                formStatus.classList.remove('hidden');
-                formStatus.classList.add('show');
-            } finally {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Daftar Sekarang';
+    // JavaScript untuk fungsionalitas FAQ (Akordion)
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqAnswer = button.nextElementSibling;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true' || false;
+            button.setAttribute('aria-expanded', !isExpanded);
+            
+            // Toggle the 'open' class for the answer
+            if (!isExpanded) {
+                faqAnswer.classList.add('open');
+                button.querySelector('i').classList.replace('fa-plus', 'fa-minus');
+            } else {
+                faqAnswer.classList.remove('open');
+                button.querySelector('i').classList.replace('fa-minus', 'fa-plus');
             }
         });
     });
-</script>
 
+    // JavaScript untuk tombol "Scroll to Top"
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('opacity-100', 'translate-y-0');
+            scrollToTopBtn.classList.remove('opacity-0', 'translate-y-4');
+        } else {
+            scrollToTopBtn.classList.add('opacity-0', 'translate-y-4');
+            scrollToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+        }
+    });
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // JavaScript untuk penanganan formulir
+    const form = document.getElementById('contactForm');
+    const submitButton = document.getElementById('submitButton');
+    const formStatus = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        
+        submitButton.disabled = true;
+        submitButton.textContent = 'Mengirim...';
+
+        const formData = new FormData(form);
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formStatus.textContent = 'Pendaftaran berhasil!';
+                formStatus.classList.remove('hidden', 'bg-red-100', 'border-red-400', 'text-red-700');
+                formStatus.classList.add('show', 'bg-green-100', 'border-green-400', 'text-green-700');
+                form.reset();
+            } else {
+                formStatus.textContent = 'Terjadi kesalahan. Silakan coba lagi.';
+                formStatus.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+                formStatus.classList.add('show', 'bg-red-100', 'border-red-400', 'text-red-700');
+            }
+        } catch (error) {
+            formStatus.textContent = 'Terjadi kesalahan jaringan. Silakan coba lagi.';
+            formStatus.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+            formStatus.classList.add('show', 'bg-red-100', 'border-red-400', 'text-red-700');
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Daftar Sekarang';
+        }
+    });
+
+</script>
 </body>
 </html>

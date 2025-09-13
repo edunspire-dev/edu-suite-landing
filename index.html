@@ -74,7 +74,7 @@
         .foto-guru {
             width: 200px;
             height: 200px;
-            object-fit: cover;
+            object-fit: contain; /* Mengubah dari 'cover' menjadi 'contain' agar foto tidak terpotong */
         }
     </style>
 </head>
@@ -156,7 +156,7 @@
                     <p class="text-gray-700 leading-relaxed">Administrasi rapi dalam satu tempat.</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-purple-600 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl fade-in">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Bimbingan Praktis</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-2">Bimbingan Praktis</h3>
                     <p class="text-gray-700 leading-relaxed">Panduan langkah demi langkah, bahkan untuk pemula.</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-green-600 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl fade-in">
@@ -433,12 +433,14 @@
 
 <!-- Tombol WhatsApp Mengambang -->
 <a href="https://wa.me/6282328888989" target="_blank"
-   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center transition-transform duration-300 transform hover:scale-110 z-50">
+   id="whatsappBtn"
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center gap-2 transition-transform duration-300 transform hover:scale-110 z-50">
     <i class="fab fa-whatsapp fa-lg"></i>
+    <span class="font-semibold">Hubungi Kami</span>
 </a>
 
 <!-- Scroll to Top Button -->
-<button id="scrollToTopBtn" class="fixed bottom-6 right-20 p-4 rounded-full shadow-lg opacity-0 transition-all duration-300 z-50 bg-gradient-to-r from-green-500 to-emerald-600 text-white transform scale-100 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+<button id="scrollToTopBtn" class="fixed bottom-6 left-6 p-4 rounded-full shadow-lg opacity-0 transition-all duration-300 z-50 bg-gradient-to-r from-green-500 to-emerald-600 text-white transform scale-100 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-emerald-500">
     <i class="fas fa-arrow-up"></i>
 </button>
 

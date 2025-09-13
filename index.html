@@ -148,6 +148,7 @@
         @keyframes iconBounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
         }
         .icon-rotate-hover:hover {
             animation: iconRotate 0.5s ease;
@@ -279,7 +280,7 @@
                     <span class="absolute top-0 right-0 mt-2 mr-2 bg-gradient-to-r from-emerald-400 to-emerald-600 text-white font-bold px-3 py-1.5 rounded-full uppercase -rotate-6 text-sm">Paling Dicari</span>
                     <span class="text-5xl font-extrabold text-purple-600 mb-4">2</span>
                     <h3 class="text-xl font-bold text-gray-900 mt-2">Level 2</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">Bimbingan langsung kuasai Google Site.</p>
+                    <p class="text-700 leading-relaxed mb-4">Bimbingan langsung menguasai Google Site dan fitur dasar Google Workspace.</p>
                     <a href="https://wa.me/6282328888989" target="_blank" class="mt-auto inline-block px-6 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition-colors">
                         Kontak Kami
                     </a>
@@ -288,7 +289,7 @@
                 <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-green-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in shadow-layered">
                     <span class="text-5xl font-extrabold text-green-600 mb-4">3</span>
                     <h3 class="text-xl font-bold text-gray-900 mt-2">Level 3</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">Praktik di kelas & tangani kendala nyata.</p>
+                    <p class="text-gray-700 leading-relaxed mb-4">Praktik di kelas & tangani kendala nyata dukungan penuh.</p>
                     <a href="https://wa.me/6282328888989" target="_blank" class="mt-auto inline-block px-6 py-3 bg-green-600 text-white font-semibold rounded-full shadow-md hover:bg-green-700 transition-colors">
                         Kontak Kami
                     </a>
@@ -297,7 +298,7 @@
                 <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-yellow-500 transition-transform duration-300 card-hover hover:shadow-2xl fade-in shadow-layered">
                     <span class="text-5xl font-extrabold text-yellow-600 mb-4">4</span>
                     <h3 class="text-xl font-bold text-gray-900 mt-2">Level 4</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">Desain lanjutan dengan tampilan profesional.</p>
+                    <p class="text-gray-700 leading-relaxed mb-4">Desain lanjutan dengan tampilan dasboard profesional.</p>
                     <a href="https://wa.me/6282328888989" target="_blank" class="mt-auto inline-block px-6 py-3 bg-yellow-600 text-white font-semibold rounded-full shadow-md hover:bg-yellow-700 transition-colors">
                         Kontak Kami
                     </a>
@@ -374,18 +375,15 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                     🌟 Kisah Kami, Solusi Anda
                 </h2>
-                <p class="text-lg leading-relaxed text-gray-700 mb-4 max-w-2xl">
-                    <b>Didirikan oleh Basri, S.Pd, M.A.P.</b>, seorang praktisi pendidikan yang memahami tantangan guru dari akar rumput.
+                <!-- Konten Kisah Kami yang Diperbarui -->
+                <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Basri%20S.Pd.png" alt="Foto Basri, S.Pd., M.A.P." class="w-[200px] h-[200px] object-cover rounded-full mx-auto mb-4 shadow-lg transition-transform duration-300 transform hover:scale-105">
+                <p class="text-2xl font-bold text-gray-900 mt-4 mb-2">Basri, S.Pd., M.A.P.</p>
+                <p class="text-lg leading-relaxed text-gray-700 italic max-w-2xl mb-6">
+                    “Kami menghadirkan solusi yang bukan sekadar teknologi. Setiap fitur lahir dari pengalaman nyata di lapangan, untuk membantu guru mengajar lebih mudah, efisien, dan inovatif di era digital modern.”
                 </p>
-                <!-- Gambar Basri S.Pd. dipindahkan ke sini -->
-                <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Basri%20S.Pd.png"
-                    alt="Basri S.Pd, M.A.P., pendiri e-Suite i3"
-                    width="200"
-                    height="200"
-                    class="foto-guru mx-auto mt-4 mb-6 rounded-xl shadow-xl ring-4 ring-gray-200 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl"
-                    loading="lazy">
-                <ul class="list-disc list-inside space-y-2 text-lg leading-relaxed text-gray-700 text-left max-w-2xl">
-                    <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i> Guru sejak 2006, dari sekolah terpencil hingga SMA negeri.</li>
+                <!-- Daftar pencapaian tetap ada -->
+                <ul class="list-none space-y-2 text-lg leading-relaxed text-gray-700 text-left max-w-2xl">
+                    <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i> Guru sejak 2006, dari sekolah SD 3T hingga SMA Negeri sampai Sekarang.</li>
                     <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i> Aktif di Pendidikan Jarak Jauh sejak 2013, mengelola ribuan mahasiswa.</li>
                     <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i> Koordinator P5, mengelola modul & penilaian 820+ siswa.</li>
                     <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i> Google for Education Certified (2025).</li>
@@ -514,7 +512,7 @@
         </div>
         <div class="text-center mt-8 pt-8 border-t border-gray-700">
             <p class="text-sm">&copy; 2025 e-Suite i3. Semua Hak Dilindungi.</p>
-            <p class="text-sm mt-1">Dibuat dengan ❤️ oleh [Nama atau Organisasi Anda].</p>
+            <p class="text-sm mt-1">Dibuat dengan ❤️ oleh Rumah digital ID.</p>
         </div>
     </div>
 </footer>

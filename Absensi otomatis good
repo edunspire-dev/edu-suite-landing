@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Absensi Digital - Lebih Mudah dan Efisien</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .sticky-column {
+            position: sticky;
+            left: 0;
+            background-color: white;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-indigo-500 to-indigo-700 text-white py-20 overflow-hidden rounded-bl-[4rem]">
+        <div class="absolute inset-0 bg-[url('https://placehold.co/1920x1080/4F46E5/FFFFFF')] opacity-10 blur-sm"></div>
+        <div class="relative container mx-auto px-6 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 animate-bounce-y">Sistem Absensi Digital </h1>
+            <p class="text-lg sm:text-xl mb-8 max-w-2xl mx-auto">Kelola absensi siswa dengan mudah, efisien, dan modern. Tidak perlu lagi kertas, semua dalam genggaman Anda.</p>
+            <form id="lead-form" class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <input type="email" aria-label="Masukkan email Anda" placeholder="Masukkan email Anda" class="w-full sm:flex-1 p-3 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition duration-300" required>
+                <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    Mulai Gratis
+                </button>
+            </form>
+            <p id="confirmation-message" class="mt-4 text-green-300 font-medium hidden">Terima kasih, data Anda telah kami terima!</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white fade-in-section rounded-t-3xl -mt-8 relative z-10 shadow-lg">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-900">Fitur Utama</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="p-8 bg-gray-100 rounded-2xl shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-5xl mb-4 text-indigo-500">
+                        <!-- SVG for QR Code -->
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Absensi Cepat</h3>
+                    <p class="text-gray-600">Siswa cukup memindai QR code untuk absen. Cepat dan anti-curang.</p>
+                </div>
+                <div class="p-8 bg-gray-100 rounded-2xl shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-5xl mb-4 text-indigo-500">
+                         <!-- SVG for Analytics -->
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Laporan Real-time</h3>
+                    <p class="text-gray-600">Pantau data absensi secara real-time dari dashboard yang intuitif.</p>
+                </div>
+                <div class="p-8 bg-gray-100 rounded-2xl shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-5xl mb-4 text-indigo-500">
+                         <!-- SVG for Data Storage -->
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h-4v4m0 0v-4m0 4l-4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Data Aman</h3>
+                    <p class="text-gray-600">Semua data tersimpan dengan aman di cloud, bisa diakses kapan saja.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Example Section -->
+    <section class="py-16 bg-gray-50 fade-in-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">Contoh Tampilan Tabel Absensi</h2>
+            <div class="bg-white rounded-3xl shadow-lg p-6 lg:p-12 overflow-x-auto">
+                <table id="attendance-table" class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="sticky-column px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Siswa</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="sticky-column px-6 py-4 whitespace-nowrap">John Doe</td>
+                        </tr>
+                        <tr>
+                            <td class="sticky-column px-6 py-4 whitespace-nowrap">Jane Smith</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-indigo-50 fade-in-section">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-900">Apa Kata Mereka?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-md p-8">
+                    <p class="text-gray-600 italic mb-4">"Sistem ini sangat membantu kami mengelola absensi kelas. Lebih cepat dan akurat!"</p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://placehold.co/40x40/E879F9/FFFFFF?text=A" alt="Foto Andre" class="w-10 h-10 rounded-full mr-4">
+                        <span class="font-semibold text-gray-900">Andre, Guru Fisika</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md p-8">
+                    <p class="text-gray-600 italic mb-4">"Sekarang kami tidak perlu lagi mencatat manual. Laporan bisa langsung diakses dari HP. Sangat praktis!"</p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://placehold.co/40x40/E879F9/FFFFFF?text=B" alt="Foto Budi" class="w-10 h-10 rounded-full mr-4">
+                        <span class="font-semibold text-gray-900">Budi, Admin Sekolah</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50 fade-in-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Pertanyaan Sering Diajukan</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-md">
+                    <h3 class="font-semibold text-xl mb-2">Bagaimana cara memulai?</h3>
+                    <p class="text-gray-600">Anda cukup mendaftar dengan email dan Anda bisa langsung menggunakan sistem ini secara gratis.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md">
+                    <h3 class="font-semibold text-xl mb-2">Apakah sistem ini aman?</h3>
+                    <p class="text-gray-600">Ya, kami menggunakan enkripsi standar industri dan data Anda tersimpan di server aman.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md">
+                    <h3 class="font-semibold text-xl mb-2">Apakah ada biaya tersembunyi?</h3>
+                    <p class="text-gray-600">Tidak ada. Versi gratis kami sudah cukup untuk kebutuhan dasar Anda. Jika Anda ingin fitur lebih, ada opsi upgrade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="bg-gradient-to-br from-indigo-500 to-indigo-700 text-white py-16 text-center rounded-t-[4rem] relative z-0">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4">Siap Mencoba?</h2>
+            <p class="text-lg mb-8">Dapatkan kemudahan mengelola absensi sekarang juga. Mulai gratis, tanpa kartu kredit.</p>
+            <form id="final-form" class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <input type="email" aria-label="Masukkan email Anda" placeholder="Masukkan email Anda" class="w-full sm:flex-1 p-3 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition duration-300" required>
+                <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    Mulai Sekarang
+                </button>
+            </form>
+            <p id="final-confirmation-message" class="mt-4 text-green-300 font-medium hidden">Berhasil terkirim!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-6 text-center">
+        <p>&copy; 2024 Absensi Digital. Semua Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Script untuk form submission
+            const leadForm = document.getElementById('lead-form');
+            const finalForm = document.getElementById('final-form');
+            const confirmationMessage = document.getElementById('confirmation-message');
+            const finalConfirmationMessage = document.getElementById('final-confirmation-message');
+
+            const handleFormSubmit = (event, messageElement) => {
+                event.preventDefault();
+                messageElement.classList.remove('hidden');
+                setTimeout(() => {
+                    messageElement.classList.add('hidden');
+                }, 3000); // Hide after 3 seconds
+                event.target.reset(); // Reset the form
+            };
+
+            leadForm.addEventListener('submit', (e) => handleFormSubmit(e, confirmationMessage));
+            finalForm.addEventListener('submit', (e) => handleFormSubmit(e, finalConfirmationMessage));
+
+            // Script untuk mengisi tabel absensi secara dinamis
+            const populateAttendanceTable = () => {
+                const table = document.getElementById('attendance-table');
+                const theadRow = table.querySelector('thead tr');
+                const tbody = table.querySelector('tbody');
+
+                const today = new Date();
+                const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+
+                // Clear existing headers except the first one
+                while (theadRow.children.length > 1) {
+                    theadRow.removeChild(theadRow.lastChild);
+                }
+
+                // Create day headers
+                for (let i = 1; i <= daysInMonth; i++) {
+                    const th = document.createElement('th');
+                    th.scope = 'col';
+                    th.className = 'px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider';
+                    th.textContent = `${i}`;
+                    theadRow.appendChild(th);
+                }
+            };
+
+            populateAttendanceTable();
+
+            // Script untuk animasi fade-in saat scroll
+            const fadeInSections = document.querySelectorAll('.fade-in-section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeInSections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

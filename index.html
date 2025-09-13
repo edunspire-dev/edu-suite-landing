@@ -165,6 +165,13 @@
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
+        .form-message {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .form-message.show {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -455,7 +462,7 @@
             <p class="text-lg mb-8 max-w-2xl mx-auto text-gray-300">
                 Isi data berikut untuk mendaftar program bimbingan intensif otomatisasi administrasi guru. Gratis untuk 50 pendaftar pertama!
             </p>
-            <form action="https://formspree.io/f/yourformid" method="POST" class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg text-left">
+            <form id="contactForm" action="https://formspree.io/f/xkgvekpd" method="POST" class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg text-left">
                 <!-- PENTING: Ganti 'yourformid' dengan ID Formspree Anda -->
                 <div class="mb-4">
                     <label for="nama" class="block font-semibold mb-2 text-gray-800">Nama Lengkap</label>
@@ -473,10 +480,14 @@
                     <label for="sekolah" class="block font-semibold mb-2 text-gray-800">Sekolah</label>
                     <input type="text" name="sekolah" id="sekolah" required class="w-full border border-gray-300 rounded px-4 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
                 </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 cta-glow focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                <button type="submit" id="submitButton" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 cta-glow focus:outline-none focus:ring-2 focus:ring-emerald-500">
                     Daftar Sekarang
                 </button>
             </form>
+            <div id="form-status" class="form-message mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg shadow-md max-w-xl mx-auto hidden" role="alert">
+                <p class="font-semibold">Pendaftaran berhasil!</p>
+                <p class="text-sm mt-1">Terima kasih, data Anda sudah kami terima.</p>
+            </div>
         </div>
     </section>
 </main>
@@ -604,6 +615,56 @@
 
         window.addEventListener('scroll', showButton);
         scrollToTopBtn.addEventListener('click', scrollToTop);
+    
+        // Skrip baru untuk menangani pengiriman formulir
+        const form = document.getElementById('contactForm');
+        const submitButton = document.getElementById('submitButton');
+        const formStatus = document.getElementById('form-status');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Sembunyikan pesan status dan disable tombol
+            formStatus.classList.add('hidden');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Mengirim...';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = 'Pendaftaran berhasil! Terima kasih, data Anda sudah kami terima.';
+                    formStatus.classList.remove('hidden');
+                    formStatus.classList.add('show');
+                    form.reset(); // Reset form setelah sukses
+                } else {
+                    const responseData = await response.json();
+                    if (responseData.errors) {
+                        formStatus.textContent = 'Terjadi kesalahan, pastikan semua data diisi dengan benar.';
+                    } else {
+                        formStatus.textContent = 'Terjadi kesalahan saat mengirim. Silakan coba lagi.';
+                    }
+                    formStatus.classList.remove('hidden');
+                    formStatus.classList.add('show');
+                }
+            } catch (error) {
+                formStatus.textContent = 'Terjadi kesalahan jaringan. Periksa koneksi internet Anda.';
+                formStatus.classList.remove('hidden');
+                formStatus.classList.add('show');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Daftar Sekarang';
+            }
+        });
     });
 </script>
 

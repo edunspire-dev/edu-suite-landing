@@ -59,6 +59,17 @@
         .navbar-scrolled .navbar-link {
             color: #4c1d95; /* Ungu tua */
         }
+        /* FAQ Interaksi */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding: 0 1.5rem;
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Nilai besar agar konten terlihat */
+            padding: 1rem 1.5rem;
+        }
     </style>
 </head>
 
@@ -94,264 +105,257 @@
     </div>
 </nav>
 
-<!-- Hero Section -->
-<header id="hero" class="text-white py-20 md:py-32 shadow-lg hero-gradient-bg">
-    <div class="container mx-auto px-6 fade-in flex flex-col-reverse lg:flex-row items-center justify-between">
-        <div class="lg:w-1/2 text-center lg:text-left mt-12 lg:mt-0">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-                Ubah Administrasi <br> <span class="text-emerald-300">Jadi Mudah.</span>
-            </h1>
-            <p class="text-lg leading-relaxed font-light mb-8 max-w-xl mx-auto lg:mx-0 text-indigo-100">
-                e-Suite i3 membantu guru mengotomatisasi administrasi agar lebih fokus mengajar siswa.
-            </p>
-            <a href="https://forms.gle/9v6oHuF69QUq8QEf9" target="_blank" class="inline-block px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-emerald-400/50 cta-glow text-xl focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                🚀 Mulai Gratis Sekarang
-            </a>
-            <p class="mt-4 text-sm opacity-80 text-gray-200">
-                ✅ Gratis &nbsp; | &nbsp; 🔒 Aman &nbsp; | &nbsp; Tanpa biaya tersembunyi
-            </p>
-        </div>
-        <div class="lg:w-1/2 flex justify-center lg:justify-end fade-in">
-            <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Hero%20page.webp.jpeg"
-                alt="Solusi Digital Guru"
-                class="rounded-xl shadow-lg w-full h-auto max-w-lg"
-                loading="lazy"
-                decoding="async">
-        </div>
-    </div>
-</header>
-
 <main>
-   <!-- Masalah Guru Section -->
-<section id="masalah" class="py-16 md:py-24 bg-gradient-problem">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            <i class="fas fa-exclamation-triangle text-yellow-500 mr-3 transition-transform icon-pulse-hover"></i> Masalah yang Dihadapi Guru
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Masalah Profesional Guru -->
-            <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-emerald-500 hover:rotate-1 hover:border-emerald-700">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                    <i class="fas fa-user-tie text-emerald-500 mr-3 text-3xl icon-pulse-hover"></i>
-                    Masalah Profesional
-                </h3>
-                <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
-                    <li><i class="fas fa-chart-line text-emerald-500 mr-3"></i> <b>Kompetensi</b>: Rendahnya kompetensi dan motivasi untuk terus belajar.</li>
-                    <li><i class="fas fa-hand-holding-usd text-teal-500 mr-3"></i> <b>Kesejahteraan</b>: Kesejahteraan rendah memengaruhi motivasi dan kualitas kerja.</li>
-                    <li><i class="fas fa-file-alt text-cyan-500 mr-3"></i> <b>Beban Administratif</b>: Tugas administratif berat mengurangi fokus mengajar.</li>
-                </ul>
+    <!-- Hero Section -->
+    <header id="hero" class="text-white py-20 md:py-32 shadow-lg hero-gradient-bg">
+        <div class="container mx-auto px-6 fade-in flex flex-col-reverse lg:flex-row items-center justify-between">
+            <div class="lg:w-1/2 text-center lg:text-left mt-12 lg:mt-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+                    Ubah Administrasi <br> <span class="text-emerald-300">Jadi Mudah.</span>
+                </h1>
+                <p class="text-lg leading-relaxed font-light mb-8 max-w-xl mx-auto lg:mx-0 text-indigo-100">
+                    e-Suite i3 membantu guru mengotomatisasi administrasi agar lebih fokus mengajar siswa.
+                </p>
+                <a href="#daftar" class="inline-block px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-emerald-400/50 cta-glow text-xl focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    🚀 Mulai Gratis Sekarang
+                </a>
+                <p class="mt-4 text-sm opacity-80 text-gray-200">
+                    ✅ Gratis &nbsp; | &nbsp; 🔒 Aman &nbsp; | &nbsp; Tanpa biaya tersembunyi
+                </p>
             </div>
-
-            <!-- Tantangan dalam Mengajar -->
-            <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-indigo-500 hover:scale-105 hover:border-indigo-700">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                    <i class="fas fa-chalkboard-teacher text-indigo-500 mr-3 text-3xl icon-pulse-hover"></i>
-                    Tantangan Mengajar
-                </h3>
-                <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
-                    <li><i class="fas fa-users text-indigo-500 mr-3"></i> <b>Keberagaman Siswa</b>: Kesulitan menyesuaikan metode dengan karakteristik siswa yang beragam.</li>
-                    <li><i class="fas fa-lightbulb text-purple-500 mr-3"></i> <b>Kreativitas Metode</b>: Kurangnya ide kreatif dalam mencoba metode baru.</li>
-                    <li><i class="fas fa-child text-pink-500 mr-3"></i> <b>Pengembangan Karakter</b>: Membentuk karakter siswa sulit karena pengaruh lingkungan luar.</li>
-                </ul>
+            <div class="lg:w-1/2 flex justify-center lg:justify-end fade-in">
+                <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Hero%20page.webp.jpeg"
+                    alt="Solusi Digital Guru"
+                    class="rounded-xl shadow-lg w-full h-auto max-w-lg"
+                    loading="lazy"
+                    decoding="async">
             </div>
-
-            <!-- Masalah Lingkungan dan Siswa -->
-            <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-orange-500 hover:rotate-1 hover:border-orange-700">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                    <i class="fas fa-school text-orange-500 mr-3 text-3xl icon-pulse-hover"></i>
-                    Masalah Lingkungan
-                </h3>
-                <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
-                    <li><i class="fas fa-building text-orange-500 mr-3"></i> <b>Infrastruktur</b>: Keterbatasan sarana prasarana dan fasilitas sekolah.</li>
-                    <li><i class="fas fa-globe text-blue-500 mr-3"></i> <b>Pembelajaran Daring</b>: Akses internet terbatas dan motivasi siswa menurun.</li>
-                </ul>
-            </div>
-
-            <!-- Distribusi dan Ketersediaan Guru -->
-            <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-red-500 hover:scale-105 hover:border-red-700">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                    <i class="fas fa-users text-red-500 mr-3 text-3xl icon-pulse-hover"></i>
-                    Distribusi Guru
-                </h3>
-                <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
-                    <li><i class="fas fa-map-marker-alt text-red-500 mr-3"></i> <b>Distribusi Tidak Merata</b>: Ada kekurangan guru di daerah terpencil, perbatasan, dan kepulauan, sementara di daerah lain terjadi kelebihan guru.</li>
-                    <li><i class="fas fa-user-slash text-red-500 mr-3"></i> <b>Kekurangan Guru</b>: Terjadi karena minat profesi rendah dan banyak guru pensiun setiap tahunnya.</li>
-                    <li><i class="fas fa-file-alt text-red-500 mr-3"></i> <b>Pendataan Tidak Akurat</b>: Sulit mendapatkan data jumlah guru karena sering terjadi perubahan data.</li>
-                </ul>
-            </div>
-
         </div>
-    </div>
-</section>
+    </header>
+
+    <!-- Masalah Guru Section -->
+    <section id="masalah" class="py-16 md:py-24 bg-gradient-problem">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                <i class="fas fa-exclamation-triangle text-yellow-500 mr-3 transition-transform icon-pulse-hover"></i> Masalah yang Dihadapi Guru
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Masalah Profesional Guru -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-emerald-500 hover:rotate-1 hover:border-emerald-700">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-user-tie text-emerald-500 mr-3 text-3xl icon-pulse-hover"></i>
+                        Masalah Profesional
+                    </h3>
+                    <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
+                        <li><i class="fas fa-chart-line text-emerald-500 mr-3"></i> <b>Kompetensi</b>: Rendahnya kompetensi dan motivasi untuk terus belajar.</li>
+                        <li><i class="fas fa-hand-holding-usd text-teal-500 mr-3"></i> <b>Kesejahteraan</b>: Kesejahteraan rendah memengaruhi motivasi dan kualitas kerja.</li>
+                        <li><i class="fas fa-file-alt text-cyan-500 mr-3"></i> <b>Beban Administratif</b>: Tugas administratif berat mengurangi fokus mengajar.</li>
+                    </ul>
+                </div>
+
+                <!-- Tantangan dalam Mengajar -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-indigo-500 hover:scale-105 hover:border-indigo-700">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-chalkboard-teacher text-indigo-500 mr-3 text-3xl icon-pulse-hover"></i>
+                        Tantangan Mengajar
+                    </h3>
+                    <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
+                        <li><i class="fas fa-users text-indigo-500 mr-3"></i> <b>Keberagaman Siswa</b>: Kesulitan menyesuaikan metode dengan karakteristik siswa yang beragam.</li>
+                        <li><i class="fas fa-lightbulb text-purple-500 mr-3"></i> <b>Kreativitas Metode</b>: Kurangnya ide kreatif dalam mencoba metode baru.</li>
+                        <li><i class="fas fa-child text-pink-500 mr-3"></i> <b>Pengembangan Karakter</b>: Membentuk karakter siswa sulit karena pengaruh lingkungan luar.</li>
+                    </ul>
+                </div>
+
+                <!-- Masalah Lingkungan dan Siswa -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-orange-500 hover:rotate-1 hover:border-orange-700">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-school text-orange-500 mr-3 text-3xl icon-pulse-hover"></i>
+                        Masalah Lingkungan
+                    </h3>
+                    <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
+                        <li><i class="fas fa-building text-orange-500 mr-3"></i> <b>Infrastruktur</b>: Keterbatasan sarana prasarana dan fasilitas sekolah.</li>
+                        <li><i class="fas fa-globe text-blue-500 mr-3"></i> <b>Pembelajaran Daring</b>: Akses internet terbatas dan motivasi siswa menurun.</li>
+                    </ul>
+                </div>
+
+                <!-- Distribusi dan Ketersediaan Guru -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-red-500 hover:scale-105 hover:border-red-700">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-users text-red-500 mr-3 text-3xl icon-pulse-hover"></i>
+                        Distribusi Guru
+                    </h3>
+                    <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
+                        <li><i class="fas fa-map-marker-alt text-red-500 mr-3"></i> <b>Distribusi Tidak Merata</b>: Ada kekurangan guru di daerah terpencil, perbatasan, dan kepulauan, sementara di daerah lain terjadi kelebihan guru.</li>
+                        <li><i class="fas fa-user-slash text-red-500 mr-3"></i> <b>Kekurangan Guru</b>: Terjadi karena minat profesi rendah dan banyak guru pensiun setiap tahunnya.</li>
+                        <li><i class="fas fa-file-alt text-red-500 mr-3"></i> <b>Pendataan Tidak Akurat</b>: Sulit mendapatkan data jumlah guru karena sering terjadi perubahan data.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Solusi Kami Section -->
-<section id="solusi" class="py-16 md:py-24 bg-gradient-solusi">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-      💡 Solusi Kami: e-Suite i3
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-      <!-- Level 1 -->
-      <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-indigo-600 transition-transform duration-300 card-hover hover:shadow-2xl hover:scale-105">
-        <h3 class="text-2xl font-bold text-gray-900 mt-2">Level 1: Portal Digital Gratis</h3>
-        <p class="text-gray-700 leading-relaxed">
-          Bangun portal Google Site sederhana untuk administrasi dasar. Cocok untuk pemula.
-        </p>
-      </div>
-
-      <!-- Level 2 -->
-      <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-purple-600 transition-transform duration-300 card-hover hover:shadow-2xl hover:rotate-1">
-        <h3 class="text-2xl font-bold text-gray-900 mt-2">Level 2: Bimbingan Praktis</h3>
-        <p class="text-gray-700 leading-relaxed">
-          Pelajari Google Workspace dasar dengan panduan langkah demi langkah & praktik terarah.
-        </p>
-      </div>
-
-      <!-- Level 3 -->
-      <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-green-600 transition-transform duration-300 card-hover hover:shadow-2xl hover:scale-105">
-        <h3 class="text-2xl font-bold text-gray-900 mb-2">Level 3: Latihan Nyata</h3>
-        <p class="text-gray-700 leading-relaxed">
-          Simulasi langsung di kelas, menghadapi kendala nyata dengan dukungan mentor.
-        </p>
-      </div>
-
-      <!-- Level 4 -->
-      <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500 transition-transform duration-300 card-hover hover:shadow-2xl hover:rotate-1">
-        <h3 class="text-2xl font-bold text-gray-900 mb-2">Level 4: Desain Progresif</h3>
-        <p class="text-gray-700 leading-relaxed">
-          Kustomisasi portal dengan desain profesional & dashboard digital terintegrasi.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
+    <section id="solusi" class="py-16 md:py-24 bg-gradient-solusi">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                💡 Solusi Kami: e-Suite i3
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Level 1 -->
+                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-indigo-600 transition-transform duration-300 card-hover hover:shadow-2xl hover:scale-105 fade-in">
+                    <h3 class="text-2xl font-bold text-gray-900 mt-2">Level 1: Portal Digital Gratis</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Bangun portal Google Site sederhana untuk administrasi dasar. Cocok untuk pemula.
+                    </p>
+                </div>
+                <!-- Level 2 -->
+                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-purple-600 transition-transform duration-300 card-hover hover:shadow-2xl hover:rotate-1 fade-in">
+                    <h3 class="text-2xl font-bold text-gray-900 mt-2">Level 2: Bimbingan Praktis</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pelajari Google Workspace dasar dengan panduan langkah demi langkah & praktik terarah.
+                    </p>
+                </div>
+                <!-- Level 3 -->
+                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-green-600 transition-transform duration-300 card-hover hover:shadow-2xl hover:scale-105 fade-in">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Level 3: Latihan Nyata</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Simulasi langsung di kelas, menghadapi kendala nyata dengan dukungan mentor.
+                    </p>
+                </div>
+                <!-- Level 4 -->
+                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500 transition-transform duration-300 card-hover hover:shadow-2xl hover:rotate-1 fade-in">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Level 4: Desain Progresif</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Kustomisasi portal dengan desain profesional & dashboard digital terintegrasi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Section Produk Kami -->
     <section id="produk" class="py-16 md:py-24 bg-gray-50">
-      <div class="container mx-auto px-6">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-          📱 Produk Kami: e-Suite i3
-        </h2>
-    
-        <!-- Item 1: Tampilan Site di HP -->
-        <div class="flex flex-col lg:flex-row items-center mb-16 gap-8">
-          <div class="lg:w-1/2">
-            <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Tampilan%20HP.webp.jpg" 
-                 alt="Tampilan Site di HP" 
-                 class="rounded-xl shadow-lg w-full h-auto">
-          </div>
-          <div class="lg:w-1/2 text-center lg:text-left">
-            <h3 class="text-2xl font-bold mb-4">Tampilan Site di HP</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Portal e-Suite i3 sepenuhnya responsif di perangkat mobile. Guru dapat mengakses materi, absensi, dan progres siswa dari HP kapan saja.
-            </p>
-          </div>
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                📱 Produk Kami: e-Suite i3
+            </h2>
+            
+            <!-- Item 1: Tampilan Site di HP -->
+            <div class="flex flex-col lg:flex-row items-center mb-16 gap-8 fade-in">
+                <div class="lg:w-1/2">
+                    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Tampilan%20HP.webp.jpg" 
+                         alt="Tampilan Site di HP" 
+                         class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h3 class="text-2xl font-bold mb-4">Tampilan Site di HP</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Portal e-Suite i3 sepenuhnya responsif di perangkat mobile. Guru dapat mengakses materi, absensi, dan progres siswa dari HP kapan saja.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Item 2: Materi di Site (zig-zag) -->
+            <div class="flex flex-col lg:flex-row-reverse items-center mb-16 gap-8 fade-in">
+                <div class="lg:w-1/2">
+                    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Contoh%20Materi.webp.jpg" 
+                         alt="Materi di Site" 
+                         class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h3 class="text-2xl font-bold mb-4">Materi di Site</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Guru dapat mengunggah dan mengatur materi pembelajaran di portal, sehingga siswa mudah mengakses materi yang dibutuhkan.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Item 3: Dashboard Update Absensi -->
+            <div class="flex flex-col lg:flex-row items-center mb-16 gap-8 fade-in">
+                <div class="lg:w-1/2">
+                    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Dasboard%20Analisis%20Absensi%20Webp..jpg" 
+                         alt="Dashboard Update Absensi" 
+                         class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h3 class="text-2xl font-bold mb-4">Dashboard Update Absensi</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Memudahkan guru memantau kehadiran siswa secara real-time, dengan laporan yang rapi dan terintegrasi.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Item 4: Progres Tugas Siswa (zig-zag) -->
+            <div class="flex flex-col lg:flex-row-reverse items-center mb-16 gap-8 fade-in">
+                <div class="lg:w-1/2">
+                    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Progres%20Tugas%20Siswa.webp.jpg" 
+                         alt="Progres Tugas Siswa" 
+                         class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h3 class="text-2xl font-bold mb-4">Progres Tugas Siswa</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Visualisasi progres tugas siswa memudahkan guru menilai perkembangan belajar setiap siswa dengan cepat.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Item 5: Monitoring Kelas -->
+            <div class="flex flex-col lg:flex-row items-center gap-8 fade-in">
+                <div class="lg:w-1/2">
+                    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Dasboard%20Monitoring%20Kelas.webp.jpg" 
+                         alt="Monitoring Kelas" 
+                         class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h3 class="text-2xl font-bold mb-4">Monitoring Kelas</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Guru dapat memantau aktivitas siswa di kelas secara real-time, memastikan setiap siswa tetap fokus dan produktif.
+                    </p>
+                </div>
+            </div>
         </div>
-    
-        <!-- Item 2: Materi di Site (zig-zag) -->
-        <div class="flex flex-col lg:flex-row-reverse items-center mb-16 gap-8">
-          <div class="lg:w-1/2">
-            <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Contoh%20Materi.webp.jpg" 
-                 alt="Materi di Site" 
-                 class="rounded-xl shadow-lg w-full h-auto">
-          </div>
-          <div class="lg:w-1/2 text-center lg:text-left">
-            <h3 class="text-2xl font-bold mb-4">Materi di Site</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Guru dapat mengunggah dan mengatur materi pembelajaran di portal, sehingga siswa mudah mengakses materi yang dibutuhkan.
-            </p>
-          </div>
-        </div>
-    
-        <!-- Item 3: Dashboard Update Absensi -->
-        <div class="flex flex-col lg:flex-row items-center mb-16 gap-8">
-          <div class="lg:w-1/2">
-            <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Dasboard%20Analisis%20Absensi%20Webp..jpg" 
-                 alt="Dashboard Update Absensi" 
-                 class="rounded-xl shadow-lg w-full h-auto">
-          </div>
-          <div class="lg:w-1/2 text-center lg:text-left">
-            <h3 class="text-2xl font-bold mb-4">Dashboard Update Absensi</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Memudahkan guru memantau kehadiran siswa secara real-time, dengan laporan yang rapi dan terintegrasi.
-            </p>
-          </div>
-        </div>
-    
-        <!-- Item 4: Progres Tugas Siswa (zig-zag) -->
-        <div class="flex flex-col lg:flex-row-reverse items-center mb-16 gap-8">
-          <div class="lg:w-1/2">
-            <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Progres%20Tugas%20Siswa.webp.jpg" 
-                 alt="Progres Tugas Siswa" 
-                 class="rounded-xl shadow-lg w-full h-auto">
-          </div>
-          <div class="lg:w-1/2 text-center lg:text-left">
-            <h3 class="text-2xl font-bold mb-4">Progres Tugas Siswa</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Visualisasi progres tugas siswa memudahkan guru menilai perkembangan belajar setiap siswa dengan cepat.
-            </p>
-          </div>
-        </div>
-    
-        <!-- Item 5: Monitoring Kelas -->
-        <div class="flex flex-col lg:flex-row items-center gap-8">
-          <div class="lg:w-1/2">
-            <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Dasboard%20Monitoring%20Kelas.webp.jpg" 
-                 alt="Monitoring Kelas" 
-                 class="rounded-xl shadow-lg w-full h-auto">
-          </div>
-          <div class="lg:w-1/2 text-center lg:text-left">
-            <h3 class="text-2xl font-bold mb-4">Monitoring Kelas</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Guru dapat memantau aktivitas siswa di kelas secara real-time, memastikan setiap siswa tetap fokus dan produktif.
-            </p>
-          </div>
-        </div>
-    
-      </div>
     </section>
+
     <!-- Pilih Layanan Section -->
-<section id="layanan" class="py-16 md:py-24 bg-gradient-pricing">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-      🎯 Pilih Layanan Anda
-    </h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      
-      <!-- Card Gratis -->
-      <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-indigo-500 hover:shadow-2xl transition">
-        <h3 class="text-xl font-bold text-gray-900 mt-2">✅ Gratis</h3>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          Dapatkan akses materi dasar tentang cara membangun portal Google Site. 
-          Termasuk pendampingan selama 1 minggu.
-        </p>
-        <span class="text-4xl font-extrabold text-indigo-600">Rp0</span>
-        <span class="text-sm text-gray-500 mb-4">syarat: share ke grup komunitas</span>
-        <a href="#daftar" class="mt-auto inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 transition">
-          Daftar Gratis
-        </a>
-      </div>
+    <section id="layanan" class="py-16 md:py-24 bg-gradient-pricing">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                🎯 Pilih Layanan Anda
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Card Gratis -->
+                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-indigo-500 hover:shadow-2xl transition fade-in">
+                    <h3 class="text-xl font-bold text-gray-900 mt-2">✅ Gratis</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Dapatkan akses materi dasar tentang cara membangun portal Google Site. 
+                        Termasuk pendampingan selama 1 minggu.
+                    </p>
+                    <span class="text-4xl font-extrabold text-indigo-600">Rp0</span>
+                    <span class="text-sm text-gray-500 mb-4">syarat: share ke grup komunitas</span>
+                    <a href="#daftar" class="mt-auto inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 transition">
+                        Daftar Gratis
+                    </a>
+                </div>
 
-      <!-- Card Berbayar -->
-      <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-purple-500 hover:shadow-2xl transition">
-        <span class="absolute top-0 right-0 mt-2 mr-2 bg-gradient-to-r from-emerald-400 to-emerald-600 text-white font-bold px-3 py-1.5 rounded-full uppercase -rotate-6 text-sm">Paling Dicari</span>
-        <h3 class="text-xl font-bold text-gray-900 mt-2">💎 Berbayar</h3>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          Akses penuh Kelas Guru Mahir Digital Level 1, dengan materi komprehensif dan bimbingan intensif. 
-          Termasuk kesempatan upgrade ke Level 2–4 untuk modul lanjutan dan pendampingan sampai mahir.
-        </p>
-        <span class="text-4xl font-extrabold text-purple-600">Rp364.000</span>
-        <span class="text-sm text-gray-500 mb-4">sekali bayar</span>
-        <a href="#daftar" class="mt-auto inline-block px-6 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition">
-          Daftar Berbayar
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
+                <!-- Card Berbayar -->
+                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-purple-500 hover:shadow-2xl transition fade-in">
+                    <span class="absolute top-0 right-0 mt-2 mr-2 bg-gradient-to-r from-emerald-400 to-emerald-600 text-white font-bold px-3 py-1.5 rounded-full uppercase -rotate-6 text-sm">Paling Dicari</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-2">💎 Berbayar</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Akses penuh Kelas Guru Mahir Digital Level 1, dengan materi komprehensif dan bimbingan intensif. 
+                        Termasuk kesempatan upgrade ke Level 2–4 untuk modul lanjutan dan pendampingan sampai mahir.
+                    </p>
+                    <span class="text-4xl font-extrabold text-purple-600">Rp364.000</span>
+                    <span class="text-sm text-gray-500 mb-4">sekali bayar</span>
+                    <a href="#daftar" class="mt-auto inline-block px-6 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition">
+                        Daftar Berbayar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimoni Guru Section -->
     <section id="testimoni" class="py-16 md:py-24 bg-gradient-testimonials">
@@ -359,7 +363,6 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
                 🗣️ Testimoni Guru
             </h2>
-            <!-- Grid responsif yang ditingkatkan -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-indigo-500 transition-transform duration-300 card-hover fade-in shadow-layered">
                     <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
@@ -397,7 +400,7 @@
                         </div>
                     </div>
                 </div>
-                    <!-- Tambahan testimoni agar grid terlihat lebih seimbang -->
+                <!-- Tambahan testimoni agar grid terlihat lebih seimbang -->
                 <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-yellow-500 transition-transform duration-300 card-hover fade-in shadow-layered">
                     <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
                         “Modul yang diberikan sangat relevan dengan kebutuhan kami sebagai guru. Saya bisa langsung menerapkannya di kelas tanpa kesulitan.”
@@ -414,62 +417,62 @@
         </div>
     </section>
 
-  <!-- Kisah Kami Section - Versi Visual Modern -->
-<section id="kisah-kami" class="py-16 md:py-24 bg-gray-50">
-    <div class="container mx-auto px-6 flex flex-col items-center text-center">
-        <!-- Foto dan Nama -->
-        <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Basri%20S.Pd.png"
-             alt="Basri S.Pd., M.A.P., Founder e-Suite i3"
-             width="200"
-             height="200"
-             class="w-[200px] h-[200px] object-cover rounded-full mb-4 shadow-lg transition-transform duration-300 transform hover:scale-105">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Basri, S.Pd., M.A.P.</h2>
-        <!-- Kutipan -->
-        <p class="text-base md:text-lg italic text-gray-700 max-w-3xl mb-12 leading-relaxed">
-            “Kami menghadirkan solusi yang bukan sekadar teknologi. Setiap fitur lahir dari pengalaman nyata di lapangan,
-            untuk membantu guru mengajar lebih mudah, efisien, dan inovatif di era digital modern.”
-        </p>
-        <!-- Daftar pencapaian visual -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full">
-            <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300">
-                <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                <div class="text-left">
-                    <b>Pengalaman Mengajar:</b> Mengajar selama 15+ tahun di berbagai jenjang, termasuk 5 tahun pengabdian di daerah 3T.
+    <!-- Kisah Kami Section - Versi Visual Modern -->
+    <section id="kisah-kami" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6 flex flex-col items-center text-center">
+            <!-- Foto dan Nama -->
+            <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Basri%20S.Pd.png"
+                    alt="Basri S.Pd., M.A.P., Founder e-Suite i3"
+                    width="200"
+                    height="200"
+                    class="w-[200px] h-[200px] object-cover rounded-full mb-4 shadow-lg transition-transform duration-300 transform hover:scale-105">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Basri, S.Pd., M.A.P.</h2>
+            <!-- Kutipan -->
+            <p class="text-base md:text-lg italic text-gray-700 max-w-3xl mb-12 leading-relaxed">
+                    “Kami menghadirkan solusi yang bukan sekadar teknologi. Setiap fitur lahir dari pengalaman nyata di lapangan,
+                    untuk membantu guru mengajar lebih mudah, efisien, dan inovatif di era digital modern.”
+            </p>
+            <!-- Daftar pencapaian visual -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full">
+                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
+                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
+                    <div class="text-left">
+                        <b>Pengalaman Mengajar:</b> Mengajar selama 15+ tahun di berbagai jenjang, termasuk 5 tahun pengabdian di daerah 3T.
+                    </div>
                 </div>
-            </div>
-            <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300">
-                <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                <div class="text-left">
-                    <b>Manajemen Pendidikan Jarak Jauh:</b> Sejak 2013, mengelola Pokjar untuk ribuan mahasiswa dan menjadi tutor bersertifikat.
+                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
+                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
+                    <div class="text-left">
+                        <b>Manajemen Pendidikan Jarak Jauh:</b> Sejak 2013, mengelola Pokjar untuk ribuan mahasiswa dan menjadi tutor bersertifikat.
+                    </div>
                 </div>
-            </div>
-            <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300">
-                <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                <div class="text-left">
-                    <b>Koordinasi Proyek:</b> Membimbing fasilitator, membangun portal proyek, dan mengelola sistem penilaian otomatis untuk 820+ siswa.
+                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
+                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
+                    <div class="text-left">
+                        <b>Koordinasi Proyek:</b> Membimbing fasilitator, membangun portal proyek, dan mengelola sistem penilaian otomatis untuk 820+ siswa.
+                    </div>
                 </div>
-            </div>
-            <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300">
-                <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                <div class="text-left">
-                    <b>Publikasi Ilmiah:</b> Penulis aktif artikel ilmiah dan publikasi di jurnal nasional serta prosiding seminar pendidikan.
+                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
+                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
+                    <div class="text-left">
+                        <b>Publikasi Ilmiah:</b> Penulis aktif artikel ilmiah dan publikasi di jurnal nasional serta prosiding seminar pendidikan.
+                    </div>
                 </div>
-            </div>
-            <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300">
-                <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                <div class="text-left">
-                    <b>Mentor Digital:</b> Mentor untuk edukator dan komunitas dalam branding, publikasi digital, dan optimalisasi teknologi pendidikan.
+                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
+                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
+                    <div class="text-left">
+                        <b>Mentor Digital:</b> Mentor untuk edukator dan komunitas dalam branding, publikasi digital, dan optimalisasi teknologi pendidikan.
+                    </div>
                 </div>
-            </div>
-            <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300">
-                <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                <div class="text-left">
-                    <b>Sertifikasi Internasional:</b> Pemegang sertifikat Google for Education Certified (2025).
+                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
+                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
+                    <div class="text-left">
+                        <b>Sertifikasi Internasional:</b> Pemegang sertifikat Google for Education Certified (2025).
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
          <!-- FAQ Section -->
 <section id="faq" class="py-16 md:py-24 bg-gray-100">

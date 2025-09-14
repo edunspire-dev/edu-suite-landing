@@ -348,7 +348,7 @@
   </div>
 </section>
 
-  <!-- Pilih Layanan Section -->
+    <!-- Pilih Layanan Section -->
 <section id="layanan" class="py-16 md:py-24 bg-gradient-pricing">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
@@ -365,7 +365,7 @@
         </p>
         <span class="text-4xl font-extrabold text-indigo-600">Rp0</span>
         <span class="text-sm text-gray-500 mb-4">syarat: share ke grup komunitas</span>
-        <a href="#form" class="mt-auto inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 transition">
+        <a href="#daftar" class="mt-auto inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 transition">
           Daftar Gratis
         </a>
       </div>
@@ -380,7 +380,7 @@
         </p>
         <span class="text-4xl font-extrabold text-purple-600">Rp364.000</span>
         <span class="text-sm text-gray-500 mb-4">sekali bayar</span>
-        <a href="#form" class="mt-auto inline-block px-6 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition">
+        <a href="#daftar" class="mt-auto inline-block px-6 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition">
           Daftar Berbayar
         </a>
       </div>
@@ -433,7 +433,7 @@
                         </div>
                     </div>
                 </div>
-                 <!-- Tambahan testimoni agar grid terlihat lebih seimbang -->
+                    <!-- Tambahan testimoni agar grid terlihat lebih seimbang -->
                 <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-yellow-500 transition-transform duration-300 card-hover fade-in shadow-layered">
                     <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
                         “Modul yang diberikan sangat relevan dengan kebutuhan kami sebagai guru. Saya bisa langsung menerapkannya di kelas tanpa kesulitan.”
@@ -459,12 +459,12 @@
                 </h2>
                 <!-- Konten Kisah Kami yang Diperbarui -->
                 <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Basri%20S.Pd.png"
-                     alt="Foto Basri S.Pd., M.A.P., founder e-Suite i3"
-                     width="200"
-                     height="200"
-                     class="w-[200px] h-[200px] object-cover rounded-full mx-auto mb-4 shadow-lg transition-transform duration-300 transform hover:scale-105"
-                     loading="lazy"
-                     decoding="async">
+                    alt="Foto Basri S.Pd., M.A.P., founder e-Suite i3"
+                    width="200"
+                    height="200"
+                    class="w-[200px] h-[200px] object-cover rounded-full mx-auto mb-4 shadow-lg transition-transform duration-300 transform hover:scale-105"
+                    loading="lazy"
+                    decoding="async">
                 <p class="text-2xl font-bold text-gray-900 mt-4 mb-2">Basri, S.Pd., M.A.P.</p>
                 <p class="text-base leading-relaxed text-gray-700 italic max-w-2xl mb-6">
                     “Kami menghadirkan solusi yang bukan sekadar teknologi. Setiap fitur lahir dari pengalaman nyata di lapangan, untuk membantu guru mengajar lebih mudah, efisien, dan inovatif di era digital modern.”
@@ -551,8 +551,8 @@
 
 <!-- Tombol WhatsApp Mengambang -->
 <a href="https://wa.me/6282328888989" target="_blank"
-   id="whatsappBtn"
-   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center gap-2 transition-transform duration-300 transform hover:scale-110 z-50">
+    id="whatsappBtn"
+    class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center gap-2 transition-transform duration-300 transform hover:scale-110 z-50">
     <i class="fab fa-whatsapp fa-lg"></i>
     <span class="hidden md:inline">Chat Kami</span>
 </a>
@@ -579,87 +579,6 @@
         document.querySelectorAll('.fade-in').forEach(element => {
             observer.observe(element);
         });
-
-        // FAQ accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                const isOpen = answer.classList.contains('open');
-
-                // Tutup semua jawaban FAQ yang terbuka
-                document.querySelectorAll('.faq-answer.open').forEach(item => {
-                    if (item !== answer) {
-                        item.classList.remove('open');
-                        const prevIcon = item.previousElementSibling.querySelector('i');
-                        if (prevIcon) {
-                           prevIcon.classList.replace('fa-minus', 'fa-plus');
-                        }
-                        item.previousElementSibling.setAttribute('aria-expanded', 'false');
-                    }
-                });
-
-                // Buka atau tutup jawaban yang diklik
-                if (isOpen) {
-                    answer.classList.remove('open');
-                    icon.classList.replace('fa-minus', 'fa-plus');
-                    button.setAttribute('aria-expanded', 'false');
-                } else {
-                    answer.classList.add('open');
-                    icon.classList.replace('fa-plus', 'fa-minus');
-                    button.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-
-        // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-        const showButton = () => {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                scrollToTopBtn.classList.remove('opacity-0');
-                scrollToTopBtn.classList.add('opacity-100');
-                scrollToTopBtn.style.transform = 'scale(1)';
-            } else {
-                scrollToTopBtn.classList.remove('opacity-100');
-                scrollToTopBtn.classList.add('opacity-0');
-                scrollToTopBtn.style.transform = 'scale(0.8)';
-            }
-        };
-
-        const scrollToTop = () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        };
-
-        window.addEventListener('scroll', showButton);
-        scrollToTopBtn.addEventListener('click', scrollToTop);
-    
-        // Navbar sticky on scroll
-        const navbar = document.getElementById('navbar');
-        const navbarLinks = document.querySelectorAll('.navbar div > a');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-                navbarLinks.forEach(link => link.classList.add('text-red-500'));
-            } else {
-                navbar.classList.remove('scrolled');
-                navbarLinks.forEach(link => link.classList.remove('text-red-500'));
-            }
-        });
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
         
         // Mobile menu toggle
         const menuButton = document.getElementById('menu-button');
@@ -668,8 +587,46 @@
             mobileMenu.classList.toggle('hidden');
         });
 
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                const isOpen = answer.classList.contains('open');
+
+                document.querySelectorAll('.faq-answer.open').forEach(el => {
+                    el.classList.remove('open');
+                });
+                document.querySelectorAll('.faq-question i.fa-minus').forEach(el => {
+                    el.classList.replace('fa-minus', 'fa-plus');
+                });
+                
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    icon.classList.replace('fa-plus', 'fa-minus');
+                }
+            });
+        });
+
+        // Scroll to top button functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.opacity = '1';
+                scrollToTopBtn.style.transform = 'scale(1)';
+            } else {
+                scrollToTopBtn.style.opacity = '0';
+                scrollToTopBtn.style.transform = 'scale(0)';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     });
 </script>
-
 </body>
 </html>

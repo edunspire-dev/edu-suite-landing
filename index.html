@@ -23,20 +23,9 @@
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
         }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .faq-answer.open {
-            max-height: 500px; /* Nilai yang cukup besar untuk transisi yang mulus */
-            transition: max-height 0.3s ease-in;
-        }
-        .faq-question i {
-            transition: transform 0.3s;
-        }
-        .faq-question i.fa-minus {
-            transform: rotate(180deg);
+        .hero-gradient-bg {
+            background-color: #4c1d95;
+            background-image: linear-gradient(to right bottom, #4c1d95, #6d28d9, #8b5cf6, #c084fc);
         }
         .fade-in {
             opacity: 0;
@@ -54,162 +43,39 @@
             from { box-shadow: 0 0 5px #4c1d95, 0 0 10px #4c1d95; }
             to { box-shadow: 0 0 20px #6d28d9, 0 0 30px #6d28d9; }
         }
-        .hero-gradient-bg {
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-gradient-bg::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, #4c1d95, #6d28d9, #8b5cf6, #c084fc);
-            background-size: 200% 200%;
-            animation: backgroundPan 15s ease infinite;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-        .pattern-bg-light {
-            background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="pola-grid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M 16 0 L 0 0 0 16" fill="none" stroke="%23e2e8f0" stroke-width="1.5" opacity="0.4" /></pattern></defs><rect width="100%" height="100%" fill="url(%23pola-grid)"/></svg>');
-        }
-        @keyframes bounce-right {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(5px); }
-        }
-        .animate-bounce-right {
-            animation: bounce-right 1s infinite;
-        }
-        #scrollToTopBtn {
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-        .foto-guru {
-            width: 200px;
-            height: 200px;
-            object-fit: contain;
-        }
         .card-hover:hover {
-            transform: translateY(-8px) scale(1.03) rotate(-1deg);
+            transform: translateY(-8px) scale(1.03);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         .shadow-layered {
             box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 4px 8px rgba(0,0,0,0.08), 0 8px 16px rgba(0,0,0,0.10);
         }
-
-        /* Gradasi Latar Belakang untuk Setiap Bagian (Diperbarui) */
-        .bg-gradient-problem {
-            background: linear-gradient(135deg, #e0f2fe, #bfdbfe);
-        }
-        .bg-gradient-solusi {
-            background: linear-gradient(135deg, #d4f8f4, #c9f5f1);
-        }
-        .bg-gradient-pricing {
-            background: linear-gradient(135deg, #fff7ed, #fef2f2);
-        }
-        .bg-gradient-testimonials {
-            background: linear-gradient(135deg, #f9fafb, #ffffff);
-        }
-        .bg-gradient-story {
-            background: linear-gradient(135deg, #dcfce7, #d1fae5);
-        }
-        .bg-gradient-faq {
-            background: linear-gradient(135deg, #fce7f3, #f3e8ff);
-        }
-        .bg-gradient-cta {
-            background: linear-gradient(135deg, #4c1d95, #6d28d9);
-        }
-        
-        /* Typography Gradasi */
-        .gradient-text-hero {
-            background: linear-gradient(270deg, #dcfce7, #f0fdfa, #dcfce7);
-            background-size: 600% 600%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 5s ease infinite;
-        }
-        @keyframes gradientMove {
-            0% {background-position:0% 50%;}
-            50% {background-position:100% 50%;}
-            100% {background-position:0% 50%;}
-        }
-        
-        /* Animasi Ikon saat Hover */
-        .icon-bounce-hover:hover {
-            animation: iconBounce 0.5s ease;
-        }
-        @keyframes iconBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
-        }
-        .icon-rotate-hover:hover {
-            animation: iconRotate 0.5s ease;
-        }
-        @keyframes iconRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .icon-pulse-hover:hover {
-            animation: iconPulse 1s ease infinite;
-        }
-        @keyframes iconPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        .form-message {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        .form-message.show {
-            opacity: 1;
-        }
-        
         /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(55, 65, 81, 0.9);
-            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-        }
-        .navbar.scrolled {
+        .navbar-scrolled {
             background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        /* Mengubah warna teks navigasi saat di-scroll */
-        .navbar.scrolled a {
-            color: #ef4444; /* Merah */
-        }
-        .navbar-link {
-            transition: color 0.3s;
-        }
-        .navbar-link:hover {
-            color: #10b981;
+        .navbar-scrolled .navbar-link {
+            color: #4c1d95; /* Ungu tua */
         }
     </style>
 </head>
 
-<body class="antialiased">
+<body class="antialiased text-gray-800">
 
 <!-- Navbar Section -->
-<nav id="navbar" class="navbar fixed top-0 w-full z-50 py-4 transition-all duration-300 bg-indigo-700 text-white">
+<nav id="navbar" class="fixed top-0 w-full z-50 py-4 transition-all duration-300">
     <div class="container mx-auto px-6 flex items-center justify-between">
         <div class="flex items-center space-x-2">
-            <!-- Ikon toga wisuda -->
-            <i class="fa-solid fa-graduation-cap text-white text-3xl"></i>
-            <span class="text-xl font-bold">e-Suite i3</span>
+            <i class="fa-solid fa-graduation-cap text-white navbar-link text-3xl transition-colors duration-300"></i>
+            <span class="text-xl font-bold text-white navbar-link transition-colors duration-300">e-Suite i3</span>
         </div>
         <div class="hidden md:flex space-x-8">
-            <a href="#hero" class="hover:text-blue-300 font-semibold transition-colors duration-300">Beranda</a>
-            <a href="#solusi" class="hover:text-blue-300 font-semibold transition-colors duration-300">Solusi</a>
-            <a href="#daftar" class="hover:text-blue-300 font-semibold transition-colors duration-300">Daftar</a>
+            <a href="#hero" class="navbar-link text-white hover:text-blue-300 font-semibold transition-colors duration-300">Beranda</a>
+            <a href="#solusi" class="navbar-link text-white hover:text-blue-300 font-semibold transition-colors duration-300">Solusi</a>
+            <a href="#produk" class="navbar-link text-white hover:text-blue-300 font-semibold transition-colors duration-300">Produk</a>
+            <a href="#daftar" class="navbar-link text-white hover:text-blue-300 font-semibold transition-colors duration-300">Daftar</a>
         </div>
         <div class="md:hidden">
             <button id="menu-button" class="text-white focus:outline-none">
@@ -222,6 +88,7 @@
         <ul class="flex flex-col space-y-2 p-4 text-center">
             <li><a href="#hero" class="block py-2 hover:bg-indigo-700 rounded transition-colors font-medium">Beranda</a></li>
             <li><a href="#solusi" class="block py-2 hover:bg-indigo-700 rounded transition-colors font-medium">Solusi</a></li>
+            <li><a href="#produk" class="block py-2 hover:bg-indigo-700 rounded transition-colors font-medium">Produk</a></li>
             <li><a href="#daftar" class="block py-2 hover:bg-indigo-700 rounded transition-colors font-medium">Daftar</a></li>
         </ul>
     </div>
@@ -229,28 +96,25 @@
 
 <!-- Hero Section -->
 <header id="hero" class="text-white py-20 md:py-32 shadow-lg hero-gradient-bg">
-    <div class="container mx-auto px-6 hero-content fade-in flex flex-col lg:flex-row items-center justify-between">
-        <div class="lg:w-1/2 text-center lg:text-left">
+    <div class="container mx-auto px-6 fade-in flex flex-col-reverse lg:flex-row items-center justify-between">
+        <div class="lg:w-1/2 text-center lg:text-left mt-12 lg:mt-0">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-                Pembelajaran Tanpa Batas <span class="gradient-text-hero"></span>
+                Ubah Administrasi <br> <span class="text-emerald-300">Jadi Mudah.</span>
             </h1>
             <p class="text-lg leading-relaxed font-light mb-8 max-w-xl mx-auto lg:mx-0 text-indigo-100">
-                Akses ribuan sumber belajar, kolaborasi real-time, administrasi otomatis.
+                e-Suite i3 membantu guru mengotomatisasi administrasi agar lebih fokus mengajar siswa.
             </p>
-            <a href="#daftar" class="inline-block px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-emerald-400/50 cta-glow text-xl focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <a href="https://forms.gle/9v6oHuF69QUq8QEf9" target="_blank" class="inline-block px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-emerald-400/50 cta-glow text-xl focus:outline-none focus:ring-2 focus:ring-emerald-500">
                 🚀 Mulai Gratis Sekarang
             </a>
             <p class="mt-4 text-sm opacity-80 text-gray-200">
                 ✅ Gratis &nbsp; | &nbsp; 🔒 Aman &nbsp; | &nbsp; Tanpa biaya tersembunyi
             </p>
         </div>
-        <div class="lg:w-1/2 flex justify-center mt-12 lg:mt-0 lg:justify-end fade-in">
-            <!-- Gambar dioptimalkan dengan atribut loading & decoding -->
-            <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Hero%20page.jpeg"
-                alt="Hero e-Suite i3"
-                width="1200"
-                height="600"
-                class="rounded-xl shadow-lg w-full h-auto"
+        <div class="lg:w-1/2 flex justify-center lg:justify-end fade-in">
+            <img src="https://placehold.co/600x400"
+                alt="Solusi Digital Guru"
+                class="rounded-xl shadow-lg w-full h-auto max-w-lg"
                 loading="lazy"
                 decoding="async">
         </div>

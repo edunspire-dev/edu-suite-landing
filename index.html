@@ -1,204 +1,346 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edunspire - Solusi Digital Sekolah</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<style>
-body { font-family: 'Inter', sans-serif; background:#f9fafb; margin:0; color:#111827; }
-h1, h2 { font-family: 'Montserrat', sans-serif; }
-.hero { text-align:center; padding:6rem 1rem; position:relative; overflow:hidden; background-color:#E0F2FE; }
-.hero h1 { font-size:2.5rem; font-weight:800; margin-bottom:1rem; color:#111827; }
-.hero p { font-size:1.125rem; color:#4b5563; max-width:700px; margin:0 auto 2rem auto; }
-.btn-primary { background:#3b82f6; color:#fff; font-weight:600; padding:0.75rem 2rem; border-radius:999px; text-decoration:none; transition:0.3s; }
-.btn-primary:hover { background:#2563eb; }
-.paket-container { display:grid; grid-template-columns:1fr; gap:2rem; max-width:1000px; margin:0 auto; }
-@media(min-width:768px){ .paket-container { grid-template-columns:repeat(3,1fr); } }
-.card { background:#fff; border-radius:1rem; padding:2rem; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.08); transition:transform 0.3s, box-shadow 0.3s; }
-.card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.12); }
-.card h3 { font-weight:700; font-size:1.5rem; margin-bottom:0.5rem; }
-.card p { color:#4b5563; margin-bottom:1rem; }
-.card-price { font-weight:800; font-size:2rem; color:#3b82f6; margin-bottom:1rem; }
-.wa-btn { position:fixed; bottom:2rem; right:2rem; background:#10b981; color:#fff; font-weight:600; padding:0.75rem 1.5rem; border-radius:999px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:50; transition:0.3s; display:flex; align-items:center; gap:0.5rem; }
-.wa-btn:hover { background:#059669; transform:translateY(-2px); }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edunspire - Solusi Digital Sekolah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLpI0k2b4k5B77R4b65P9P994E8R4n9B3c5sK0D45B0P5U2b0D90f23B3b4B7C5S9J9D3B0A5F0Q6G8J7kQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom fonts and core styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #111827;
+            scroll-padding-top: 5rem; /* For fixed header */
+        }
+        h1, h2 { font-family: 'Montserrat', sans-serif; }
+        
+        /* Custom animations not available in Tailwind */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn { animation: fadeIn 1s forwards; }
+        .animate-fadeIn-200 { animation-delay: 0.2s; }
+        .animate-fadeIn-400 { animation-delay: 0.4s; }
+        .animate-fadeIn-600 { animation-delay: 0.6s; }
 
-/* Navbar */
-.navbar { background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-.nav-link { font-weight: 500; color: #4b5563; transition: color 0.2s; }
-.nav-link:hover { color: #2563eb; }
-
-/* Testimonial */
-.testimonial-card { background: #fff; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-.testimonial-card img { width: 6rem; height: 6rem; object-fit: cover; border-radius: 50%; border: 4px solid #dbeafe; }
-
-/* Animasi */
-@keyframes fadeIn { 0% { opacity:0; transform:translateY(20px);} 100%{opacity:1; transform:translateY(0);} }
-.animate-fadeIn { animation: fadeIn 1s forwards; }
-.animate-fadeIn.delay-200 { animation-delay:0.2s; }
-.animate-fadeIn.delay-400 { animation-delay:0.4s; }
-.animate-fadeIn.delay-600 { animation-delay:0.6s; }
-
-@keyframes bounce { 0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,-20px);} }
-.animate-bounce { animation:bounce 2s infinite; }
-
-@keyframes gradientSlow { 0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;} }
-.animate-gradientSlow { background-size:200% 200%; animation: gradientSlow 15s ease infinite; }
-</style>
+        @keyframes bounce-up {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-up { animation: bounce-up 2s infinite; }
+    </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<header class="navbar p-4 fixed w-full bg-white shadow z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-    <div class="flex items-center space-x-2 text-xl font-bold text-gray-800">
-      <i class="fa-solid fa-graduation-cap text-blue-600"></i>
-      <span>Edunspire</span>
+<header class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center space-x-2 text-xl font-bold text-gray-800 transition hover:scale-105">
+                <i class="fa-solid fa-graduation-cap text-blue-600"></i>
+                <span>Edunspire</span>
+            </a>
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#hero" class="text-gray-600 font-semibold hover:text-blue-600 transition">Beranda</a>
+                <a href="#paket" class="text-gray-600 font-semibold hover:text-blue-600 transition">Paket</a>
+                <a href="#testimoni" class="text-gray-600 font-semibold hover:text-blue-600 transition">Testimoni</a>
+                <a href="#kontak" class="text-gray-600 font-semibold hover:text-blue-600 transition">Hubungi Kami</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="hidden flex-col items-center pb-4 space-y-4 md:hidden">
+            <a href="#hero" class="nav-link font-semibold hover:text-blue-600 transition">Beranda</a>
+            <a href="#paket" class="nav-link font-semibold hover:text-blue-600 transition">Paket</a>
+            <a href="#testimoni" class="nav-link font-semibold hover:text-blue-600 transition">Testimoni</a>
+            <a href="#kontak" class="nav-link font-semibold hover:text-blue-600 transition">Hubungi Kami</a>
+        </nav>
     </div>
-    <!-- Desktop Menu -->
-    <nav class="hidden md:flex space-x-8">
-      <a href="#beranda" class="nav-link hover:text-blue-600">Beranda</a>
-      <a href="#paket" class="nav-link hover:text-blue-600">Paket</a>
-      <a href="#testimoni" class="nav-link hover:text-blue-600">Testimoni</a>
-      <a href="#kontak" class="nav-link hover:text-blue-600">Hubungi Kami</a>
-    </nav>
-    <!-- Mobile Hamburger -->
-    <div class="md:hidden">
-      <button id="menu-toggle" class="text-gray-600 focus:outline-none">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </div>
-  </div>
-  <!-- Mobile Menu -->
-  <nav id="mobile-menu" class="hidden flex-col items-center mt-4 space-y-4 md:hidden">
-    <a href="#beranda" class="nav-link hover:text-blue-600">Beranda</a>
-    <a href="#paket" class="nav-link hover:text-blue-600">Paket</a>
-    <a href="#testimoni" class="nav-link hover:text-blue-600">Testimoni</a>
-    <a href="#kontak" class="nav-link hover:text-blue-600">Hubungi Kami</a>
-  </nav>
 </header>
 
 <!-- Hero Section -->
-<section id="beranda" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-28 relative overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fadeIn">Wujudkan Sekolah Digital Terdepan, Raih Keterampilan Abad 21</h1>
-    <p class="text-lg md:text-xl mb-8 animate-fadeIn delay-200">
-      Edunspire hadir dengan solusi yang sejalan dengan amanat Instruksi Presiden (Inpres) Nomor 7 Tahun 2025 tentang Percepatan Pelaksanaan Program Pembangunan dan Revitalisasi Satuan Pendidikan dan Digitalisasi Pembelajaran.
-    </p>
-    <div class="flex flex-col md:flex-row justify-center gap-4 mb-8 animate-fadeIn delay-400">
-      <a href="https://wa.me/6282328888989?text=Halo,%20saya%20tertarik%20dengan%20paket%20Basic" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition transform hover:scale-105">
-        <i class="fa-solid fa-cart-plus mr-2"></i> Pesan Paket Basic
-      </a>
-      <a href="#paket" class="bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-800 transition transform hover:scale-105">
-        <i class="fa-solid fa-box-open mr-2"></i> Lihat Semua Paket
-      </a>
+<section id="hero" class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white py-36 relative overflow-hidden text-center">
+    <div class="relative z-10 max-w-5xl mx-auto px-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fadeIn">
+            Wujudkan Sekolah Digital Terdepan, Raih Keterampilan Abad 21
+        </h1>
+        <p class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto animate-fadeIn animate-fadeIn-200">
+            Edunspire hadir dengan solusi yang sejalan dengan amanat Instruksi Presiden (Inpres) Nomor 7 Tahun 2025 tentang Percepatan Pelaksanaan Program Pembangunan dan Revitalisasi Satuan Pendidikan dan Digitalisasi Pembelajaran.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 animate-fadeIn animate-fadeIn-400">
+            <a href="https://wa.me/6282328888989?text=Halo,%20saya%20tertarik%20dengan%20paket%20Basic"
+               target="_blank" class="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-full shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+                <i class="fa-solid fa-cart-plus mr-2"></i> Pesan Paket Basic
+            </a>
+            <a href="#paket" class="inline-block bg-blue-700 text-white font-bold px-8 py-3 rounded-full shadow-lg transition transform hover:scale-105 hover:bg-blue-800">
+                <i class="fa-solid fa-box-open mr-2"></i> Lihat Semua Paket
+            </a>
+        </div>
+        
+        <!-- Pricing -->
+        <p class="text-xl md:text-2xl font-bold animate-fadeIn animate-fadeIn-600">
+            Mulai dari <span class="line-through text-blue-300">Rp 500.000</span>
+            <span class="text-yellow-300 font-extrabold">Rp 364.000</span>
+        </p>
     </div>
-    <p class="text-lg md:text-xl font-bold animate-fadeIn delay-600">
-      Mulai dari <span class="line-through text-gray-300">Rp 500.000</span> 
-      <span class="text-yellow-300">Rp 364.000</span>
-    </p>
-  </div>
-  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <div class="bg-white text-blue-600 px-6 py-4 rounded-lg shadow-lg flex items-center gap-3">
-      <i class="fa-solid fa-gauge-high text-2xl"></i>
-      <div class="text-left">
-        <p class="font-bold">Paket Basic</p>
-        <p class="text-sm">Mulai belajar sekarang</p>
-      </div>
+
+    <!-- Background Shapes for Visuals -->
+    <div class="absolute inset-0 bg-blue-400/20 rounded-full blur-3xl opacity-50 -translate-x-1/4 -translate-y-1/4"></div>
+    <div class="absolute inset-0 bg-indigo-500/20 rounded-full blur-3xl opacity-50 translate-x-1/4 translate-y-1/4"></div>
+</section>
+
+<!-- E-suite i3 Section -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
+            E-suite dari Edunspire: Rangkaian Alat yang Aman dan Fleksibel
+        </h2>
+        <p class="text-gray-600 max-w-3xl mx-auto mb-12">
+            Solusi terintegrasi E-Suite hadir untuk menciptakan lingkungan belajar yang interaktif dan efisien. Rangkaian alat ini dirancang untuk mendukung manajemen sekolah, pengalaman mengajar guru, dan proses belajar siswa.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Feature Card 1 -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center text-center hover:shadow-xl transition-all duration-300">
+                <div class="text-blue-500 mb-4 bg-blue-100 p-4 rounded-full">
+                    <i class="fa-solid fa-sync-alt fa-2x"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Sistem Terintegrasi</h3>
+                <p class="text-gray-600 text-sm">Integrasi tanpa batas antara administrasi, pembelajaran, dan komunikasi.</p>
+            </div>
+            <!-- Feature Card 2 -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center text-center hover:shadow-xl transition-all duration-300">
+                <div class="text-blue-500 mb-4 bg-blue-100 p-4 rounded-full">
+                    <i class="fa-solid fa-lock fa-2x"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Aman & Terjamin</h3>
+                <p class="text-gray-600 text-sm">Keamanan data terjamin dengan enkripsi mutakhir sesuai standar internasional.</p>
+            </div>
+            <!-- Feature Card 3 -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center text-center hover:shadow-xl transition-all duration-300">
+                <div class="text-blue-500 mb-4 bg-blue-100 p-4 rounded-full">
+                    <i class="fa-solid fa-tools fa-2x"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Fleksibel & Dapat Disesuaikan</h3>
+                <p class="text-gray-600 text-sm">Portal yang dapat disesuaikan sesuai dengan kebutuhan unik setiap sekolah.</p>
+            </div>
+            <!-- Feature Card 4 -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center text-center hover:shadow-xl transition-all duration-300">
+                <div class="text-blue-500 mb-4 bg-blue-100 p-4 rounded-full">
+                    <i class="fa-solid fa-lightbulb fa-2x"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Interaktif & Inovatif</h3>
+                <p class="text-gray-600 text-sm">Memanfaatkan teknologi Google Workspace untuk pengalaman belajar yang interaktif dan menarik.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- Paket Section -->
-<section id="paket" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6 text-center mb-12">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Paket Edunspire</h2>
-    <p class="text-gray-600">Pilih paket sesuai kebutuhan sekolah Anda</p>
-  </div>
-  <div class="paket-container px-6">
-    <div class="card">
-      <h3>Paket Basic</h3>
-      <p>Akses modul pembelajaran digital</p>
-      <div class="card-price">Rp 364.000</div>
-      <a href="https://wa.me/6282328888989?text=Halo,%20saya%20tertarik%20dengan%20paket%20Basic" class="btn-primary">Daftar Sekarang</a>
+<section id="paket" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">Pilih Paket Digital Terbaik Untuk Sekolah Anda</h2>
+        <p class="text-gray-600 mb-12">Sesuaikan paket dengan kebutuhan sekolah Anda dan nikmati kemudahan pengelolaan digital.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+
+            <!-- Basic Package -->
+            <div class="bg-gray-50 rounded-2xl shadow-lg p-8 border-t-8 border-blue-600 flex flex-col hover:shadow-2xl transition duration-300">
+                <h3 class="text-2xl font-bold text-blue-600 mb-2">Basic</h3>
+                <p class="text-gray-500 mb-4">Cocok untuk uji coba awal</p>
+                <p class="text-4xl font-extrabold text-blue-600">Mulai Rp 364.000 <span class="text-gray-400 text-lg line-through ml-2">Rp 1.250.000</span></p>
+                <p class="text-green-600 font-semibold mb-6">Diskon 85% + Gratis Upgrade & Konsultasi</p>
+                <ul class="text-left space-y-3 flex-grow mb-6">
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-500 w-5 mr-2"></i>Portal administrasi dasar</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-500 w-5 mr-2"></i>Modul + LKPD Interaktif</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-500 w-5 mr-2"></i>Absensi Otomatis</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-500 w-5 mr-2"></i>Rekap Penilaian & Dashboard Pintar</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-500 w-5 mr-2"></i>Free update template 3 bulan</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-blue-500 w-5 mr-2"></i>Dukungan teknis via WhatsApp</li>
+                </ul>
+                <a href="https://forms.gle/k2tzV4sig5zdkpx18"
+                   target="_blank"
+                   class="mt-auto inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition transform hover:scale-105">
+                   Daftar Sekarang
+                </a>
+            </div>
+
+            <!-- Premium Package -->
+            <div class="bg-white rounded-2xl shadow-2xl p-8 border-t-8 border-green-600 flex flex-col relative scale-105">
+                <span class="absolute top-4 right-4 bg-green-600 text-white text-xs px-4 py-1 rounded-full font-bold">Paling Populer</span>
+                <h3 class="text-2xl font-bold text-green-600 mb-2">Premium</h3>
+                <p class="text-gray-500 mb-4">Paling populer untuk sekolah</p>
+                <p class="text-4xl font-extrabold text-green-600">Mulai Rp 4.500.000 <span class="text-gray-400 text-lg line-through ml-2">Rp 5.000.000</span></p>
+                <p class="text-green-600 font-semibold mb-6">Hemat 35% + Bonus Pelatihan</p>
+                <ul class="text-left space-y-3 flex-grow mb-6">
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2"></i>Semua fitur Basic</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2"></i>Portal guru & siswa lengkap</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2"></i>Konsultasi & bimbingan online</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2"></i>Maintenance gratis 1 tahun</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2"></i>Ekosistem data terintegrasi</li>
+                </ul>
+                <a href="https://wa.me/6282328888989?text=Halo,%20saya%20tertarik%20dengan%20paket%20Premium"
+                   target="_blank"
+                   class="mt-auto inline-block bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition transform hover:scale-105">
+                   Pesan Sekarang
+                </a>
+            </div>
+
+            <!-- Enterprise Package -->
+            <div class="bg-gray-50 rounded-2xl shadow-lg p-8 border-t-8 border-red-600 flex flex-col hover:shadow-2xl transition duration-300">
+                <h3 class="text-2xl font-bold text-red-600 mb-2">Enterprise</h3>
+                <p class="text-gray-500 mb-2">Solusi Komprehensif & Eksklusif</p>
+                <p class="text-sm italic text-gray-500 mb-4">Cocok untuk sekolah besar / Group yayasan</p>
+                <p class="text-4xl font-extrabold text-red-600">Mulai Rp 7.000.000 <span class="text-gray-400 text-lg line-through ml-2">Rp 9.500.000</span></p>
+                <p class="text-green-600 font-semibold mb-6">Hemat 25% + Bonus Eksklusif</p>
+                <ul class="text-left space-y-3 flex-grow mb-6">
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-red-500 w-5 mr-2"></i>Semua fitur Premium</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-red-500 w-5 mr-2"></i>Custom branding & desain sekolah</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-red-500 w-5 mr-2"></i>Pelatihan onsite untuk guru</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-red-500 w-5 mr-2"></i>Garansi layanan 2 tahun</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check-circle text-red-500 w-5 mr-2"></i>Website sekolah + Ekosistem data terintegrasi</li>
+                </ul>
+                <a href="https://wa.me/6282328888989?text=Halo,%20saya%20tertarik%20dengan%20paket%20Enterprise"
+                   target="_blank"
+                   class="mt-auto inline-block bg-red-600 text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition transform hover:scale-105">
+                   Pesan Sekarang
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <h3>Paket Standard</h3>
-      <p>Modul + Webinar + Support Guru</p>
-      <div class="card-price">Rp 764.000</div>
-      <a href="https://wa.me/6282328888989?text=Halo,%20saya%20tertarik%20dengan%20paket%20Standard" class="btn-primary">Daftar Sekarang</a>
-    </div>
-    <div class="card">
-      <h3>Paket Premium</h3>
-      <p>Semua fasilitas + konsultasi bulanan</p>
-      <div class="card-price">Rp 1.364.000</div>
-      <a href="https://wa.me/6282328888989?text=Halo,%20saya%20tertarik%20dengan%20paket%20Premium" class="btn-primary">Daftar Sekarang</a>
-    </div>
-  </div>
 </section>
 
-<!-- Testimoni Section -->
-<section id="testimoni" class="py-20">
-  <div class="max-w-7xl mx-auto px-6 text-center mb-12">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Testimoni Pengguna</h2>
-    <p class="text-gray-600">Apa kata guru dan kepala sekolah tentang Edunspire</p>
-  </div>
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="testimonial-card text-center">
-      <img src="https://via.placeholder.com/100" alt="Guru 1" class="mx-auto mb-4">
-      <p class="italic">"Solusi digital yang sangat mempermudah pembelajaran di sekolah kami!"</p>
-      <p class="font-bold mt-2">Ibu Siti, SDN 01 Pasangkayu</p>
+<!-- Testimonial Section -->
+<section id="testimoni" class="bg-gray-100 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">Apa Kata Mereka?</h2>
+        <p class="text-gray-600 mb-12">Cerita nyata dari sekolah yang telah berkolaborasi dengan kami.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+                <div class="flex flex-col items-center">
+                    <img src="https://placehold.co/120x120/E5E7EB/4B5563?text=Guru" class="w-24 h-24 object-cover rounded-full border-4 border-blue-200" alt="Foto Bapak Budi Santoso">
+                    <p class="italic text-gray-600 text-lg mt-6">"Edunspire benar-benar mengubah cara kami mengelola administrasi sekolah. Sangat efisien dan mudah digunakan!"</p>
+                    <p class="mt-4 font-bold text-gray-800">Bapak Budi Santoso</p>
+                    <p class="text-sm text-gray-500">Kepala Sekolah SMP Harapan Bangsa</p>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+                <div class="flex flex-col items-center">
+                    <img src="https://placehold.co/120x120/E5E7EB/4B5563?text=Guru" class="w-24 h-24 object-cover rounded-full border-4 border-blue-200" alt="Foto Ibu Siti Nurhayati">
+                    <p class="italic text-gray-600 text-lg mt-6">"Pelatihan yang diberikan sangat membantu para guru kami beradaptasi dengan teknologi digital. Sangat direkomendasikan!"</p>
+                    <p class="mt-4 font-bold text-gray-800">Ibu Siti Nurhayati</p>
+                    <p class="text-sm text-gray-500">Guru SMAN 1 Jakarta</p>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+                <div class="flex flex-col items-center">
+                    <img src="https://placehold.co/120x120/E5E7EB/4B5563?text=IT" class="w-24 h-24 object-cover rounded-full border-4 border-blue-200" alt="Foto Tim IT Sekolah">
+                    <p class="italic text-gray-600 text-lg mt-6">"Layanan pelanggan Edunspire sangat responsif. Setiap masalah yang kami hadapi cepat diselesaikan. Kami merasa sangat terbantu."</p>
+                    <p class="mt-4 font-bold text-gray-800">Tim IT Sekolah</p>
+                    <p class="text-sm text-gray-500">Manajer IT Sekolah SLBN</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="testimonial-card text-center">
-      <img src="https://via.placeholder.com/100" alt="Guru 2" class="mx-auto mb-4">
-      <p class="italic">"Pelayanan cepat, modul lengkap, guru pun terbantu."</p>
-      <p class="font-bold mt-2">Bapak Andi, SMPN 02 Pasangkayu</p>
-    </div>
-    <div class="testimonial-card text-center">
-      <img src="https://via.placeholder.com/100" alt="Guru 3" class="mx-auto mb-4">
-      <p class="italic">"Rekomendasi terbaik untuk digitalisasi sekolah!"</p>
-      <p class="font-bold mt-2">Ibu Rina, SDN 03 Pasangkayu</p>
-    </div>
-  </div>
-</section>
-
-<!-- Kontak Section -->
-<section id="kontak" class="py-20 bg-blue-50 text-center">
-  <div class="max-w-3xl mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h2>
-    <p class="text-gray-700 mb-6">Untuk informasi lebih lanjut, silakan klik tombol WhatsApp di bawah atau isi form.</p>
-    <a href="https://wa.me/6282328888989?text=Halo,%20saya%20ingin%20informasi%20lebih%20lanjut" class="btn-primary inline-block">Chat via WhatsApp</a>
-  </div>
 </section>
 
 <!-- Floating WhatsApp Button -->
-<a href="https://wa.me/6282328888989?text=Halo,%20saya%20tertarik%20dengan%20Edunspire" class="wa-btn"><i class="fa-brands fa-whatsapp text-xl"></i> Hubungi Kami</a>
+<a href="https://wa.me/6282328888989" target="_blank"
+   class="fixed bottom-8 right-8 bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-green-600 flex items-center gap-2 z-40">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.433-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+    </svg>
+    Chat Sekarang
+</a>
+
+<!-- Footer -->
+<footer id="kontak" class="bg-gray-900 text-gray-300 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-10 border-b border-gray-700">
+            <!-- About Section -->
+            <div>
+                <h2 class="text-2xl font-bold text-blue-400 mb-4">Edunspire</h2>
+                <p class="text-gray-400">Partner transformasi digital sekolah di Indonesia.</p>
+                <p class="text-sm leading-relaxed mt-2 text-gray-500">
+                    Solusi digital inovatif untuk sekolah, menciptakan pengalaman belajar yang lebih cerdas dan efisien.
+                </p>
+            </div>
+            <!-- Links 1 -->
+            <div>
+                <h3 class="text-blue-400 font-semibold mb-4">Produk & Layanan</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white transition">e-suite i3: Solusi Digital Lengkap</a></li>
+                    <li><a href="#" class="hover:text-white transition">Paket Bimbingan</a></li>
+                    <li><a href="#" class="hover:text-white transition">Portal Pembelajaran</a></li>
+                    <li><a href="#" class="hover:text-white transition">Daftar Uji Coba Gratis</a></li>
+                </ul>
+            </div>
+            <!-- Links 2 -->
+            <div>
+                <h3 class="text-blue-400 font-semibold mb-4">Tentang Kami</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Kisah Kami</a></li>
+                    <li><a href="#" class="hover:text-white transition">Kisah Pelanggan</a></li>
+                    <li><a href="#" class="hover:text-white transition">Nilai-nilai Kami</a></li>
+                    <li><a href="#" class="hover:text-white transition">Program Partner</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-blue-400 font-semibold mb-4">Dukungan & Bantuan</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="mailto:halo@edunspire.com" class="hover:text-white transition">Email: halo@edunspire.com</a></li>
+                    <li><a href="mailto:basri12@guru.sma.belajar.id" class="hover:text-white transition">Email: basri12@guru.sma.belajar.id</a></li>
+                    <li><a href="https://wa.me/6282328888989" class="hover:text-white transition">WhatsApp: +62 823 2888 8989</a></li>
+                    <li><a href="#" class="hover:text-white transition">Hubungi Kami</a></li>
+                    <li><a href="#" class="hover:text-white transition">Pusat Pembelajaran</a></li>
+                    <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    <li><a href="#" class="hover:text-white transition">Berita & Acara</a></li>
+                </ul>
+                <!-- Social Media -->
+                <div class="flex space-x-4 text-2xl mt-6">
+                    <a href="https://facebook.com/edunspire" class="hover:text-white transition"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://instagram.com/edunspire" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/edunspire" class="hover:text-white transition"><i class="fab fa-youtube-square"></i></a>
+                    <a href="https://tiktok.com/@edunspire" class="hover:text-white transition"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://twitter.com/edunspire" class="hover:text-white transition"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://linkedin.com/company/edunspire" class="hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center text-sm text-gray-500 mt-10">
+            <p>© 2025 Edunspire. Hak Cipta Dilindungi.</p>
+        </div>
+    </div>
+</footer>
 
 <!-- Scripts -->
 <script>
-  // Mobile Menu Toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  // Smooth Scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if(target){
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-      if(!mobileMenu.classList.contains('hidden')){
-        mobileMenu.classList.add('hidden');
-      }
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
     });
-  });
-</script>
 
-</body>
-</html>
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+</script>

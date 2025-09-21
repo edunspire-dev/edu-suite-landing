@@ -66,14 +66,77 @@ h1, h2 { font-family: 'Montserrat', sans-serif; }
   </nav>
 </header>
 
-<!-- Hero Section -->
-<section id="beranda" class="hero">
-  <div class="relative z-10">
-    <h1 class="font-extrabold text-5xl">Wujudkan Sekolah Digital Terdepan, Raih Keterampilan Abad 21</h1>
-    <p>Edunspire hadir dengan solusi yang sejalan dengan amanat Instruksi Presiden (Inpres) Nomor 7 Tahun 2025 tentang Percepatan Pelaksanaan Program Pembangunan dan Revitalisasi Satuan Pendidikan dan Digitalisasi Pembelajaran.</p>
-    <a href="https://kemendikdasmen.go.id/siaran-pers/13635-kemendikdasmen-dorong-digitalisasi-pembelajaran-untuk-wujudk" class="btn-primary">Mulai Transformasi Sekarang</a>
+<!-- Hero Section Full -->
+<section id="hero" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-28 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+    <!-- Judul -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fadeIn">
+      Solusi Digital Sekolah
+    </h1>
+    <!-- Deskripsi -->
+    <p class="text-lg md:text-xl mb-8 animate-fadeIn delay-200">
+      Pilih paket sesuai kebutuhan sekolah Anda. Semua paket dilengkapi bonus & diskon spesial.
+    </p>
+
+    <!-- Tombol Call-to-Action -->
+    <div class="flex flex-col md:flex-row justify-center gap-4 mb-8 animate-fadeIn delay-400">
+      <a href="https://wa.me/6282328888989?text=Halo,%20saya%20tertarik%20dengan%20paket%20Basic"
+         class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition transform hover:scale-105">
+         <i class="fa-solid fa-cart-plus mr-2"></i> Pesan Paket Basic
+      </a>
+      <a href="#paket"
+         class="bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-800 transition transform hover:scale-105">
+         <i class="fa-solid fa-box-open mr-2"></i> Lihat Semua Paket
+      </a>
+    </div>
+
+    <!-- Harga Paket Basic -->
+    <p class="text-lg md:text-xl font-bold animate-fadeIn delay-600">
+      Mulai dari <span class="line-through text-gray-300">Rp 500.000</span> 
+      <span class="text-yellow-300">Rp 364.000</span>
+    </p>
   </div>
+
+  <!-- Ilustrasi paket Basic (opsional) -->
+  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="bg-white text-blue-600 px-6 py-4 rounded-lg shadow-lg flex items-center gap-3">
+      <i class="fa-solid fa-gauge-high text-2xl"></i>
+      <div class="text-left">
+        <p class="font-bold">Paket Basic</p>
+        <p class="text-sm">Cocok untuk uji coba awal, semua fitur administrasi dasar.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Efek animasi latar belakang (opsional) -->
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 opacity-50 animate-gradientSlow"></div>
 </section>
+
+<!-- Tambahkan CSS Animasi -->
+<style>
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 1s forwards; }
+.animate-fadeIn.delay-200 { animation-delay: 0.2s; }
+.animate-fadeIn.delay-400 { animation-delay: 0.4s; }
+.animate-fadeIn.delay-600 { animation-delay: 0.6s; }
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -20px); }
+}
+.animate-bounce { animation: bounce 2s infinite; }
+
+@keyframes gradientSlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradientSlow { background-size: 200% 200%; animation: gradientSlow 15s ease infinite; }
+</style>
+
 
 <!-- E-suite i3 Section -->
 <section class="py-12 bg-gray-100">

@@ -3,705 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-Suite i3 - Portal Digital Guru</title>
-    <meta name="description" content="e-Suite i3 membantu guru mengotomatisasi administrasi agar lebih fokus mengajar siswa. Daftar gratis sekarang!">
+    <!-- SEO & Metadata untuk Mesin Pencari dan Media Sosial -->
+    <title>Edukasi Kreatif & Produk Digital Sekolah</title>
+    <meta name="description" content="Transformasi pendidikan dengan solusi digital lengkap! Temukan portal sekolah otomatis, modul interaktif, dan manajemen tugas. Hubungi kami untuk promo eksklusif.">
+    <meta name="keywords" content="solusi sekolah digital, edukasi kreatif, manajemen pembelajaran, portal sekolah, modul interaktif, paket sekolah lengkap">
+    <meta name="robots" content="index, follow">
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Open Graph Tags untuk Social Media Sharing -->
+    <meta property="og:title" content="Edukasi Kreatif & Produk Digital Sekolah">
+    <meta property="og:description" content="Pelajari keterampilan digital dan produk kreatif yang relevan dengan kebutuhan sekolah modern. Hubungi kami untuk promo eksklusif!">
+    <meta property="og:image" content="https://placehold.co/1200x630/0000FF/FFFFFF?text=Edukasi+Kreatif">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://landingpageanda.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Edukasi Kreatif & Produk Digital Sekolah">
+    <meta name="twitter:description" content="Pelajari keterampilan digital dan produk kreatif yang relevan dengan kebutuhan sekolah modern. Hubungi kami untuk promo eksklusif!">
+    <meta name="twitter:image" content="https://placehold.co/1200x675/0000FF/FFFFFF?text=Edukasi+Kreatif">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // Ganti G-XXXXXXXXXX dengan ID GA4 Anda
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome untuk ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts - Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
-        /* Gaya Kustom untuk animasi & efek */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+        body { font-family: 'Poppins', sans-serif; }
+
+        /* Hero & Buttons */
+        .btn-primary {
+            background-color: #f97316; /* Tailwind orange-500 */
+            transition: all 0.3s ease;
         }
-        .hero-gradient-bg {
-            background-color: #4c1d95;
-            background-image: linear-gradient(to right bottom, #4c1d95, #6d28d9, #8b5cf6, #c084fc);
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+            background-color: #ea580c; /* Tailwind orange-600 */
         }
-        .fade-in {
+        .float-animation { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
+        @keyframes pulse { 0%,100%{transform:scale(1);}50%{transform:scale(1.05);} }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+            50% { transform: none; animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+        }
+
+        /* Produk & Paket */
+        .product-card-hover img { transition: transform 0.5s ease; }
+        .product-card-hover:hover img { transform: scale(1.05); }
+
+        /* Fade-in */
+        .fade-in-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+        
+        /* Floating Button Fade-in */
+        .floating-button-fade-in { opacity: 0; transform: scale(0.9); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+        .floating-button-fade-in.is-visible { opacity: 1; transform: scale(1); }
+
+        /* Testimoni Carousel */
+        .carousel-item {
+            min-width: 100%;
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
-        .fade-in.is-visible {
+        .carousel-item.active {
             opacity: 1;
             transform: translateY(0);
+            position: relative;
         }
-        .cta-glow:hover {
-            animation: glow 1.5s infinite alternate;
+
+        /* Dots */
+        .carousel-dot.active {
+            background-color: #f97316 !important;
         }
-        @keyframes glow {
-            from { box-shadow: 0 0 5px #4c1d95, 0 0 10px #4c1d95; }
-            to { box-shadow: 0 0 20px #6d28d9, 0 0 30px #6d28d9; }
-        }
-        .card-hover:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        .shadow-layered {
-            box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 4px 8px rgba(0,0,0,0.08), 0 8px 16px rgba(0,0,0,0.10);
-        }
-        /* Navbar */
-        .navbar-scrolled {
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .navbar-scrolled .navbar-link {
-            color: #4c1d95; /* Ungu tua */
-        }
-        /* FAQ Interaksi */
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-            padding: 0 1.5rem;
-        }
-        .faq-answer.open {
-            max-height: 500px; /* Nilai besar agar konten terlihat */
-            padding: 1rem 1.5rem;
-        }
+
+        /* Hero gradient */
+        .bg-hero-gradient { background-image: linear-gradient(to right top, #d1e5ff, #f3f9ff, #ffffff); }
     </style>
 </head>
+<body class="bg-gray-100 text-gray-800">
 
-<body class="antialiased text-gray-800">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-<!-- Navbar Section -->
-<nav id="navbar" class="fixed top-0 w-full z-50 py-4 transition-all duration-300">
-    <div class="container mx-auto px-6 flex items-center justify-between">
-        <div class="flex items-center space-x-2">
-            <i class="fa-solid fa-graduation-cap text-white navbar-link text-3xl transition-colors duration-300"></i>
-            <span class="text-xl font-bold text-white navbar-link transition-colors duration-300">e-Suite i3</span>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg py-4 px-6 md:px-12 flex items-center justify-between sticky top-0 z-50">
+        <a href="#" class="text-2xl font-bold text-blue-900">Edukasi Kreatif</a>
+        <div class="space-x-4">
+            <a href="#produk" class="text-blue-900 hover:text-orange-500 font-medium transition duration-300">Produk</a>
+            <a href="#paket" class="text-blue-900 hover:text-orange-500 font-medium transition duration-300">Paket</a>
+            <a href="#testimoni" class="text-blue-900 hover:text-orange-500 font-medium transition duration-300">Testimoni</a>
         </div>
-        <div class="hidden md:flex space-x-8">
-            <a href="#hero" class="navbar-link text-white hover:text-blue-300 font-semibold transition-colors duration-300">Beranda</a>
-            <a href="#solusi" class="navbar-link text-white hover:text-blue-300 font-semibold transition-colors duration-300">Solusi</a>
-            <a href="#produk" class="navbar-link text-white hover:text-blue-300 font-semibold transition-colors duration-300">Produk</a>
-            <a href="#daftar" class="navbar-link text-white hover:text-blue-300 font-semibold transition-colors duration-300">Daftar</a>
-        </div>
-        <div class="md:hidden">
-            <button id="menu-button" class="text-white focus:outline-none">
-                <i class="fas fa-bars fa-lg"></i>
-            </button>
-        </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-indigo-600 mt-4 mx-4 rounded-lg shadow-lg text-white">
-        <ul class="flex flex-col space-y-2 p-4 text-center">
-            <li><a href="#hero" class="block py-2 hover:bg-indigo-700 rounded transition-colors font-medium">Beranda</a></li>
-            <li><a href="#solusi" class="block py-2 hover:bg-indigo-700 rounded transition-colors font-medium">Solusi</a></li>
-            <li><a href="#produk" class="block py-2 hover:bg-indigo-700 rounded transition-colors font-medium">Produk</a></li>
-            <li><a href="#daftar" class="block py-2 hover:bg-indigo-700 rounded transition-colors font-medium">Daftar</a></li>
-        </ul>
-    </div>
-</nav>
+    </nav>
 
-<main>
- <!-- Hero Section -->
-<header id="hero" class="text-white py-20 md:py-32 shadow-lg hero-gradient-bg">
-    <div class="container mx-auto px-6 fade-in flex flex-col-reverse lg:flex-row items-center justify-between">
-        <div class="lg:w-1/2 text-center lg:text-left mt-12 lg:mt-0">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-                Ubah Administrasi <br> <span class="text-emerald-300">Jadi Mudah.</span>
-            </h1>
-            <p class="text-lg leading-relaxed font-light mb-8 max-w-xl mx-auto lg:mx-0 text-indigo-100">
-                e-Suite i3 membantu guru mengotomatisasi administrasi agar lebih fokus mengajar siswa.
+    <!-- Hero -->
+    <header class="bg-hero-gradient py-20 md:py-32 text-center rounded-b-3xl shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-5xl font-bold text-blue-900 mb-4 float-animation">Solusi Sekolah Digital: Edukasi Kreatif</h1>
+            <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-8 leading-relaxed">Pelajari keterampilan digital dan produk kreatif yang relevan dengan kebutuhan sekolah modern.</p>
+            <a href="#produk" class="btn-primary inline-block text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">Lihat Produk Unggulan</a>
+        </div>
+    </header>
+
+    <!-- Produk -->
+    <section id="produk" class="py-16 bg-white fade-in-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12">Produk Unggulan Kami</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg product-card-hover relative">
+                    <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Terbaru</span>
+                    <img loading="lazy" src="https://placehold.co/600x400/FFC96B/FFF?text=Desain+Grafis" alt="Produk Desain Grafis" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-900">Produk Kreatif A</h3>
+                        <p class="text-gray-700 leading-relaxed">Deskripsi singkat produk kreatif A yang menarik dan bermanfaat.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg product-card-hover relative">
+                    <span class="absolute top-4 left-4 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Diskon Terbatas</span>
+                    <img loading="lazy" src="https://placehold.co/600x400/98d8d8/FFF?text=Pengembangan+Web" alt="Produk Pengembangan Web" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-900">Produk Kreatif B</h3>
+                        <p class="text-gray-700 leading-relaxed">Deskripsi singkat produk kreatif B yang inovatif dan edukatif.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg product-card-hover relative">
+                    <img loading="lazy" src="https://placehold.co/600x400/96b8e8/FFF?text=Konten+Digital" alt="Produk Konten Digital" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-900">Produk Kreatif C</h3>
+                        <p class="text-gray-700 leading-relaxed">Deskripsi singkat produk kreatif C untuk meningkatkan keterampilan digital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paket -->
+    <section id="paket" class="py-16 bg-blue-50 fade-in-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-6">🌟 Paket E-suite i3 – Solusi Digital Sekolah Lengkap</h2>
+            <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Transformasi sekolah ke digital dengan portal, modul, dan manajemen otomatis. Dari solusi per guru hingga paket sekolah lengkap, semua dibuat untuk efisiensi, kolaborasi, dan pembelajaran mendalam.
             </p>
-            <a href="#daftar" class="inline-block px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-emerald-400/50 cta-glow text-xl focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                🚀 Mulai Gratis Sekarang
-            </a>
-            <p class="mt-4 text-sm opacity-80 text-gray-200">
-                ✅ Gratis &nbsp; | &nbsp; 🔒 Aman &nbsp; | &nbsp; Tanpa biaya tersembunyi
-            </p>
-        </div>
-        <div class="lg:w-1/2 flex justify-center lg:justify-end fade-in">
-            <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Hero%20page.webp.jpeg"
-                 alt="Solusi Digital Guru"
-                 class="rounded-full border-4 border-emerald-400 w-40 sm:w-52 md:w-64 lg:w-72 xl:w-80 h-40 sm:h-52 md:h-64 lg:h-72 xl:h-80 object-cover transition-transform duration-500 ease-in-out transform hover:scale-110 hover:shadow-[0_0_50px_rgba(16,185,129,0.6)]"
-                 loading="lazy" decoding="async">
-        </div>
-    </div>
-</header>
-
-    <!-- Masalah Guru Section -->
-    <section id="masalah" class="py-16 md:py-24 bg-gradient-problem">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                <i class="fas fa-exclamation-triangle text-yellow-500 mr-3 transition-transform icon-pulse-hover"></i> Masalah yang Dihadapi Guru
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Masalah Profesional Guru -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-emerald-500 hover:rotate-1 hover:border-emerald-700">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                        <i class="fas fa-user-tie text-emerald-500 mr-3 text-3xl icon-pulse-hover"></i>
-                        Masalah Profesional
-                    </h3>
-                    <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
-                        <li><i class="fas fa-chart-line text-emerald-500 mr-3"></i> <b>Kompetensi</b>: Rendahnya kompetensi dan motivasi untuk terus belajar.</li>
-                        <li><i class="fas fa-hand-holding-usd text-teal-500 mr-3"></i> <b>Kesejahteraan</b>: Kesejahteraan rendah memengaruhi motivasi dan kualitas kerja.</li>
-                        <li><i class="fas fa-file-alt text-cyan-500 mr-3"></i> <b>Beban Administratif</b>: Tugas administratif berat mengurangi fokus mengajar.</li>
-                    </ul>
-                </div>
-
-                <!-- Tantangan dalam Mengajar -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-indigo-500 hover:scale-105 hover:border-indigo-700">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                        <i class="fas fa-chalkboard-teacher text-indigo-500 mr-3 text-3xl icon-pulse-hover"></i>
-                        Tantangan Mengajar
-                    </h3>
-                    <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
-                        <li><i class="fas fa-users text-indigo-500 mr-3"></i> <b>Keberagaman Siswa</b>: Kesulitan menyesuaikan metode dengan karakteristik siswa yang beragam.</li>
-                        <li><i class="fas fa-lightbulb text-purple-500 mr-3"></i> <b>Kreativitas Metode</b>: Kurangnya ide kreatif dalam mencoba metode baru.</li>
-                        <li><i class="fas fa-child text-pink-500 mr-3"></i> <b>Pengembangan Karakter</b>: Membentuk karakter siswa sulit karena pengaruh lingkungan luar.</li>
-                    </ul>
-                </div>
-
-                <!-- Masalah Lingkungan dan Siswa -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-orange-500 hover:rotate-1 hover:border-orange-700">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                        <i class="fas fa-school text-orange-500 mr-3 text-3xl icon-pulse-hover"></i>
-                        Masalah Lingkungan
-                    </h3>
-                    <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
-                        <li><i class="fas fa-building text-orange-500 mr-3"></i> <b>Infrastruktur</b>: Keterbatasan sarana prasarana dan fasilitas sekolah.</li>
-                        <li><i class="fas fa-globe text-blue-500 mr-3"></i> <b>Pembelajaran Daring</b>: Akses internet terbatas dan motivasi siswa menurun.</li>
-                    </ul>
-                </div>
-
-                <!-- Distribusi dan Ketersediaan Guru -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover fade-in shadow-layered border-t-4 border-red-500 hover:scale-105 hover:border-red-700">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                        <i class="fas fa-users text-red-500 mr-3 text-3xl icon-pulse-hover"></i>
-                        Distribusi Guru
-                    </h3>
-                    <ul class="space-y-4 text-gray-700 leading-relaxed list-none">
-                        <li><i class="fas fa-map-marker-alt text-red-500 mr-3"></i> <b>Distribusi Tidak Merata</b>: Ada kekurangan guru di daerah terpencil, perbatasan, dan kepulauan, sementara di daerah lain terjadi kelebihan guru.</li>
-                        <li><i class="fas fa-user-slash text-red-500 mr-3"></i> <b>Kekurangan Guru</b>: Terjadi karena minat profesi rendah dan banyak guru pensiun setiap tahunnya.</li>
-                        <li><i class="fas fa-file-alt text-red-500 mr-3"></i> <b>Pendataan Tidak Akurat</b>: Sulit mendapatkan data jumlah guru karena sering terjadi perubahan data.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solusi Kami Section -->
-    <section id="solusi" class="py-16 md:py-24 bg-gradient-solusi">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                💡 Solusi Kami: e-Suite i3
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Level 1 -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-indigo-600 transition-transform duration-300 card-hover hover:shadow-2xl hover:scale-105 fade-in">
-                    <h3 class="text-2xl font-bold text-gray-900 mt-2">Level 1: Portal Digital Gratis</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Bangun portal Google Site sederhana untuk administrasi dasar. Cocok untuk pemula.
-                    </p>
-                </div>
-                <!-- Level 2 -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-purple-600 transition-transform duration-300 card-hover hover:shadow-2xl hover:rotate-1 fade-in">
-                    <h3 class="text-2xl font-bold text-gray-900 mt-2">Level 2: Bimbingan Praktis</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Pelajari Google Workspace dasar dengan panduan langkah demi langkah & praktik terarah.
-                    </p>
-                </div>
-                <!-- Level 3 -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-green-600 transition-transform duration-300 card-hover hover:shadow-2xl hover:scale-105 fade-in">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Level 3: Latihan Nyata</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Simulasi langsung di kelas, menghadapi kendala nyata dengan dukungan mentor.
-                    </p>
-                </div>
-                <!-- Level 4 -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500 transition-transform duration-300 card-hover hover:shadow-2xl hover:rotate-1 fade-in">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Level 4: Desain Progresif</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Kustomisasi portal dengan desain profesional & dashboard digital terintegrasi.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Produk Kami -->
-    <section id="produk" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                📱 Produk Kami: e-Suite i3
-            </h2>
             
-            <!-- Item 1: Tampilan Site di HP -->
-            <div class="flex flex-col lg:flex-row items-center mb-16 gap-8 fade-in">
-                <div class="lg:w-1/2">
-                    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Tampilan%20HP.webp.jpg" 
-                         alt="Tampilan Site di HP" 
-                         class="rounded-xl shadow-lg w-full h-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Paket 1 -->
+                <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-900">1️⃣ Portal Otomatis Sekolah</h3>
+                    <p class="text-gray-700 mb-2 leading-relaxed">💡 Bangun portal sekolah tanpa ribet, otomatis & terintegrasi.</p>
+                    <p class="text-gray-400 line-through text-lg">Rp 3.500.000</p>
+                    <p class="text-2xl font-bold text-orange-500">Rp 3.000.000</p>
+                    <p class="text-orange-500 text-sm font-semibold mt-2">📌 Diskon terbatas untuk 10 sekolah pertama / pembelian bulan ini</p>
+                    <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Hubungi Kami - Paket 1' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4">Hubungi Kami</a>
                 </div>
-                <div class="lg:w-1/2 text-center lg:text-left">
-                    <h3 class="text-2xl font-bold mb-4">Tampilan Site di HP</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Portal e-Suite i3 sepenuhnya responsif di perangkat mobile. Guru dapat mengakses materi, absensi, dan progres siswa dari HP kapan saja.
-                    </p>
+                <!-- Paket 2 -->
+                <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-900">2️⃣ Modul Pembelajaran Mendalam</h3>
+                    <p class="text-gray-700 mb-2 leading-relaxed">💡 Materi digital interaktif untuk pemahaman konsep mendalam.</p>
+                    <p class="text-gray-400 line-through text-lg">Rp 2.500.000</p>
+                    <p class="text-2xl font-bold text-orange-500">Rp 2.200.000</p>
+                    <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Hubungi Kami - Paket 2' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4">Hubungi Kami</a>
                 </div>
-            </div>
-            
-            <!-- Item 2: Materi di Site (zig-zag) -->
-            <div class="flex flex-col lg:flex-row-reverse items-center mb-16 gap-8 fade-in">
-                <div class="lg:w-1/2">
-                    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Contoh%20Materi.webp.jpg" 
-                         alt="Materi di Site" 
-                         class="rounded-xl shadow-lg w-full h-auto">
+                <!-- Paket 3 -->
+                <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-900">3️⃣ Manajemen Tugas & Dokumen</h3>
+                    <p class="text-gray-700 mb-2 leading-relaxed">💡 Kelola file tugas, analisis diagnostik, & laporan siswa otomatis.</p>
+                    <p class="text-gray-400 line-through text-lg">Rp 1.500.000</p>
+                    <p class="text-2xl font-bold text-orange-500">Rp 1.200.000</p>
+                    <p class="text-orange-500 text-sm font-semibold mt-2">📌 Diskon khusus jika dibeli bersama Portal atau Modul</p>
+                    <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Hubungi Kami - Paket 3' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4">Hubungi Kami</a>
                 </div>
-                <div class="lg:w-1/2 text-center lg:text-left">
-                    <h3 class="text-2xl font-bold mb-4">Materi di Site</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Guru dapat mengunggah dan mengatur materi pembelajaran di portal, sehingga siswa mudah mengakses materi yang dibutuhkan.
-                    </p>
+                <!-- Paket 4 -->
+                <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-900">4️⃣ Paket Bimbingan & Pendampingan</h3>
+                    <p class="text-gray-700 mb-2 leading-relaxed">💡 Pendampingan teknis & konsultasi agar transformasi digital sukses.</p>
+                    <p class="text-gray-400 line-through text-lg">Rp 2.000.000</p>
+                    <p class="text-2xl font-bold text-orange-500">Rp 1.750.000</p>
+                    <p class="text-green-500 text-sm font-semibold mt-2">🎁 Bonus sesi follow-up tambahan</p>
+                    <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Hubungi Kami - Paket 4' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4">Hubungi Kami</a>
                 </div>
-            </div>
-            
-            <!-- Item 3: Dashboard Update Absensi -->
-            <div class="flex flex-col lg:flex-row items-center mb-16 gap-8 fade-in">
-                <div class="lg:w-1/2">
-                    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Dasboard%20Analisis%20Absensi%20Webp..jpg" 
-                         alt="Dashboard Update Absensi" 
-                         class="rounded-xl shadow-lg w-full h-auto">
+                <!-- Paket 5 -->
+                <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-900">5️⃣ Modul Khusus Guru</h3>
+                    <p class="text-gray-700 mb-2 leading-relaxed">💡 Materi digital personal per mata pelajaran, siap pakai di kelas.</p>
+                    <p class="text-2xl font-bold text-blue-900">Rp 250.000 / Mata Pelajaran</p>
+                    <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Hubungi Kami - Paket 5' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4">Hubungi Kami</a>
                 </div>
-                <div class="lg:w-1/2 text-center lg:text-left">
-                    <h3 class="text-2xl font-bold mb-4">Dashboard Update Absensi</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Memudahkan guru memantau kehadiran siswa secara real-time, dengan laporan yang rapi dan terintegrasi.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Item 4: Progres Tugas Siswa (zig-zag) -->
-            <div class="flex flex-col lg:flex-row-reverse items-center mb-16 gap-8 fade-in">
-                <div class="lg:w-1/2">
-                    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Progres%20Tugas%20Siswa.webp.jpg" 
-                         alt="Progres Tugas Siswa" 
-                         class="rounded-xl shadow-lg w-full h-auto">
-                </div>
-                <div class="lg:w-1/2 text-center lg:text-left">
-                    <h3 class="text-2xl font-bold mb-4">Progres Tugas Siswa</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Visualisasi progres tugas siswa memudahkan guru menilai perkembangan belajar setiap siswa dengan cepat.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Item 5: Monitoring Kelas -->
-            <div class="flex flex-col lg:flex-row items-center gap-8 fade-in">
-                <div class="lg:w-1/2">
-                    <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Dasboard%20Monitoring%20Kelas.webp.jpg" 
-                         alt="Monitoring Kelas" 
-                         class="rounded-xl shadow-lg w-full h-auto">
-                </div>
-                <div class="lg:w-1/2 text-center lg:text-left">
-                    <h3 class="text-2xl font-bold mb-4">Monitoring Kelas</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Guru dapat memantau aktivitas siswa di kelas secara real-time, memastikan setiap siswa tetap fokus dan produktif.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pilih Layanan Section -->
-    <section id="layanan" class="py-16 md:py-24 bg-gradient-pricing">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                🎯 Pilih Layanan Anda
-            </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                <!-- Card Gratis -->
-                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-indigo-500 hover:shadow-2xl transition fade-in">
-                    <h3 class="text-xl font-bold text-gray-900 mt-2">✅ Gratis</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Dapatkan akses materi dasar tentang cara membangun portal Google Site. 
-                        Termasuk pendampingan selama 1 minggu.
-                    </p>
-                    <span class="text-4xl font-extrabold text-indigo-600">Rp0</span>
-                    <span class="text-sm text-gray-500 mb-4">syarat: share ke grup komunitas</span>
-                    <a href="#daftar" class="mt-auto inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 transition">
-                        Daftar Gratis
-                    </a>
-                </div>
-
-                <!-- Card Berbayar -->
-                <div class="relative bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center border-t-4 border-purple-500 hover:shadow-2xl transition fade-in">
-                    <span class="absolute top-0 right-0 mt-2 mr-2 bg-gradient-to-r from-emerald-400 to-emerald-600 text-white font-bold px-3 py-1.5 rounded-full uppercase -rotate-6 text-sm">Paling Dicari</span>
-                    <h3 class="text-xl font-bold text-gray-900 mt-2">💎 Berbayar</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Akses penuh Kelas Guru Mahir Digital Level 1, dengan materi komprehensif dan bimbingan intensif. 
-                        Termasuk kesempatan upgrade ke Level 2–4 untuk modul lanjutan dan pendampingan sampai mahir.
-                    </p>
-                    <span class="text-4xl font-extrabold text-purple-600">Rp364.000</span>
-                    <span class="text-sm text-gray-500 mb-4">sekali bayar</span>
-                    <a href="#daftar" class="mt-auto inline-block px-6 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition">
-                        Daftar Berbayar
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimoni Guru Section -->
-    <section id="testimoni" class="py-16 md:py-24 bg-gradient-testimonials">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                🗣️ Testimoni Guru
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-indigo-500 transition-transform duration-300 card-hover fade-in shadow-layered">
-                    <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
-                        “Awalnya saya tidak paham sama sekali Google Site, sekarang semua administrasi saya rapi hanya dengan sekali klik. Waktu saya lebih banyak untuk siswa.”
-                    </p>
-                    <div class="flex items-center">
-                        <img src="https://placehold.co/64x64/E2E8F0/1A202C?text=Guru" alt="Foto Profil Guru Ani" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            <p class="text-sm font-semibold text-gray-600">— Bu Ani, Guru IPA SMPN 1 Jakarta</p>
+                <!-- Paket Bundle -->
+                <div class="bg-gradient-to-r from-blue-800 via-blue-900 to-blue-800 text-white rounded-3xl shadow-2xl transition duration-300 transform scale-105 hover:scale-110 relative overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">🎁 Paket Bundle Lengkap</h3>
+                        <p class="text-gray-300 mb-2 leading-relaxed">Dapatkan semua solusi utama (Portal, Modul, Manajemen & Bimbingan) dalam satu paket.</p>
+                        
+                        <!-- Harga -->
+                        <div class="mb-4">
+                            <p class="text-gray-400 line-through text-base">Rp 9.500.000</p>
+                            <p class="text-5xl md:text-6xl font-extrabold text-orange-400 animate-pulse">Rp 5.900.000</p>
+                            <p class="text-lg text-orange-300 font-semibold">🔥 Hemat hingga Rp 3.600.000!</p>
                         </div>
+                          <!-- CTA -->
+                        <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Beli Sekarang - Bundle' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-orange-600 transition duration-300">Beli Sekarang</a>
                     </div>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-purple-500 transition-transform duration-300 card-hover fade-in shadow-layered">
-                    <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
-                        “Bimbingan e-Suite sangat praktis. Tidak hanya teori, tapi juga pendampingan ketika ada masalah nyata di kelas.”
-                    </p>
-                    <div class="flex items-center">
-                        <img src="https://placehold.co/64x64/E2E8F0/1A202C?text=Guru" alt="Foto Profil Guru Rahmat" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            <p class="text-sm font-semibold text-gray-600">— Pak Rahmat, Guru SMA Negeri Pasangkayu</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-green-500 transition-transform duration-300 card-hover fade-in shadow-layered">
-                    <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
-                        “Saya merasa lebih percaya diri menggunakan teknologi di kelas setelah mengikuti bimbingan e-Suite. Siswa jadi lebih termotivasi!”
-                    </p>
-                    <div class="flex items-center">
-                        <img src="https://placehold.co/64x64/E2E8F0/1A202C?text=Guru" alt="Foto Profil Guru Siti" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            <p class="text-sm font-semibold text-gray-600">— Ibu Siti, Guru Bahasa Inggris SMAN 2 Bandung</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tambahan testimoni agar grid terlihat lebih seimbang -->
-                <div class="bg-white p-8 rounded-xl shadow-xl border-l-4 border-yellow-500 transition-transform duration-300 card-hover fade-in shadow-layered">
-                    <p class="text-lg leading-relaxed text-gray-700 italic mb-4">
-                        “Modul yang diberikan sangat relevan dengan kebutuhan kami sebagai guru. Saya bisa langsung menerapkannya di kelas tanpa kesulitan.”
-                    </p>
-                    <div class="flex items-center">
-                        <img src="https://placehold.co/64x64/E2E8F0/1A202C?text=Guru" alt="Foto Profil Guru Budi" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            <p class="text-sm font-semibold text-gray-600">— Pak Budi, Guru Matematika SMPN 5 Depok</p>
-                        </div>
-                    </div>
+                    <!-- Badge -->
+                    <span class="absolute top-3 right-3 bg-orange-400 text-white px-4 py-2 rounded-full text-sm md:text-base font-bold shadow-lg animate-bounce">Paling Populer</span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Kisah Kami Section - Versi Visual Modern -->
-    <section id="kisah-kami" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-6 flex flex-col items-center text-center">
-            <!-- Foto dan Nama -->
-        <img src="https://raw.githubusercontent.com/edunspire-dev/edu-suite-landing/main/Basri%20S.Pd.webp.png"
-     alt="Basri S.Pd., M.A.P., Founder e-Suite i3"
-     width="200"
-     height="200"
-     class="w-[200px] h-[200px] object-cover rounded-full mb-4 shadow-lg transition-transform duration-300 transform hover:scale-105">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Basri, S.Pd., M.A.P.</h2>
-            <!-- Kutipan -->
-            <p class="text-base md:text-lg italic text-gray-700 max-w-3xl mb-12 leading-relaxed">
-                    “Kami menghadirkan solusi yang bukan sekadar teknologi. Setiap fitur lahir dari pengalaman nyata di lapangan,
-                    untuk membantu guru mengajar lebih mudah, efisien, dan inovatif di era digital modern.”
-            </p>
-            <!-- Daftar pencapaian visual -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full">
-                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
-                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                    <div class="text-left">
-                        <b>Pengalaman Mengajar:</b> Mengajar selama 15+ tahun di berbagai jenjang, termasuk 5 tahun pengabdian di daerah 3T.
-                    </div>
-                </div>
-                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
-                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                    <div class="text-left">
-                        <b>Manajemen Pendidikan Jarak Jauh:</b> Sejak 2013, mengelola Pokjar untuk ribuan mahasiswa dan menjadi tutor bersertifikat.
-                    </div>
-                </div>
-                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
-                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                    <div class="text-left">
-                        <b>Koordinasi Proyek:</b> Membimbing fasilitator, membangun portal proyek, dan mengelola sistem penilaian otomatis untuk 820+ siswa.
-                    </div>
-                </div>
-                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
-                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                    <div class="text-left">
-                        <b>Publikasi Ilmiah:</b> Penulis aktif artikel ilmiah dan publikasi di jurnal nasional serta prosiding seminar pendidikan.
-                    </div>
-                </div>
-                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
-                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                    <div class="text-left">
-                        <b>Mentor Digital:</b> Mentor untuk edukator dan komunitas dalam branding, publikasi digital, dan optimalisasi teknologi pendidikan.
-                    </div>
-                </div>
-                <div class="flex items-start bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 fade-in">
-                    <i class="fas fa-check-circle text-emerald-500 text-2xl mr-4 mt-1"></i>
-                    <div class="text-left">
-                        <b>Sertifikasi Internasional:</b> Pemegang sertifikat Google for Education Certified (2025).
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-         <!-- FAQ Section -->
-<section id="faq" class="py-16 md:py-24 bg-gray-100">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-      ❓ FAQ (Tanya Jawab)
-    </h2>
-
-    <div class="max-w-3xl mx-auto space-y-4">
-      <!-- FAQ Item 1 -->
-      <div class="faq-item fade-in">
-        <button class="faq-question w-full flex justify-between items-center bg-white p-6 rounded-xl shadow-md font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-expanded="false" aria-controls="faq-answer-1">
-          <span>Apakah ini benar-benar gratis?</span>
-          <i class="fas fa-plus transition-transform duration-300"></i>
-        </button>
-        <div id="faq-answer-1" class="faq-answer mt-2 px-6 py-4 bg-white rounded-xl text-gray-700">
-          <p>Ya. Level 1 bisa Anda ikuti 100% gratis tanpa biaya tersembunyi.</p>
-        </div>
-      </div>
-
-      <!-- FAQ Item 2 -->
-      <div class="faq-item fade-in">
-        <button class="faq-question w-full flex justify-between items-center bg-white p-6 rounded-xl shadow-md font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-expanded="false" aria-controls="faq-answer-2">
-          <span>Apakah saya butuh kemampuan teknis?</span>
-          <i class="fas fa-plus transition-transform duration-300"></i>
-        </button>
-        <div id="faq-answer-2" class="faq-answer mt-2 px-6 py-4 bg-white rounded-xl text-gray-700">
-          <p>Tidak. Semua bimbingan dilakukan langkah demi langkah, bahkan untuk pemula.</p>
-        </div>
-      </div>
-
-      <!-- FAQ Item 3 -->
-      <div class="faq-item fade-in">
-        <button class="faq-question w-full flex justify-between items-center bg-white p-6 rounded-xl shadow-md font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-expanded="false" aria-controls="faq-answer-3">
-          <span>Apakah sistem ini aman dipakai di sekolah?</span>
-          <i class="fas fa-plus transition-transform duration-300"></i>
-        </button>
-        <div id="faq-answer-3" class="faq-answer mt-2 px-6 py-4 bg-white rounded-xl text-gray-700">
-          <p>Ya. Kami menggunakan Google Workspace resmi, sesuai standar keamanan internasional.</p>
-        </div>
-      </div>
-
-      <!-- FAQ Item 4 -->
-      <div class="faq-item fade-in">
-        <button class="faq-question w-full flex justify-between items-center bg-white p-6 rounded-xl shadow-md font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-expanded="false" aria-controls="faq-answer-4">
-          <span>Apa saja yang saya dapatkan di versi premium?</span>
-          <i class="fas fa-plus transition-transform duration-300"></i>
-        </button>
-        <div id="faq-answer-4" class="faq-answer mt-2 px-6 py-4 bg-white rounded-xl text-gray-700">
-          <p>Template otomatis, desain profesional, dan update regulasi terbaru.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- JavaScript untuk FAQ Interaktif -->
-<script>
-  // Sembunyikan semua jawaban saat halaman load
-  document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.add('hidden'));
-
-  // Tambahkan fungsi toggle untuk setiap tombol FAQ
-  const faqButtons = document.querySelectorAll('.faq-question');
-  faqButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const answer = btn.nextElementSibling;
-      const icon = btn.querySelector('i');
-
-      // Toggle jawaban
-      answer.classList.toggle('hidden');
-
-      // Toggle icon +/-
-      icon.classList.toggle('fa-plus');
-      icon.classList.toggle('fa-minus');
-    });
-  });
-</script>
-
-<!-- Daftar Bimbingan Intensif Section - Responsif & Tajam -->
-<section id="daftar" class="py-16 md:py-24 bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-900 text-white fade-in">
-    <div class="container mx-auto px-6 text-center">
-        <!-- Judul -->
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 drop-shadow-lg">
-            Daftar Bimbingan Intensif
-        </h2>
-        <!-- Deskripsi -->
-        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-200 leading-relaxed drop-shadow-sm">
-            Isi data berikut untuk mendaftar program bimbingan intensif otomatisasi administrasi guru. Gratis untuk 10 pendaftar pertama!
-        </p>
-        <!-- Tombol utama -->
-        <a href="https://forms.gle/UdHVXJZYF9cMGW5v8" target="_blank"
-           class="inline-block w-full sm:w-auto px-8 py-4 md:px-12 md:py-5 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-emerald-500/50 cta-glow text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-emerald-500">
-            Lanjut ke Formulir Pendaftaran
-        </a>
-        <!-- Catatan -->
-        <p class="text-sm md:text-base mt-4 text-gray-300 drop-shadow-sm max-w-md mx-auto">
-            Anda akan diarahkan ke halaman baru untuk mengisi formulir pendaftaran.
-        </p>
-    </div>
-</section>
-
-
-    <!-- CTA Ganda di Footer -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Siap Mengajar Lebih Baik?</h2>
-            <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-                Bergabunglah dengan ratusan guru yang sudah mengoptimalkan waktu mereka. Dapatkan akses gratis sekarang juga!
-            </p>
-            <a href="#daftar" class="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 cta-glow text-xl focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                Daftar & Mulai Gratis
-            </a>
-        </div>
-    </section>
-</main>
-
-<!-- Footer -->
-<footer class="bg-gray-900 text-gray-300 py-10">
-    <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center md:text-left">
-            <div class="mb-6 md:mb-0">
-                <h4 class="text-xl font-semibold text-white mb-2">e-Suite i3</h4>
-                <p class="text-sm">Membantu guru mengotomatisasi administrasi untuk fokus mendidik siswa.</p>
-            </div>
-            <div>
-                <h4 class="text-xl font-semibold text-white mb-2">Tautan Cepat</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-white transition-colors">Tentang Kami</a></li>
-                    <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
-                    <li><a href="https://dosenkren.blogspot.com/" class="hover:text-white transition-colors" target="_blank">Blog DosenKeren</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a></li>
-                    <li><a href="https://wa.me/6282328888989" target="_blank" class="hover:text-white transition-colors">Hubungi Kami via WhatsApp</a></li>
+            <!-- Upgrade & Bonus Rapi -->
+            <div class="mt-12 max-w-3xl mx-auto text-gray-700">
+                <!-- Strategi Upgrade & Pertumbuhan -->
+                <h4 class="text-2xl font-bold mb-4 text-blue-900">🔝 Strategi Upgrade & Pertumbuhan</h4>
+                <ul class="list-none mb-6 leading-relaxed space-y-2">
+                    <li>➡️ Dari Guru ke Sekolah: Guru yang puas dengan Modul Khusus Guru dapat upgrade ke Paket Sekolah Lengkap dengan harga spesial + bonus bimbingan.</li>
+                    <li>➡️ Dari Per Item ke Bundle: Sekolah yang membeli satu produk bisa upgrade ke Paket Bundle dengan harga khusus, memaksimalkan efisiensi & fitur.</li>
                 </ul>
+
+                <!-- Bonus & Promo Eksklusif -->
+                <h4 class="text-2xl font-bold mb-4 text-blue-900">🚀 Bonus & Promo Eksklusif</h4>
+                <ul class="list-none leading-relaxed space-y-2">
+                    <li>✅ Diskon Early Adopter 10–15% untuk sekolah yang berani bertransformasi awal.</li>
+                    <li>✅ Free konsultasi & update template selama beberapa bulan.</li>
+                    <li>⏰ Promo terbatas: “Hanya berlaku untuk 10 sekolah pertama!”</li>
+                </ul>
+
+                <p class="mt-6 text-center">
+                    📲 Pelajari & Hubungi: <a href="https://wa.me/6281234567890" class="text-orange-500 font-bold hover:underline">WhatsApp / Landing Page</a>
+                </p>
             </div>
-            <div>
-                <h4 class="text-xl font-semibold text-white mb-2">Ikuti Kami</h4>
-                <div class="social-icons space-x-6 mb-4">
-                    <a href="https://www.facebook.com/edusuitei3?locale=id_ID" class="text-gray-500 hover:text-white transition-colors duration-300" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="https://www.instagram.com/basrione?igsh=YW1kamRkYTM2dmVq" class="text-gray-500 hover:text-white transition-colors duration-300" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="https://www.linkedin.com/in/basri-lopia-776a88182?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-500 hover:text-white transition-colors duration-300" target="_blank"><i class="fab fa-linkedin-in fa-lg"></i></a>
-                    <a href="https://www.youtube.com/@Edunspire" class="text-gray-500 hover:text-white transition-colors duration-300" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testimoni" class="py-16 bg-white fade-in-on-scroll">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12">Apa Kata Mereka</h2>
+        
+        <div class="max-w-4xl mx-auto relative">
+
+            <!-- Carousel Track -->
+            <div class="carousel-track relative overflow-hidden rounded-3xl">
+
+                <!-- Carousel Item 1 -->
+                <div class="carousel-item relative flex flex-col items-center p-8 w-full bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl shadow-xl transform transition duration-500 hover:scale-105">
+                    <!-- Foto Profil -->
+                    <img src="https://placehold.co/100x100/A0EEFF/3C3B6E?text=User+A" alt="User A" class="w-24 h-24 rounded-full border-4 border-orange-400 shadow-lg -mt-16 mb-4">
+                    
+                    <p class="font-semibold text-blue-900 text-lg mb-2">⭐ User A</p>
+                    <p class="text-gray-700 text-center leading-relaxed">“Pelajaran dan produk sangat membantu saya belajar digital dengan mudah. Materi disajikan dengan cara yang sangat praktis dan mudah dipahami.”</p>
                 </div>
-                <p class="text-sm">Dapatkan update terbaru kami!</p>
+
+                <!-- Carousel Item 2 -->
+                <div class="carousel-item relative flex flex-col items-center p-8 w-full bg-gradient-to-br from-teal-100 to-teal-200 rounded-3xl shadow-xl transform transition duration-500 hover:scale-105">
+                    <img src="https://placehold.co/100x100/B5F1CC/3C3B6E?text=User+B" alt="User B" class="w-24 h-24 rounded-full border-4 border-orange-400 shadow-lg -mt-16 mb-4">
+                    <p class="font-semibold text-blue-900 text-lg mb-2">🌟 User B</p>
+                    <p class="text-gray-700 text-center leading-relaxed">“Materi kreatif dan praktis, cocok untuk pembelajaran online maupun offline. Saya sangat merekomendasikan produk mereka kepada siapa pun yang ingin belajar hal baru.”</p>
+                </div>
+
+                <!-- Carousel Item 3 -->
+                <div class="carousel-item relative flex flex-col items-center p-8 w-full bg-gradient-to-br from-pink-100 to-pink-200 rounded-3xl shadow-xl transform transition duration-500 hover:scale-105">
+                    <img src="https://placehold.co/100x100/FFC8DD/3C3B6E?text=User+C" alt="User C" class="w-24 h-24 rounded-full border-4 border-orange-400 shadow-lg -mt-16 mb-4">
+                    <p class="font-semibold text-blue-900 text-lg mb-2">🔥 User C</p>
+                    <p class="text-gray-700 text-center leading-relaxed">“Sangat inspiratif! Produk kreatif membuat kegiatan belajar menjadi lebih menyenangkan. Saya merasa lebih termotivasi untuk terus menciptakan sesuatu.”</p>
+                </div>
+            </div>
+
+            <!-- Dots -->
+            <div class="carousel-dots flex justify-center mt-6 space-x-2">
+                <span class="carousel-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"></span>
+                <span class="carousel-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"></span>
+                <span class="carousel-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"></span>
             </div>
         </div>
-        <div class="text-center mt-8 pt-8 border-t border-gray-700">
-            <p class="text-sm">&copy; 2025 e-Suite i3. Semua Hak Dilindungi.</p>
-            <p class="text-sm mt-1">Powered by Halo@edunspire.com</p>
+    </div></section>
+
+    <!-- Floating WhatsApp Button dengan Teks -->
+    <a href="https://wa.me/6281234567890" target="_blank"
+       onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Floating WhatsApp Button' });"
+       class="floating-button-fade-in fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center gap-3 px-5 py-3 z-50 transition-all duration-300">
+       
+       <!-- Ikon WhatsApp -->
+       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+           <path d="M20.52 3.48A11.94 11.94 0 0012 .001C5.373 0 .001 5.373.001 12a11.94 11.94 0 002.52 7.52l-2.7 7.5 7.5-2.7A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12a11.94 11.94 0 00-3.48-8.52zM12 22.002c-2.07 0-4.004-.637-5.618-1.723l-.398-.25-4.46 1.608 1.608-4.46-.25-.398A9.95 9.95 0 012 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10zm5.228-7.5c-.247-.124-1.46-.72-1.687-.8-.226-.08-.39-.124-.554.124-.164.247-.63.8-.77.964-.142.164-.284.185-.53.062-.247-.124-1.043-.384-1.986-1.224-.733-.652-1.228-1.455-1.376-1.702-.142-.247-.015-.38.108-.503.112-.112.247-.284.37-.426.124-.142.164-.247.247-.412.082-.165.041-.309-.02-.426-.062-.112-.554-1.333-.758-1.824-.2-.48-.404-.416-.554-.424-.142-.008-.309-.01-.474-.01-.165 0-.426.062-.648.309s-.852.832-.852 2.028c0 1.195.873 2.354.994 2.516.124.165 1.718 2.63 4.17 3.688.583.252 1.036.403 1.39.516.584.185 1.116.16 1.536.097.468-.067 1.46-.596 1.667-1.17.206-.57.206-1.056.144-1.17-.062-.112-.226-.165-.474-.29z"/>
+       </svg>
+       <!-- Teks CTA -->
+       <span class="font-bold text-lg">Chat Sekarang</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12 px-6 text-center rounded-t-3xl shadow-inner">
+        <div class="container mx-auto">
+            <p class="text-lg mb-2">Hubungi kami di <a href="https://wa.me/628232888989" target="_blank" class="text-orange-400 font-bold hover:underline">WhatsApp</a> atau ikuti media sosial kami.</p>
+            <p class="text-sm text-gray-400">&copy; 2025 Edukasi Kreatif. Semua hak dilindungi.</p>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- Tombol WhatsApp Mengambang -->
-<a href="https://wa.me/6282328888989" target="_blank"
-    id="whatsappBtn"
-    class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center gap-2 transition-transform duration-300 transform hover:scale-110 z-50">
-    <i class="fab fa-whatsapp fa-lg"></i>
-    <span class="hidden md:inline">Chat Kami</span>
-</a>
+    <script>
+        // JavaScript for fade-in on scroll animation
+        const sections = document.querySelectorAll('.fade-in-on-scroll');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-<!-- Scroll to Top Button -->
-<button id="scrollToTopBtn" class="fixed bottom-6 left-6 p-4 rounded-full shadow-lg opacity-0 transition-all duration-300 z-50 bg-gradient-to-r from-green-500 to-emerald-600 text-white transform scale-100 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-emerald-500">
-    <i class="fas fa-arrow-up"></i>
-</button>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Intersection Observer untuk animasi saat di-scroll
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
+        }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach(element => {
-            observer.observe(element);
+        sections.forEach(section => {
+            observer.observe(section);
         });
         
-        // Mobile menu toggle
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        // JavaScript for carousel functionality
+        const track = document.querySelector('.carousel-track');
+        const items = document.querySelectorAll('.carousel-item');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentIndex = 0;
+        let autoplayInterval;
 
-        // FAQ accordion functionality
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                const isOpen = answer.classList.contains('open');
+        // Update Carousel
+        function updateCarousel(index) {
+            items.forEach(item => item.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
 
-                document.querySelectorAll('.faq-answer.open').forEach(el => {
-                    el.classList.remove('open');
-                });
-                document.querySelectorAll('.faq-question i.fa-minus').forEach(el => {
-                    el.classList.replace('fa-minus', 'fa-plus');
-                });
-                
-                if (!isOpen) {
-                    answer.classList.add('open');
-                    icon.classList.replace('fa-plus', 'fa-minus');
-                }
+            items[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        // Dot Click
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                resetAutoplay();
+                currentIndex = idx;
+                updateCarousel(currentIndex);
             });
         });
 
-        // Scroll to top button functionality
-        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.style.opacity = '1';
-                scrollToTopBtn.style.transform = 'scale(1)';
-            } else {
-                scrollToTopBtn.style.opacity = '0';
-                scrollToTopBtn.style.transform = 'scale(0)';
+        // Autoplay
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel(currentIndex);
+            }, 3000); // 3 detik per transisi
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+
+        // Initialize
+        updateCarousel(currentIndex);
+        startAutoplay();
+        
+        // JavaScript for floating button fade-in on load
+        window.onload = function() {
+            const floatingButton = document.querySelector('.floating-button-fade-in');
+            if (floatingButton) {
+                floatingButton.classList.add('is-visible');
             }
-        });
-
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    });
-</script>
+        };
+    </script>
 </body>
 </html>

@@ -1,387 +1,302 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO & Metadata untuk Mesin Pencari dan Media Sosial -->
-    <title>Edukasi Kreatif & Produk Digital Sekolah</title>
-    <meta name="description" content="Transformasi pendidikan dengan solusi digital lengkap! Temukan portal sekolah otomatis, modul interaktif, dan manajemen tugas. Hubungi kami untuk promo eksklusif.">
-    <meta name="keywords" content="solusi sekolah digital, edukasi kreatif, manajemen pembelajaran, portal sekolah, modul interaktif, paket sekolah lengkap">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Tags untuk Social Media Sharing -->
-    <meta property="og:title" content="Edukasi Kreatif & Produk Digital Sekolah">
-    <meta property="og:description" content="Pelajari keterampilan digital dan produk kreatif yang relevan dengan kebutuhan sekolah modern. Hubungi kami untuk promo eksklusif!">
-    <meta property="og:image" content="https://placehold.co/1200x630/0000FF/FFFFFF?text=Edukasi+Kreatif">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://landingpageanda.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edunspire - Solusi Digital Sekolah</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLpI0k2b4k5B77R4b65P9P994E8R4n9B3c5sK0D45B0P5U2b0D90f23B3b4B7C5S9J9D3B0A5F0Q6G8J7kQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+body { font-family: 'Inter', sans-serif; background:#f9fafb; margin:0; color:#111827; }
+h1, h2 { font-family: 'Montserrat', sans-serif; }
+.hero { text-align:center; padding:6rem 1rem; position:relative; overflow:hidden; background-color:#E0F2FE; }
+.hero h1 { font-size:2.5rem; font-weight:800; margin-bottom:1rem; color:#111827; }
+.hero p { font-size:1.125rem; color:#4b5563; max-width:700px; margin:0 auto 2rem auto; }
+.btn-primary { background:#3b82f6; color:#fff; font-weight:600; padding:0.75rem 2rem; border-radius:999px; text-decoration:none; transition:0.3s; }
+.btn-primary:hover { background:#2563eb; }
+.paket-container { display:grid; grid-template-columns:1fr; gap:2rem; max-width:1000px; margin:0 auto; }
+@media(min-width:768px){ .paket-container { grid-template-columns:repeat(3,1fr); } }
+.card { background:#fff; border-radius:1rem; padding:2rem; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.08); transition:transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.12); }
+.card h3 { font-weight:700; font-size:1.5rem; margin-bottom:0.5rem; }
+.card p { color:#4b5563; margin-bottom:1rem; }
+.card-price { font-weight:800; font-size:2rem; color:#3b82f6; margin-bottom:1rem; }
+.wa-btn { position:fixed; bottom:2rem; right:2rem; background:#10b981; color:#fff; font-weight:600; padding:0.75rem 1.5rem; border-radius:999px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:50; transition:0.3s; display:flex; align-items:center; gap:0.5rem; }
+.wa-btn:hover { background:#059669; transform:translateY(-2px); }
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Edukasi Kreatif & Produk Digital Sekolah">
-    <meta name="twitter:description" content="Pelajari keterampilan digital dan produk kreatif yang relevan dengan kebutuhan sekolah modern. Hubungi kami untuk promo eksklusif!">
-    <meta name="twitter:image" content="https://placehold.co/1200x675/0000FF/FFFFFF?text=Edukasi+Kreatif">
+/* Styling untuk Navbar */
+.navbar { background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.nav-link { font-weight: 500; color: #4b5563; transition: color 0.2s; }
+.nav-link:hover { color: #2563eb; }
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX'); // Ganti G-XXXXXXXXXX dengan ID GA4 Anda
-    </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: 'Poppins', sans-serif; }
-
-        /* Hero & Buttons */
-        .btn-primary {
-            background-color: #f97316; /* Tailwind orange-500 */
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
-            background-color: #ea580c; /* Tailwind orange-600 */
-        }
-        .float-animation { animation: float 3s ease-in-out infinite; }
-        @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
-        @keyframes pulse { 0%,100%{transform:scale(1);}50%{transform:scale(1.05);} }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
-            50% { transform: none; animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
-        }
-
-        /* Produk & Paket */
-        .product-card-hover img { transition: transform 0.5s ease; }
-        .product-card-hover:hover img { transform: scale(1.05); }
-
-        /* Fade-in */
-        .fade-in-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-        
-        /* Floating Button Fade-in */
-        .floating-button-fade-in { opacity: 0; transform: scale(0.9); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
-        .floating-button-fade-in.is-visible { opacity: 1; transform: scale(1); }
-
-        /* Testimoni Carousel */
-        .carousel-item {
-            min-width: 100%;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .carousel-item.active {
-            opacity: 1;
-            transform: translateY(0);
-            position: relative;
-        }
-
-        /* Dots */
-        .carousel-dot.active {
-            background-color: #f97316 !important;
-        }
-
-        /* Hero gradient */
-        .bg-hero-gradient { background-image: linear-gradient(to right top, #d1e5ff, #f3f9ff, #ffffff); }
-    </style>
+/* Styling untuk Testimonial */
+.testimonial-card { background: #fff; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.testimonial-card img { width: 6rem; height: 6rem; object-fit: cover; border-radius: 50%; border: 4px solid #dbeafe; }
+</style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Navbar -->
-    <nav class="bg-white shadow-lg py-4 px-6 md:px-12 flex items-center justify-between sticky top-0 z-50">
-        <a href="#" class="text-2xl font-bold text-blue-900">Edukasi Kreatif</a>
-        <div class="space-x-4">
-            <a href="#produk" class="text-blue-900 hover:text-orange-500 font-medium transition duration-300">Produk</a>
-            <a href="#paket" class="text-blue-900 hover:text-orange-500 font-medium transition duration-300">Paket</a>
-            <a href="#testimoni" class="text-blue-900 hover:text-orange-500 font-medium transition duration-300">Testimoni</a>
-        </div>
+<!-- Navbar -->
+<header class="navbar p-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="flex items-center space-x-2 text-xl font-bold text-gray-800">
+      <i class="fa-solid fa-graduation-cap text-blue-600"></i>
+      <span>Edunspire</span>
+    </div>
+    <nav class="hidden md:flex space-x-8">
+      <a href="#beranda" class="nav-link">Beranda</a>
+      <a href="#paket" class="nav-link">Paket</a>
+      <a href="#testimoni" class="nav-link">Testimoni</a>
+      <a href="#kontak" class="nav-link">Hubungi Kami</a>
     </nav>
+    <div class="md:hidden">
+      <!-- Hamburger Menu -->
+      <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="hidden flex-col items-center mt-4 space-y-4 md:hidden">
+    <a href="#beranda" class="nav-link">Beranda</a>
+    <a href="#paket" class="nav-link">Paket</a>
+    <a href="#testimoni" class="nav-link">Testimoni</a>
+    <a href="#kontak" class="nav-link">Hubungi Kami</a>
+  </nav>
+</header>
 
-    <!-- Hero -->
-    <header class="bg-hero-gradient py-20 md:py-32 text-center rounded-b-3xl shadow-lg">
-        <div class="container mx-auto px-4">
-            <h1 class="text-3xl md:text-5xl font-bold text-blue-900 mb-4 float-animation">Solusi Sekolah Digital: Edukasi Kreatif</h1>
-            <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-8 leading-relaxed">Pelajari keterampilan digital dan produk kreatif yang relevan dengan kebutuhan sekolah modern.</p>
-            <a href="#produk" class="btn-primary inline-block text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">Lihat Produk Unggulan</a>
-        </div>
-    </header>
+<!-- Hero Section -->
+<section id="beranda" class="hero">
+  <div class="relative z-10">
+    <h1 class="font-extrabold text-5xl">Wujudkan Sekolah Digital Terdepan, Raih Keterampilan Abad 21</h1>
+    <p>Edunspire hadir dengan solusi yang sejalan dengan amanat Instruksi Presiden Nomor 7 Tahun 2025 yang menargetkan implementasi Interactive Flat Panel (IFP) di setiap sekolah.</p>
+    <a href="https://kemendikdasmen.go.id/siaran-pers/13635-kemendikdasmen-dorong-digitalisasi-pembelajaran-untuk-wujudk" class="btn-primary">Mulai Transformasi Sekarang</a>
+  </div>
+</section>
 
-    <!-- Produk -->
-    <section id="produk" class="py-16 bg-white fade-in-on-scroll">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12">Produk Unggulan Kami</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg product-card-hover relative">
-                    <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Terbaru</span>
-                    <img loading="lazy" src="https://placehold.co/600x400/FFC96B/FFF?text=Desain+Grafis" alt="Produk Desain Grafis" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-blue-900">Produk Kreatif A</h3>
-                        <p class="text-gray-700 leading-relaxed">Deskripsi singkat produk kreatif A yang menarik dan bermanfaat.</p>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg product-card-hover relative">
-                    <span class="absolute top-4 left-4 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Diskon Terbatas</span>
-                    <img loading="lazy" src="https://placehold.co/600x400/98d8d8/FFF?text=Pengembangan+Web" alt="Produk Pengembangan Web" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-blue-900">Produk Kreatif B</h3>
-                        <p class="text-gray-700 leading-relaxed">Deskripsi singkat produk kreatif B yang inovatif dan edukatif.</p>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg product-card-hover relative">
-                    <img loading="lazy" src="https://placehold.co/600x400/96b8e8/FFF?text=Konten+Digital" alt="Produk Konten Digital" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-blue-900">Produk Kreatif C</h3>
-                        <p class="text-gray-700 leading-relaxed">Deskripsi singkat produk kreatif C untuk meningkatkan keterampilan digital.</p>
-                    </div>
-                </div>
+<!-- E-suite i3 Section -->
+<section class="py-12 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">E-suite i3: Rangkaian Alat yang Aman dan Fleksibel</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-10">
+      Solusi terintegrasi Edunspire hadir untuk menciptakan lingkungan belajar yang interaktif dan efisien. Rangkaian alat ini dirancang untuk mendukung manajemen sekolah, pengalaman mengajar guru, dan proses belajar siswa.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
+            <div class="text-blue-500 mb-4">
+                <i class="fa-solid fa-sync-alt fa-3x"></i>
             </div>
+            <h3 class="font-bold text-xl mb-2">Sistem Terintegrasi</h3>
+            <p class="text-gray-600 text-sm">Integrasi tanpa batas antara administrasi, pembelajaran, dan komunikasi.</p>
         </div>
-    </section>
-
-    <!-- Paket -->
-    <section id="paket" class="py-16 bg-blue-50 fade-in-on-scroll">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-6">🌟 Paket E-suite i3 – Solusi Digital Sekolah Lengkap</h2>
-            <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Transformasi sekolah ke digital dengan portal, modul, dan manajemen otomatis. Dari solusi per guru hingga paket sekolah lengkap, semua dibuat untuk efisiensi, kolaborasi, dan pembelajaran mendalam.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Paket 1 -->
-                <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-900">1️⃣ Portal Otomatis Sekolah</h3>
-                    <p class="text-gray-700 mb-2 leading-relaxed">💡 Bangun portal sekolah tanpa ribet, otomatis & terintegrasi.</p>
-                    <p class="text-gray-400 line-through text-lg">Rp 3.500.000</p>
-                    <p class="text-2xl font-bold text-orange-500">Rp 3.000.000</p>
-                    <p class="text-orange-500 text-sm font-semibold mt-2">📌 Diskon terbatas untuk 10 sekolah pertama / pembelian bulan ini</p>
-                    <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Hubungi Kami - Paket 1' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4">Hubungi Kami</a>
-                </div>
-                <!-- Paket 2 -->
-                <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-900">2️⃣ Modul Pembelajaran Mendalam</h3>
-                    <p class="text-gray-700 mb-2 leading-relaxed">💡 Materi digital interaktif untuk pemahaman konsep mendalam.</p>
-                    <p class="text-gray-400 line-through text-lg">Rp 2.500.000</p>
-                    <p class="text-2xl font-bold text-orange-500">Rp 2.200.000</p>
-                    <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Hubungi Kami - Paket 2' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4">Hubungi Kami</a>
-                </div>
-                <!-- Paket 3 -->
-                <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-900">3️⃣ Manajemen Tugas & Dokumen</h3>
-                    <p class="text-gray-700 mb-2 leading-relaxed">💡 Kelola file tugas, analisis diagnostik, & laporan siswa otomatis.</p>
-                    <p class="text-gray-400 line-through text-lg">Rp 1.500.000</p>
-                    <p class="text-2xl font-bold text-orange-500">Rp 1.200.000</p>
-                    <p class="text-orange-500 text-sm font-semibold mt-2">📌 Diskon khusus jika dibeli bersama Portal atau Modul</p>
-                    <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Hubungi Kami - Paket 3' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4">Hubungi Kami</a>
-                </div>
-                <!-- Paket 4 -->
-                <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-900">4️⃣ Paket Bimbingan & Pendampingan</h3>
-                    <p class="text-gray-700 mb-2 leading-relaxed">💡 Pendampingan teknis & konsultasi agar transformasi digital sukses.</p>
-                    <p class="text-gray-400 line-through text-lg">Rp 2.000.000</p>
-                    <p class="text-2xl font-bold text-orange-500">Rp 1.750.000</p>
-                    <p class="text-green-500 text-sm font-semibold mt-2">🎁 Bonus sesi follow-up tambahan</p>
-                    <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Hubungi Kami - Paket 4' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4">Hubungi Kami</a>
-                </div>
-                <!-- Paket 5 -->
-                <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-900">5️⃣ Modul Khusus Guru</h3>
-                    <p class="text-gray-700 mb-2 leading-relaxed">💡 Materi digital personal per mata pelajaran, siap pakai di kelas.</p>
-                    <p class="text-2xl font-bold text-blue-900">Rp 250.000 / Mata Pelajaran</p>
-                    <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Hubungi Kami - Paket 5' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4">Hubungi Kami</a>
-                </div>
-                <!-- Paket Bundle -->
-                <div class="bg-gradient-to-r from-blue-800 via-blue-900 to-blue-800 text-white rounded-3xl shadow-2xl transition duration-300 transform scale-105 hover:scale-110 relative overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">🎁 Paket Bundle Lengkap</h3>
-                        <p class="text-gray-300 mb-2 leading-relaxed">Dapatkan semua solusi utama (Portal, Modul, Manajemen & Bimbingan) dalam satu paket.</p>
-                        
-                        <!-- Harga -->
-                        <div class="mb-4">
-                            <p class="text-gray-400 line-through text-base">Rp 9.500.000</p>
-                            <p class="text-5xl md:text-6xl font-extrabold text-orange-400 animate-pulse">Rp 5.900.000</p>
-                            <p class="text-lg text-orange-300 font-semibold">🔥 Hemat hingga Rp 3.600.000!</p>
-                        </div>
-                          <!-- CTA -->
-                        <a href="https://wa.me/628232888989" onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Beli Sekarang - Bundle' });" class="btn-primary inline-block w-full text-center text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-orange-600 transition duration-300">Beli Sekarang</a>
-                    </div>
-                    <!-- Badge -->
-                    <span class="absolute top-3 right-3 bg-orange-400 text-white px-4 py-2 rounded-full text-sm md:text-base font-bold shadow-lg animate-bounce">Paling Populer</span>
-                </div>
+        <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
+            <div class="text-blue-500 mb-4">
+                <i class="fa-solid fa-lock fa-3x"></i>
             </div>
-
-            <!-- Upgrade & Bonus Rapi -->
-            <div class="mt-12 max-w-3xl mx-auto text-gray-700">
-                <!-- Strategi Upgrade & Pertumbuhan -->
-                <h4 class="text-2xl font-bold mb-4 text-blue-900">🔝 Strategi Upgrade & Pertumbuhan</h4>
-                <ul class="list-none mb-6 leading-relaxed space-y-2">
-                    <li>➡️ Dari Guru ke Sekolah: Guru yang puas dengan Modul Khusus Guru dapat upgrade ke Paket Sekolah Lengkap dengan harga spesial + bonus bimbingan.</li>
-                    <li>➡️ Dari Per Item ke Bundle: Sekolah yang membeli satu produk bisa upgrade ke Paket Bundle dengan harga khusus, memaksimalkan efisiensi & fitur.</li>
-                </ul>
-
-                <!-- Bonus & Promo Eksklusif -->
-                <h4 class="text-2xl font-bold mb-4 text-blue-900">🚀 Bonus & Promo Eksklusif</h4>
-                <ul class="list-none leading-relaxed space-y-2">
-                    <li>✅ Diskon Early Adopter 10–15% untuk sekolah yang berani bertransformasi awal.</li>
-                    <li>✅ Free konsultasi & update template selama beberapa bulan.</li>
-                    <li>⏰ Promo terbatas: “Hanya berlaku untuk 10 sekolah pertama!”</li>
-                </ul>
-
-                <p class="mt-6 text-center">
-                    📲 Pelajari & Hubungi: <a href="https://wa.me/6281234567890" class="text-orange-500 font-bold hover:underline">WhatsApp / Landing Page</a>
-                </p>
-            </div>
+            <h3 class="font-bold text-xl mb-2">Aman & Terjamin</h3>
+            <p class="text-gray-600 text-sm">Keamanan data terjamin dengan enkripsi mutakhir sesuai standar internasional.</p>
         </div>
-    </section>
-
-    <!-- Testimoni -->
-    <section id="testimoni" class="py-16 bg-white fade-in-on-scroll">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12">Apa Kata Mereka</h2>
-        
-        <div class="max-w-4xl mx-auto relative">
-
-            <!-- Carousel Track -->
-            <div class="carousel-track relative overflow-hidden rounded-3xl">
-
-                <!-- Carousel Item 1 -->
-                <div class="carousel-item relative flex flex-col items-center p-8 w-full bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl shadow-xl transform transition duration-500 hover:scale-105">
-                    <!-- Foto Profil -->
-                    <img src="https://placehold.co/100x100/A0EEFF/3C3B6E?text=User+A" alt="User A" class="w-24 h-24 rounded-full border-4 border-orange-400 shadow-lg -mt-16 mb-4">
-                    
-                    <p class="font-semibold text-blue-900 text-lg mb-2">⭐ User A</p>
-                    <p class="text-gray-700 text-center leading-relaxed">“Pelajaran dan produk sangat membantu saya belajar digital dengan mudah. Materi disajikan dengan cara yang sangat praktis dan mudah dipahami.”</p>
-                </div>
-
-                <!-- Carousel Item 2 -->
-                <div class="carousel-item relative flex flex-col items-center p-8 w-full bg-gradient-to-br from-teal-100 to-teal-200 rounded-3xl shadow-xl transform transition duration-500 hover:scale-105">
-                    <img src="https://placehold.co/100x100/B5F1CC/3C3B6E?text=User+B" alt="User B" class="w-24 h-24 rounded-full border-4 border-orange-400 shadow-lg -mt-16 mb-4">
-                    <p class="font-semibold text-blue-900 text-lg mb-2">🌟 User B</p>
-                    <p class="text-gray-700 text-center leading-relaxed">“Materi kreatif dan praktis, cocok untuk pembelajaran online maupun offline. Saya sangat merekomendasikan produk mereka kepada siapa pun yang ingin belajar hal baru.”</p>
-                </div>
-
-                <!-- Carousel Item 3 -->
-                <div class="carousel-item relative flex flex-col items-center p-8 w-full bg-gradient-to-br from-pink-100 to-pink-200 rounded-3xl shadow-xl transform transition duration-500 hover:scale-105">
-                    <img src="https://placehold.co/100x100/FFC8DD/3C3B6E?text=User+C" alt="User C" class="w-24 h-24 rounded-full border-4 border-orange-400 shadow-lg -mt-16 mb-4">
-                    <p class="font-semibold text-blue-900 text-lg mb-2">🔥 User C</p>
-                    <p class="text-gray-700 text-center leading-relaxed">“Sangat inspiratif! Produk kreatif membuat kegiatan belajar menjadi lebih menyenangkan. Saya merasa lebih termotivasi untuk terus menciptakan sesuatu.”</p>
-                </div>
+        <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
+            <div class="text-blue-500 mb-4">
+                <i class="fa-solid fa-tools fa-3x"></i>
             </div>
-
-            <!-- Dots -->
-            <div class="carousel-dots flex justify-center mt-6 space-x-2">
-                <span class="carousel-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"></span>
-                <span class="carousel-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"></span>
-                <span class="carousel-dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"></span>
+            <h3 class="font-bold text-xl mb-2">Fleksibel & Dapat Disesuaikan</h3>
+            <p class="text-gray-600 text-sm">Modul yang dapat disesuaikan sesuai dengan kebutuhan unik setiap sekolah.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
+            <div class="text-blue-500 mb-4">
+                <i class="fa-solid fa-lightbulb fa-3x"></i>
             </div>
+            <h3 class="font-bold text-xl mb-2">Interaktif & Inovatif</h3>
+            <p class="text-gray-600 text-sm">Memanfaatkan teknologi IFP untuk pengalaman belajar yang interaktif dan menarik.</p>
         </div>
-    </div></section>
+    </div>
+  </div>
+</section>
 
-    <!-- Floating WhatsApp Button dengan Teks -->
-    <a href="https://wa.me/6281234567890" target="_blank"
-       onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Floating WhatsApp Button' });"
-       class="floating-button-fade-in fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center gap-3 px-5 py-3 z-50 transition-all duration-300">
-       
-       <!-- Ikon WhatsApp -->
-       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-           <path d="M20.52 3.48A11.94 11.94 0 0012 .001C5.373 0 .001 5.373.001 12a11.94 11.94 0 002.52 7.52l-2.7 7.5 7.5-2.7A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12a11.94 11.94 0 00-3.48-8.52zM12 22.002c-2.07 0-4.004-.637-5.618-1.723l-.398-.25-4.46 1.608 1.608-4.46-.25-.398A9.95 9.95 0 012 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10zm5.228-7.5c-.247-.124-1.46-.72-1.687-.8-.226-.08-.39-.124-.554.124-.164.247-.63.8-.77.964-.142.164-.284.185-.53.062-.247-.124-1.043-.384-1.986-1.224-.733-.652-1.228-1.455-1.376-1.702-.142-.247-.015-.38.108-.503.112-.112.247-.284.37-.426.124-.142.164-.247.247-.412.082-.165.041-.309-.02-.426-.062-.112-.554-1.333-.758-1.824-.2-.48-.404-.416-.554-.424-.142-.008-.309-.01-.474-.01-.165 0-.426.062-.648.309s-.852.832-.852 2.028c0 1.195.873 2.354.994 2.516.124.165 1.718 2.63 4.17 3.688.583.252 1.036.403 1.39.516.584.185 1.116.16 1.536.097.468-.067 1.46-.596 1.667-1.17.206-.57.206-1.056.144-1.17-.062-.112-.226-.165-.474-.29z"/>
-       </svg>
-       <!-- Teks CTA -->
-       <span class="font-bold text-lg">Chat Sekarang</span>
-    </a>
+<!-- Paket Section -->
+<section id="paket" class="bg-gray-50 py-12">
+  <div class="max-w-6xl mx-auto text-center px-6">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Paket Digital Sekolah</h2>
+    <p class="text-gray-600 mb-10">Pilih paket sesuai kebutuhan sekolah Anda. Semua paket dilengkapi bonus & diskon spesial.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card flex flex-col">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Basic</h3>
+        <p class="text-gray-500">Cocok untuk uji coba awal</p>
+        <p class="text-3xl font-extrabold text-blue-600 mt-4">
+          Rp 2.500.000
+          <span class="text-gray-400 text-lg line-through ml-2">Rp 3.500.000</span>
+        </p>
+        <p class="text-green-600 font-semibold">Diskon 30% + Gratis Upgrade</p>
+        <ul class="text-left mt-6 space-y-2 flex-grow">
+          <li class="flex items-center"><i class="fa-solid fa-file-invoice text-blue-500 w-5 mr-2"></i> Modul administrasi dasar</li>
+          <li class="flex items-center"><i class="fa-solid fa-rotate text-blue-500 w-5 mr-2"></i> Free update template 3 bulan</li>
+          <li class="flex items-center"><i class="fa-solid fa-headset text-blue-500 w-5 mr-2"></i> Dukungan teknis via WhatsApp</li>
+        </ul>
+        <a href="https://edunspire.com/paket/basic"
+           class="mt-6 inline-block bg-blue-600 text-white px-5 py-3 rounded-full font-semibold hover:bg-blue-700">
+          Pesan Sekarang
+        </a>
+      </div>
+      <div class="card border-4 border-blue-600 flex flex-col relative">
+        <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full absolute top-4 right-4">Paling Populer</span>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Standard</h3>
+        <p class="text-gray-500">Paling populer untuk sekolah</p>
+        <p class="text-3xl font-extrabold text-blue-600 mt-4">
+          Rp 5.000.000
+          <span class="text-gray-400 text-lg line-through ml-2">Rp 7.500.000</span>
+        </p>
+        <p class="text-green-600 font-semibold">Hemat 35% + Bonus Pelatihan</p>
+        <ul class="text-left mt-6 space-y-2 flex-grow">
+          <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 w-5 mr-2"></i> Semua fitur Basic</li>
+          <li class="flex items-center"><i class="fa-solid fa-users text-blue-500 w-5 mr-2"></i> Modul guru & siswa lengkap</li>
+          <li class="flex items-center"><i class="fa-solid fa-comments text-blue-500 w-5 mr-2"></i> Konsultasi & bimbingan online</li>
+          <li class="flex items-center"><i class="fa-solid fa-screwdriver-wrench text-blue-500 w-5 mr-2"></i> Maintenance gratis 1 tahun</li>
+        </ul>
+        <a href="https://edunspire.com/paket/standard"
+           class="mt-6 inline-block bg-blue-600 text-white px-5 py-3 rounded-full font-semibold hover:bg-blue-700">
+          Pesan Sekarang
+        </a>
+      </div>
+      <div class="card flex flex-col">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Premium</h3>
+        <p class="text-gray-500">Solusi lengkap & eksklusif</p>
+        <p class="text-sm italic text-gray-500">Cocok untuk sekolah besar</p>
+        <p class="text-3xl font-extrabold text-blue-600 mt-4">
+          Rp 9.000.000
+          <span class="text-gray-400 text-lg line-through ml-2">Rp 12.000.000</span>
+        </p>
+        <p class="text-green-600 font-semibold">Hemat 25% + Bonus Eksklusif</p>
+        <ul class="text-left mt-6 space-y-2 flex-grow">
+          <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 w-5 mr-2"></i> Semua fitur Standard</li>
+          <li class="flex items-center"><i class="fa-solid fa-palette text-blue-500 w-5 mr-2"></i> Custom branding & desain sekolah</li>
+          <li class="flex items-center"><i class="fa-solid fa-chalkboard-user text-blue-500 w-5 mr-2"></i> Pelatihan onsite untuk guru</li>
+          <li class="flex items-center"><i class="fa-solid fa-award text-blue-500 w-5 mr-2"></i> Garansi layanan 2 tahun</li>
+        </ul>
+        <a href="https://edunspire.com/paket/premium"
+           class="mt-6 inline-block bg-blue-600 text-white px-5 py-3 rounded-full font-semibold hover:bg-blue-700">
+          Pesan Sekarang
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white py-12 px-6 text-center rounded-t-3xl shadow-inner">
-        <div class="container mx-auto">
-            <p class="text-lg mb-2">Hubungi kami di <a href="https://wa.me/628232888989" target="_blank" class="text-orange-400 font-bold hover:underline">WhatsApp</a> atau ikuti media sosial kami.</p>
-            <p class="text-sm text-gray-400">&copy; 2025 Edukasi Kreatif. Semua hak dilindungi.</p>
+<!-- Testimonial Section -->
+<section id="testimoni" class="bg-white py-12">
+  <div class="max-w-6xl mx-auto text-center px-6">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Mereka?</h2>
+    <p class="text-gray-600 mb-10">Cerita nyata dari sekolah yang telah berkolaborasi dengan kami.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="testimonial-card">
+        <div class="flex flex-col items-center">
+          <img src="https://placehold.co/100x100/A0AEC0/fff?text=Nama+A" alt="Foto Pelanggan 1">
+          <p class="italic text-gray-600 mt-4">"Edunspire benar-benar mengubah cara kami mengelola administrasi sekolah. Sangat efisien dan mudah digunakan!"</p>
+          <p class="mt-4 font-bold text-gray-800">Bapak Budi Santoso</p>
+          <p class="text-sm text-gray-500">Kepala Sekolah SMP Harapan Bangsa</p>
         </div>
-    </footer>
+      </div>
+      <div class="testimonial-card">
+        <div class="flex flex-col items-center">
+          <img src="https://placehold.co/100x100/A0AEC0/fff?text=Nama+B" alt="Foto Pelanggan 2">
+          <p class="italic text-gray-600 mt-4">"Pelatihan yang diberikan sangat membantu para guru kami beradaptasi dengan teknologi digital. Sangat direkomendasikan!"</p>
+          <p class="mt-4 font-bold text-gray-800">Ibu Siti Nurhayati</p>
+          <p class="text-sm text-gray-500">Guru SMAN 1 Jakarta</p>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="flex flex-col items-center">
+          <img src="https://placehold.co/100x100/A0AEC0/fff?text=Nama+C" alt="Foto Pelanggan 3">
+          <p class="italic text-gray-600 mt-4">"Layanan pelanggan Edunspire sangat responsif. Setiap masalah yang kami hadapi cepat diselesaikan. Kami merasa sangat terbantu."</p>
+          <p class="mt-4 font-bold text-gray-800">Tim IT Sekolah XYZ</p>
+          <p class="text-sm text-gray-500">Manajer IT Sekolah XYZ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // JavaScript for fade-in on scroll animation
-        const sections = document.querySelectorAll('.fade-in-on-scroll');
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
+<a href="https://wa.me/6282328888989" target="_blank" class="wa-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-white" viewBox="0 0 24 24">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.433-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+  </svg>
+  Chat Sekarang
+</a>
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+<footer id="kontak" class="bg-gray-800 text-gray-300 py-10">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between pb-8 border-b border-gray-700 mb-8">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+        <h3 class="text-blue-300 font-semibold text-lg">Ikuti Kami</h3>
+        <ul class="flex space-x-4 text-xl">
+          <li><a href="https://facebook.com/edunspire" class="hover:text-white"><i class="fab fa-facebook-square"></i></a></li>
+          <li><a href="https://instagram.com/edunspire" class="hover:text-white"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://youtube.com/edunspire" class="hover:text-white"><i class="fab fa-youtube-square"></i></a></li>
+          <li><a href="https://tiktok.com/@edunspire" class="hover:text-white"><i class="fab fa-tiktok"></i></a></li>
+          <li><a href="https://twitter.com/edunspire" class="hover:text-white"><i class="fab fa-twitter-square"></i></a></li>
+          <li><a href="https://linkedin.com/company/edunspire" class="hover:text-white"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <div>
+        <h2 class="text-2xl font-bold text-blue-300 mb-4">Edunspire</h2>
+        <p class="text-white font-normal mt-1">Partner transformasi digital sekolah di Indonesia.</p>
+        <p class="text-sm leading-relaxed mt-2">
+          Solusi digital inovatif untuk sekolah, menciptakan pengalaman belajar yang lebih cerdas dan efisien.
+        </p>
+      </div>
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-        
-        // JavaScript for carousel functionality
-        const track = document.querySelector('.carousel-track');
-        const items = document.querySelectorAll('.carousel-item');
-        const dots = document.querySelectorAll('.carousel-dot');
-        let currentIndex = 0;
-        let autoplayInterval;
+      <div>
+        <h3 class="text-blue-300 font-semibold mb-4">Produk & Layanan</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://edunspire.com/e-suite-i3" class="hover:text-white">e-suite i3: Solusi Digital Lengkap</a></li>
+          <li><a href="https://edunspire.com/bimbingan" class="hover:text-white">Paket Bimbingan</a></li>
+          <li><a href="https://edunspire.com/modul" class="hover:text-white">Modul Pembelajaran</a></li>
+          <li><a href="https://edunspire.com/uji-coba-gratis" class="hover:text-white">Daftar Uji Coba Gratis</a></li>
+        </ul>
+      </div>
 
-        // Update Carousel
-        function updateCarousel(index) {
-            items.forEach(item => item.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
+      <div>
+        <h3 class="text-blue-300 font-semibold mb-4">Tentang Kami</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://edunspire.com/kisah-kami" class="hover:text-white">Kisah Kami</a></li>
+          <li><a href="https://edunspire.com/kisah-pelanggan" class="hover:text-white">Kisah Pelanggan</a></li>
+          <li><a href="https://edunspire.com/nilai-nilai" class="hover:text-white">Nilai-nilai Kami</a></li>
+          <li><a href="https://edunspire.com/partner" class="hover:text-white">Program Partner</a></li>
+        </ul>
+      </div>
 
-            items[index].classList.add('active');
-            dots[index].classList.add('active');
-        }
+      <div>
+        <h3 class="text-blue-300 font-semibold mb-4">Dukungan & Bantuan</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="mailto:halo@edunspire.com" class="hover:text-white">Email: halo@edunspire.com</a></li>
+          <li><a href="mailto:basri12@guru.sma.belajar.id" class="hover:text-white">Email: basri12@guru.sma.belajar.id</a></li>
+          <li><a href="https://wa.me/6282328888989" class="hover:text-white">WhatsApp: +62 823 2888 8989</a></li>
+          <li><a href="https://edunspire.com/hubungi" class="hover:text-white">Hubungi Kami</a></li>
+          <li><a href="https://edunspire.com/pusat-pembelajaran" class="hover:text-white">Pusat Pembelajaran</a></li>
+          <li><a href="https://edunspire.com/faq" class="hover:text-white">FAQ</a></li>
+          <li><a href="https://edunspire.com/berita" class="hover:text-white">Berita & Acara</a></li>
+        </ul>
+      </div>
+    </div>
 
-        // Dot Click
-        dots.forEach((dot, idx) => {
-            dot.addEventListener('click', () => {
-                resetAutoplay();
-                currentIndex = idx;
-                updateCarousel(currentIndex);
-            });
-        });
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
+      <p>© 2025 Edunspire. Hak Cipta Dilindungi.</p>
+    </div>
+  </div>
+</footer>
 
-        // Autoplay
-        function startAutoplay() {
-            autoplayInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % items.length;
-                updateCarousel(currentIndex);
-            }, 3000); // 3 detik per transisi
-        }
+<script>
+  // Script untuk hamburger menu
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-        function resetAutoplay() {
-            clearInterval(autoplayInterval);
-            startAutoplay();
-        }
-
-        // Initialize
-        updateCarousel(currentIndex);
-        startAutoplay();
-        
-        // JavaScript for floating button fade-in on load
-        window.onload = function() {
-            const floatingButton = document.querySelector('.floating-button-fade-in');
-            if (floatingButton) {
-                floatingButton.classList.add('is-visible');
-            }
-        };
-    </script>
-</body>
-</html>
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
